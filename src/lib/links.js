@@ -1,3 +1,4 @@
 export const links = {
-    main: '/'
+    main: '/',
+    rent: 'rent'
 }

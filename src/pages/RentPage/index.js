@@ -1,11 +1,11 @@
+import { Rent } from "../../features/rent";
 import { Header } from "../../shared";
-import { Main } from "../../features/main";
 
-export const MainPage = () => {
+export const RentPage = () => {
   return (
     <>
       <Header />
-      <Main />
+      <Rent />
     </>
   );
 };
