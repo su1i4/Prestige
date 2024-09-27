@@ -7,5 +7,15 @@
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
+
+.routes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
   
