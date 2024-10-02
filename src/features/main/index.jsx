@@ -12,10 +12,11 @@ import { Vector } from "../../shared/icons/Vector";
 import { Ruler } from "../../shared/icons/ruler";
 import { Next } from "../../shared/icons/Next";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export const Main = () => {
   return (
@@ -87,41 +88,45 @@ export const Main = () => {
           </div>
         </div>
       </div>
-      <Swiper
-        // spaceBetween={50}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-      >
-        <SwiperSlide>
-          <div className="slide-content">
-            <h2>Холл</h2>
-            <p>
-              Репутация и значимость любого Бизнес-Центра начинается со входа,
-              ведь именно он создает первое впечатление
-            </p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slide-content">
-            <h2>Slide 2</h2>
-            <p>Content for slide 2</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slide-content">
-            <h2>Slide 3</h2>
-            <p>Content for slide 3</p>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slide-content">
-            <h2>Slide 4</h2>
-            <p>Content for slide 4</p>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+      <div className="swipers">
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          style={{width: '100%', margin: '100px', borderRadius: '20px'}}
+        >
+          <SwiperSlide>
+            <div className="slide-content">
+              <h2>Холл</h2>
+              <p>
+                Репутация и значимость любого Бизнес-Центра начинается со входа,
+                ведь именно он создает первое впечатление
+              </p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="slide-content">
+              <h2>Slide 2</h2>
+              <p>Content for slide 2</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="slide-content">
+              <h2>Slide 3</h2>
+              <p>Content for slide 3</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="slide-content">
+              <h2>Slide 4</h2>
+              <p>Content for slide 4</p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </div>
   );
 };
