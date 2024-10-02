@@ -1,4 +1,65 @@
-.Main{
-    background-color: black;
-    height: 100vh;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+.nutral {
+  height: 100vh;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+.background-section {
+  background-color: black;
+  width: 100%;
+}
+
+.info-wrap {
+  border-left: 2px white solid;
+  padding-left: 30px;
+}
+
+.info-wrap > h1 {
+  font-size: 150px;
+  color: white;
+  font-family: "Playfair Display", serif;
+  line-height: 10px;
+}
+
+.info-wrap > p {
+  font-family: "Geologica", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 30px;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.buttons > button {
+  height: 60px;
+  width: 250px;
+  border-radius: 20px;
+  font-family: "Geologica", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.buttons button:nth-child(1) {
+  background-color: #cccccc;
+}
+
+.buttons button:nth-child(2) {
+  background-color: #848484;
+  color: white;
 }

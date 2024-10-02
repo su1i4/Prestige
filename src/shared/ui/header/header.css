@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 .Header {
     border-radius: 30px;
     height: 60px;
@@ -8,14 +10,17 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-.routes {
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    padding: 0px 30px 0px;
+    z-index: 50;
+  }
+
+.Routes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
 }
   
