@@ -13,6 +13,14 @@ export const Main = () => {
           <button>Аренда</button>
         </div>
       </div>
+      <div className="about">
+        <div className="inner">
+            <h2>Об объекте</h2>
+            <div className="list">
+
+            </div>
+        </div>
+      </div>
     </div>
   );
 };
