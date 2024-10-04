@@ -11,6 +11,13 @@ import { Restaraunt } from "../../shared/icons/Restaraunt";
 import { Vector } from "../../shared/icons/Vector";
 import { Ruler } from "../../shared/icons/ruler";
 import { Next } from "../../shared/icons/Next";
+import Smamage from "../../shared/images/Smamage.png";
+import Restoran from "../../shared/images/Layer_1.png";
+import Namaz from "../../shared/images/Layer_1 (1).png";
+import Parking from "../../shared/images/_Р РµР¶РёРј_РёР·РѕР»СЏС†РёРё.png";
+import Office from "../../shared/images/image 20.png";
+import Xoll from "../../shared/images/Rectangle.png";
+import Konf from "../../shared/images/Конференц зал.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
@@ -85,6 +92,11 @@ export const Main = () => {
                 Ресторан на 13 этаже
               </div>
             </div>
+            <img
+              src={Smamage}
+              alt="Prestige Tower здание в"
+              style={{ marginBottom: "40px" }}
+            />
           </div>
         </div>
       </div>
@@ -93,13 +105,16 @@ export const Main = () => {
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={1}
-          navigation
+          navigation={{
+            prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+          }}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          style={{width: '100%', margin: '100px', borderRadius: '20px'}}
+          style={{ width: "100%", margin: "100px", borderRadius: "20px" }}
         >
           <SwiperSlide>
-            <div className="slide-content">
+            <div id="one" className="slide-content">
               <h2>Холл</h2>
               <p>
                 Репутация и значимость любого Бизнес-Центра начинается со входа,
@@ -108,23 +123,37 @@ export const Main = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="slide-content">
+            <div id="two" className="slide-content">
               <h2>Slide 2</h2>
               <p>Content for slide 2</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="slide-content">
+            <div id="three" className="slide-content">
               <h2>Slide 3</h2>
               <p>Content for slide 3</p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="slide-content">
+            <div id="four" className="slide-content">
               <h2>Slide 4</h2>
               <p>Content for slide 4</p>
             </div>
           </SwiperSlide>
+          <SwiperSlide>
+            <div id="five" className="slide-content">
+              <h2>Slide 4</h2>
+              <p>Content for slide 4</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div id="six" className="slide-content">
+              <h2>Slide 4</h2>
+              <p>Content for slide 4</p>
+            </div>
+          </SwiperSlide>
+          <div className="swiper-button-prev">sulaiman</div>
+          <div className="swiper-button-next">aichurok</div>
         </Swiper>
       </div>
     </div>
