@@ -23,14 +23,13 @@
   font-size: 150px;
   color: white;
   font-family: "Playfair Display", serif;
-  line-height: 10px;
+  /* line-height: 10px; */
 }
 
 .info-wrap > p {
   font-family: "Geologica", sans-serif;
   font-size: 30px;
   font-weight: 300;
-  line-height: 30px;
   color: white;
 }
 

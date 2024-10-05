@@ -9,13 +9,13 @@ export const Header = () => {
     <div className="Header">
       <Logo />
       <div className="Routes">
-        <StyledLink to={links.rent}>
+        <StyledLink to={links.selling}>
           <NavText>Продажа</NavText>
         </StyledLink>
-        <StyledLink>
+        <StyledLink to={links.rent} >
           <NavText>Аренда</NavText>
         </StyledLink>
-        <StyledLink>
+        <StyledLink to={links.location} >
           <NavText>Расположение</NavText>
         </StyledLink>
         <StyledLink>

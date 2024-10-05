@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   margin: 0;
-  font-family: "Geologica", sans-serif;;
+  font-family: "Geologica", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
