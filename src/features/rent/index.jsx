@@ -1,18 +1,16 @@
-import "./rent.css";
-import Main from "../../shared/images/selling/main.png";
-import Hard from "../../shared/images/selling/hard.png";
 import React, { useState } from "react";
 import styled from "styled-components";
+import Hard from "../../shared/images/selling/hard.png";
 
 const Container = styled.div`
   position: relative;
   display: inline-block;
+  width: 100%;
 `;
 
 const Image = styled.img`
   display: block;
   width: 100%;
-//   max-height: 90vh;
 `;
 
 const HighlightArea = styled.svg`
@@ -24,11 +22,10 @@ const HighlightArea = styled.svg`
   pointer-events: none;
 `;
 
-const HighlightPolygon = styled.polygon`
+const HighlightPath = styled.path`
   fill: rgba(0, 0, 255, 0.3);
   cursor: pointer;
   pointer-events: all;
-
   &:hover {
     fill: rgba(0, 0, 255, 0.6);
   }
@@ -60,47 +57,38 @@ export const Rent = () => {
   const handleMouseLeave = () => {
     setHoveredArea(null);
   };
+
+  // Define path data for each floor
+  const floors = [
+    {
+      path: "m0,250.5l247,-85.5l61,-20l0,-9l184.5,-65l297.5,106l0,41.5l-297.5,-89l-492.5,155l0,-17l0,-17z",
+      label: "Penthouse",
+    },
+  ];
+
   return (
-    <div className="Rent w-full h-auto">
-      <div className="w-full h-[100vh] relative">
-        <img src={Main} className="darkened-image" />
-        <div className="absolute bottom-10 right-8 left-8 border-l-[2px] border-white border-solid pl-8 p-4 bg-black/30 ">
-          <p className="text-[50px] text-white">Аренда и продажа офисов</p>
-          <p className="text-lg text-white">
-            Современный бизнес центр для вашего комфорта
-          </p>
-          <div className="w-full flex justify-end">
-            <button className="text-xl text-white bg-[#848484] rounded-[15px] px-4 py-2">
-              Контакты
-            </button>
-          </div>
-        </div>
-      </div>
-      <Container>
-        <Image src={Hard} alt="Building" />
-        <HighlightArea>
-          <HighlightPolygon
-            points="100,150 200,100 300,150 200,200"
-            onMouseEnter={(e) => handleMouseEnter(e, "Этаж 1")}
+    <Container>
+      <Image src={Hard} alt="Building" />
+      <HighlightArea viewBox="0 0 800 600">
+        {floors.map((floor, index) => (
+          <HighlightPath
+            key={index}
+            d={floor.path}
+            onMouseEnter={(e) => handleMouseEnter(e, floor.label)}
             onMouseLeave={handleMouseLeave}
           />
-          <HighlightPolygon
-            points="100,300 200,250 300,300 200,350"
-            onMouseEnter={(e) => handleMouseEnter(e, "Этаж 2")}
-            onMouseLeave={handleMouseLeave}
-          />
-        </HighlightArea>
-        {hoveredArea && (
-          <Popover
-            style={{
-              top: `${popoverPosition.y}px`,
-              left: `${popoverPosition.x}px`,
-            }}
-          >
-            {hoveredArea}
-          </Popover>
-        )}
-      </Container>
-    </div>
+        ))}
+      </HighlightArea>
+      {hoveredArea && (
+        <Popover
+          style={{
+            top: `${popoverPosition.y}px`,
+            left: `${popoverPosition.x}px`,
+          }}
+        >
+          {hoveredArea}
+        </Popover>
+      )}
+    </Container>
   );
 };
