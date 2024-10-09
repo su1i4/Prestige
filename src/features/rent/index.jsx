@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Hard from "../../shared/images/selling/hard.png";
+import { floors } from "../../lib/data";
 
 const Container = styled.div`
   position: relative;
@@ -23,12 +24,9 @@ const HighlightArea = styled.svg`
 `;
 
 const HighlightPath = styled.path`
-  fill: rgba(0, 0, 255, 0.3);
+  fill: ${({ isHovered }) => (isHovered ? "#2756FC66" : "rgba(0, 0, 0, 0.0)")};
   cursor: pointer;
   pointer-events: all;
-  &:hover {
-    fill: rgba(0, 0, 255, 0.6);
-  }
 `;
 
 const Popover = styled.div`
@@ -43,11 +41,11 @@ const Popover = styled.div`
 `;
 
 export const Rent = () => {
-  const [hoveredArea, setHoveredArea] = useState(null);
+  const [hoveredFloorIndex, setHoveredFloorIndex] = useState(null);
   const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseEnter = (event, area) => {
-    setHoveredArea(area);
+  const handleMouseEnter = (event, index) => {
+    setHoveredFloorIndex(index);
     setPopoverPosition({
       x: event.clientX,
       y: event.clientY - 20,
@@ -55,38 +53,38 @@ export const Rent = () => {
   };
 
   const handleMouseLeave = () => {
-    setHoveredArea(null);
+    setHoveredFloorIndex(null);
   };
-
-  // Define path data for each floor
-  const floors = [
-    {
-      path: "m0,250.5l247,-85.5l61,-20l0,-9l184.5,-65l297.5,106l0,41.5l-297.5,-89l-492.5,155l0,-17l0,-17z",
-      label: "Penthouse",
-    },
-  ];
 
   return (
     <Container>
       <Image src={Hard} alt="Building" />
       <HighlightArea viewBox="0 0 800 600">
         {floors.map((floor, index) => (
-          <HighlightPath
-            key={index}
-            d={floor.path}
-            onMouseEnter={(e) => handleMouseEnter(e, floor.label)}
-            onMouseLeave={handleMouseLeave}
-          />
+          <React.Fragment key={index}>
+            <HighlightPath
+              d={floor.rigth.path}
+              isHovered={hoveredFloorIndex === index}
+              onMouseEnter={(e) => handleMouseEnter(e, index)}
+              onMouseLeave={handleMouseLeave}
+            />
+            <HighlightPath
+              d={floor.left.path}
+              isHovered={hoveredFloorIndex === index}
+              onMouseEnter={(e) => handleMouseEnter(e, index)}
+              onMouseLeave={handleMouseLeave}
+            />
+          </React.Fragment>
         ))}
       </HighlightArea>
-      {hoveredArea && (
+      {hoveredFloorIndex !== null && (
         <Popover
           style={{
             top: `${popoverPosition.y}px`,
             left: `${popoverPosition.x}px`,
           }}
         >
-          {hoveredArea}
+          {floors[hoveredFloorIndex].label}
         </Popover>
       )}
     </Container>
