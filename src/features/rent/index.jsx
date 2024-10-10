@@ -1,90 +1,103 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import Hard from "../../shared/images/selling/hard.png";
+import React, { useState, useEffect, useRef } from "react";
 import { floors } from "../../lib/data";
 
-const Container = styled.div`
-  position: relative;
-  display: inline-block;
-  width: 100%;
-`;
+const Container = ({ children }) => (
+  <div className="relative inline-block w-full">{children}</div>
+);
 
-const Image = styled.img`
-  display: block;
-  width: 100%;
-`;
+const Image = ({ src, alt }) => (
+  <img src={src} alt={alt} className="block w-full" />
+);
 
-const HighlightArea = styled.svg`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-`;
+const HighlightArea = ({ children }) => (
+  <svg className="absolute top-0 left-0 w-full h-full pointer-events-none" viewBox="0 0 800 600">
+    {children}
+  </svg>
+);
 
-const HighlightPath = styled.path`
-  fill: ${({ isHovered }) => (isHovered ? "#2756FC66" : "rgba(0, 0, 0, 0.0)")};
-  cursor: pointer;
-  pointer-events: all;
-`;
+const HighlightPath = ({ d, isActive, onMouseEnter, onClick }) => (
+  <path
+    d={d}
+    className={`${
+      isActive ? "fill-[#2756FC66]" : "fill-transparent"
+    } cursor-pointer pointer-events-auto`}
+    onMouseEnter={onMouseEnter}
+    onClick={onClick}
+  />
+);
 
-const Popover = styled.div`
-  position: absolute;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-  transform: translate(-50%, -100%);
-  pointer-events: none;
-`;
+const Popover = ({ children, position }) => (
+  <div
+    className="absolute bg-white rounded-md border border-gray-300 p-2.5 shadow-lg z-10 transform -translate-x-1/2 -translate-y-full"
+    style={{ top: `${position.y}px`, left: `${position.x}px` }}
+  >
+    {children}
+  </div>
+);
 
 export const Rent = () => {
-  const [hoveredFloorIndex, setHoveredFloorIndex] = useState(null);
+  const [activeFloorIndex, setActiveFloorIndex] = useState(null);
   const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef(null);
 
-  const handleMouseEnter = (event, index) => {
-    setHoveredFloorIndex(index);
+  const handleFloorActivate = (event, index) => {
+    setActiveFloorIndex(index);
     setPopoverPosition({
       x: event.clientX,
       y: event.clientY - 20,
     });
   };
 
-  const handleMouseLeave = () => {
-    setHoveredFloorIndex(null);
+  const handleClickOutside = (event) => {
+    if (containerRef.current && !containerRef.current.contains(event.target)) {
+      setActiveFloorIndex(null);
+    }
   };
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <Container>
-      <Image src={Hard} alt="Building" />
-      <HighlightArea viewBox="0 0 800 600">
+    <Container ref={containerRef}>
+      <Image src="/api/placeholder/800/600" alt="Building" />
+      <HighlightArea>
         {floors.map((floor, index) => (
           <React.Fragment key={index}>
             <HighlightPath
               d={floor.rigth.path}
-              isHovered={hoveredFloorIndex === index}
-              onMouseEnter={(e) => handleMouseEnter(e, index)}
-              onMouseLeave={handleMouseLeave}
+              isActive={activeFloorIndex === index}
+              onMouseEnter={(e) => handleFloorActivate(e, index)}
+              onClick={(e) => handleFloorActivate(e, index)}
             />
             <HighlightPath
               d={floor.left.path}
-              isHovered={hoveredFloorIndex === index}
-              onMouseEnter={(e) => handleMouseEnter(e, index)}
-              onMouseLeave={handleMouseLeave}
+              isActive={activeFloorIndex === index}
+              onMouseEnter={(e) => handleFloorActivate(e, index)}
+              onClick={(e) => handleFloorActivate(e, index)}
             />
           </React.Fragment>
         ))}
       </HighlightArea>
-      {hoveredFloorIndex !== null && (
-        <Popover
-          style={{
-            top: `${popoverPosition.y}px`,
-            left: `${popoverPosition.x}px`,
-          }}
-        >
-          {floors[hoveredFloorIndex].label}
+      {activeFloorIndex !== null && (
+        <Popover position={popoverPosition}>
+          <div className="w-[270px] flex flex-col justify-center items-center gap-4">
+            <div className="w-full flex flex-col justify-center items-center">
+              <p className="text-black text-[23px] font-semibold">
+                {floors[activeFloorIndex].floor} этаж
+              </p>
+              <div className="w-[50px] h-[3px] bg-black" />
+            </div>
+            <p className="text-[#000000B2] text-xs font-medium">
+              {floors[activeFloorIndex].count} свободных помещений на аренду
+            </p>
+            <button className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 text-white">
+              Перейти
+            </button>
+          </div>
         </Popover>
       )}
     </Container>
