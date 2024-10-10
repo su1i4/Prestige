@@ -1,67 +1,225 @@
 export const floors = [
-    {
-      rigth: { path: "M 444 167 L 444.5 126 L 154 269 L 154 300 Z" },
-      left: { path: "M 620 244 L 620 214 L 444.5 126 L 444 167 Z" },
-      label: "Horosho",
+  {
+    rigth: { path: "M 444 167 L 444.5 126 L 154 269 L 154 300 Z" },
+    left: { path: "M 620 244 L 620 214 L 444.5 126 L 444 167 Z" },
+    label: "Horosho",
+    floor: 13,
+    squints: {
+      1: { square: 217.94, name: "Ресторан на терассе", lock: true },
+      2: { square: 351.12, name: "Ресторан", lock: true },
     },
-    {
-      rigth: { path: "M 444 198 L 444.5 166.5 L 154 300 L 154 324 Z" },
-      left: { path: "M 620 274 L 620 244 L 444.5 166 L 444 198 Z" },
-      label: "2 этаж",
+    count: 2
+  },
+  {
+    rigth: { path: "M 444 198 L 444.5 166.5 L 154 300 L 154 324 Z" },
+    left: { path: "M 620 274 L 620 244 L 444.5 166 L 444 198 Z" },
+    label: "2 этаж",
+    floor: 12,
+    squints: {
+      1: { square: 165.2, name: "Офис №1", lock: true },
+      2: { square: 140.53, name: "Офис №2", lock: true },
+      3: { square: 143.73, name: "Офис №3", lock: true },
+      4: { square: 175.81, name: "Офис №4", lock: true },
     },
-    {
-      rigth: { path: "M 444 231 L 444.5 198 L 154 323 L 154 349 Z" },
-      left: { path: "M 620 302 L 620 274 L 444.5 198 L 444 231 Z" },
-      label: "Horosho",
+    count: 4
+  },
+  {
+    rigth: { path: "M 444 231 L 444.5 198 L 154 323 L 154 349 Z" },
+    left: { path: "M 620 302 L 620 274 L 444.5 198 L 444 231 Z" },
+    label: "Horosho",
+    floor: 11,
+    squints: {
+      1: { square: 165.2, name: "Офис №1", lock: true },
+      2: { square: 140.53, name: "Офис №2", lock: true },
+      3: { square: 143.73, name: "Офис №3", lock: true },
+      4: { square: 175.81, name: "Офис №4", lock: true },
     },
-    {
-      rigth: { path: "M 444 265 L 444.5 230.5 L 154 348 L 154 368 Z" },
-      left: { path: "M 620 325 L 620 297 L 444.5 231 L 444 265 Z" },
-      label: "Horosho",
+    count: 4
+  },
+  {
+    rigth: { path: "M 444 265 L 444.5 230.5 L 154 348 L 154 368 Z" },
+    left: { path: "M 620 325 L 620 297 L 444.5 231 L 444 265 Z" },
+    label: "Horosho",
+    floor: 10,
+    squints: {
+      1: { square: 77.69, name: "Офис №1", lock: true },
+      2: { square: 76.59, name: "Офис №2", lock: true },
+      3: { square: 71.7, name: "Офис №3", lock: true },
+      4: { square: 68.7, name: "Офис №4", lock: true },
+      5: { square: 70.1, name: "Офис №5", lock: true },
+      6: { square: 79.97, name: "Офис №6", lock: true },
+      7: { square: 102.13, name: "Офис №7", lock: true },
+      8: { square: 63.83, name: "Офис №8", lock: true },
     },
-    {
-      rigth: { path: "M 444 298 L 444.5 265 L 154 368 L 154 390 Z" },
-      left: { path: "M 620 350 L 620 326 L 444.5 265 L 444 298 Z" },
-      label: "Horosho",
+    count: 8
+  },
+  {
+    rigth: { path: "M 444 298 L 444.5 265 L 154 368 L 154 390 Z" },
+    left: { path: "M 620 350 L 620 326 L 444.5 265 L 444 298 Z" },
+    label: "Horosho",
+    floor: 9,
+    squints: {
+      1: { square: 77.69, name: "Офис №1", lock: true },
+      2: { square: 76.59, name: "Офис №2", lock: true },
+      3: { square: 71.7, name: "Офис №3", lock: true },
+      4: { square: 68.7, name: "Офис №4", lock: true },
+      5: { square: 70.1, name: "Офис №5", lock: true },
+      6: { square: 79.97, name: "Офис №6", lock: true },
+      7: { square: 102.13, name: "Офис №7", lock: true },
+      8: { square: 63.83, name: "Офис №8", lock: true },
     },
-    {
-      rigth: { path: "M 444 328 L 444.5 298 L 154 390 L 154 410 Z" },
-      left: { path: "M 620 377 L 620 350 L 444.5 298 L 444 328 Z" },
-      label: "Horosho",
+    count: 8
+  },
+  {
+    rigth: { path: "M 444 328 L 444.5 298 L 154 390 L 154 410 Z" },
+    left: { path: "M 620 377 L 620 350 L 444.5 298 L 444 328 Z" },
+    label: "Horosho",
+    floor: 8,
+    squints: {
+      1: { square: 77.69, name: "Офис №1", lock: true },
+      2: { square: 76.59, name: "Офис №2", lock: true },
+      3: { square: 71.7, name: "Офис №3", lock: true },
+      4: { square: 68.7, name: "Офис №4", lock: true },
+      5: { square: 70.1, name: "Офис №5", lock: true },
+      6: { square: 79.97, name: "Офис №6", lock: true },
+      7: { square: 102.13, name: "Офис №7", lock: true },
+      8: { square: 63.83, name: "Офис №8", lock: true },
     },
-    {
-      rigth: { path: "M 444 360 L 444.5 328 L 154 410 L 154 430 Z" },
-      left: { path: "M 620 402 L 620 377 L 444.5 328 L 444 360 Z" },
-      label: "Horosho",
+    count: 8
+  },
+  {
+    rigth: { path: "M 444 360 L 444.5 328 L 154 410 L 154 430 Z" },
+    left: { path: "M 620 402 L 620 377 L 444.5 328 L 444 360 Z" },
+    label: "Horosho",
+    floor: 7,
+    squints: {
+      1: { square: 30.07, name: "Офис №1", lock: true },
+      2: { square: 36.58, name: "Офис №2", lock: true },
+      3: { square: 39.58, name: "Офис №3", lock: true },
+      4: { square: 34.04, name: "Офис №4", lock: true },
+      5: { square: 33.82, name: "Офис №5", lock: true },
+      6: { square: 34.69, name: "Офис №6", lock: true },
+      7: { square: 68.7, name: "Офис №7", lock: true },
+      8: { square: 33.98, name: "Офис №8", lock: true },
+      9: { square: 33.45, name: "Офис №9", lock: true },
+      10: { square: 68.85, name: "Офис №10", lock: true },
+      11: { square: 76.83, name: "Офис №11", lock: true },
+      12: { square: 35.4, name: "Офис №12", lock: true },
+      13: { square: 63.83, name: "Офис №13", lock: true },
     },
-    {
-      rigth: { path: "M 444 393 L 444.5 360 L 154 430 L 154 450 Z" },
-      left: { path: "M 620 427 L 620 402 L 444.5 360 L 444 393 Z" },
-      label: "Horosho",
+    count: 13
+  },
+  {
+    rigth: { path: "M 444 393 L 444.5 360 L 154 430 L 154 450 Z" },
+    left: { path: "M 620 427 L 620 402 L 444.5 360 L 444 393 Z" },
+    label: "Horosho",
+    floor: 6,
+    squints: {
+      1: { square: 30.07, name: "Офис №1", lock: true },
+      2: { square: 36.58, name: "Офис №2", lock: true },
+      3: { square: 39.58, name: "Офис №3", lock: true },
+      4: { square: 34.04, name: "Офис №4", lock: true },
+      5: { square: 33.82, name: "Офис №5", lock: true },
+      6: { square: 34.69, name: "Офис №6", lock: true },
+      7: { square: 68.7, name: "Офис №7", lock: true },
+      8: { square: 33.98, name: "Офис №8", lock: true },
+      9: { square: 33.45, name: "Офис №9", lock: true },
+      10: { square: 68.85, name: "Офис №10", lock: true },
+      11: { square: 76.83, name: "Офис №11", lock: true },
+      12: { square: 35.4, name: "Офис №12", lock: true },
+      13: { square: 63.83, name: "Офис №13", lock: true },
     },
-    {
-      rigth: { path: "M 444 426 L 444.5 393 L 154 450 L 154 472 Z" },
-      left: { path: "M 620 454 L 620 427 L 444.5 393 L 444 426 Z" },
-      label: "Horosho",
+    count: 13
+  },
+  {
+    rigth: { path: "M 444 426 L 444.5 393 L 154 450 L 154 472 Z" },
+    left: { path: "M 620 454 L 620 427 L 444.5 393 L 444 426 Z" },
+    label: "Horosho",
+    floor: 5,
+    squints: {
+      1: { square: 30.07, name: "Офис №1", lock: true },
+      2: { square: 36.58, name: "Офис №2", lock: true },
+      3: { square: 39.58, name: "Офис №3", lock: true },
+      4: { square: 34.04, name: "Офис №4", lock: true },
+      5: { square: 33.82, name: "Офис №5", lock: true },
+      6: { square: 34.69, name: "Офис №6", lock: true },
+      7: { square: 68.7, name: "Офис №7", lock: true },
+      8: { square: 33.98, name: "Офис №8", lock: true },
+      9: { square: 33.45, name: "Офис №9", lock: true },
+      10: { square: 68.85, name: "Офис №10", lock: true },
+      11: { square: 76.83, name: "Офис №11", lock: true },
+      12: { square: 35.4, name: "Офис №12", lock: true },
+      13: { square: 63.83, name: "Офис №13", lock: true },
     },
-    {
-      rigth: { path: "M 444 458 L 444.5 426 L 154 472 L 154 494 Z" },
-      left: { path: "M 620 480 L 620 454 L 444.5 426 L 444 458 Z" },
-      label: "Horosho",
+    count: 13
+  },
+  {
+    rigth: { path: "M 444 458 L 444.5 426 L 154 472 L 154 494 Z" },
+    left: { path: "M 620 480 L 620 454 L 444.5 426 L 444 458 Z" },
+    label: "Horosho",
+    floor: 4,
+    squints: {
+      1: { square: 30.07, name: "Офис №1", lock: true },
+      2: { square: 36.58, name: "Офис №2", lock: true },
+      3: { square: 39.58, name: "Офис №3", lock: true },
+      4: { square: 34.04, name: "Офис №4", lock: true },
+      5: { square: 33.82, name: "Офис №5", lock: true },
+      6: { square: 34.69, name: "Офис №6", lock: true },
+      7: { square: 68.7, name: "Офис №7", lock: true },
+      8: { square: 33.98, name: "Офис №8", lock: true },
+      9: { square: 33.45, name: "Офис №9", lock: true },
+      10: { square: 68.85, name: "Офис №10", lock: true },
+      11: { square: 76.83, name: "Офис №11", lock: true },
+      12: { square: 35.4, name: "Офис №12", lock: true },
+      13: { square: 63.83, name: "Офис №13", lock: true },
     },
-    {
-      rigth: { path: "M 444 488 L 444.5 458 L 154 494 L 154 514 Z" },
-      left: { path: "M 620 503 L 620 480 L 444.5 458 L 444 488 Z" },
-      label: "Horosho",
+    count: 13
+  },
+  {
+    rigth: { path: "M 444 488 L 444.5 458 L 154 494 L 154 514 Z" },
+    left: { path: "M 620 503 L 620 480 L 444.5 458 L 444 488 Z" },
+    label: "Horosho",
+    floor: 3,
+    squints: {
+      1: { square: 77.69, name: "Офис №1", lock: true },
+      2: { square: 76.59, name: "Офис №2", lock: true },
+      3: { square: 71.7, name: "Офис №3", lock: true },
+      4: { square: 68.7, name: "Офис №4", lock: true },
+      5: { square: 70.1, name: "Офис №5", lock: true },
+      6: { square: 79.97, name: "Офис №6", lock: true },
+      7: { square: 102.13, name: "Офис №7", lock: true },
+      8: { square: 63.83, name: "Офис №8", lock: true },
     },
-    {
-      rigth: { path: "M 444 513 L 444.5 488 L 154 514 L 154 530 Z" },
-      left: { path: "M 620 521 L 620 503 L 444.5 488 L 444 513 Z" },
-      label: "Horosho",
+    count: 8
+  },
+  {
+    rigth: { path: "M 444 513 L 444.5 488 L 154 514 L 154 530 Z" },
+    left: { path: "M 620 521 L 620 503 L 444.5 488 L 444 513 Z" },
+    label: "Horosho",
+    floor: 2,
+    squints: {
+      1: { square: 77.69, name: "Офис №1", lock: true },
+      2: { square: 76.59, name: "Офис №2", lock: true },
+      3: { square: 71.7, name: "Офис №3", lock: true },
+      4: { square: 68.7, name: "Офис №4", lock: true },
+      5: { square: 70.1, name: "Офис №5", lock: true },
+      6: { square: 79.97, name: "Офис №6", lock: true },
+      7: { square: 102.13, name: "Офис №7", lock: true },
+      8: { square: 63.83, name: "Офис №8", lock: true },
     },
-    {
-      rigth: { path: "M 484 583 L 484.5 513 L 96 534 L 96 575 Z" },
-      left: { path: "M 687 581 L 687 527 L 484.5 514.5 L 484 583 Z" },
-      label: "Horosho",
+    count: 8
+  },
+  {
+    rigth: { path: "M 484 583 L 484.5 513 L 96 534 L 96 575 Z" },
+    left: { path: "M 687 581 L 687 527 L 484.5 514.5 L 484 583 Z" },
+    label: "Horosho",
+    floor: 1,
+    squints: {
+      1: { square: 337.77, name: "Торговое помещение №1", lock: true },
+      2: { square: 84.43, name: "Кофейня", lock: true },
+      3: { square: 342.66, name: "Торговое помещение №2", lock: true },
+      4: { square: 342.66, name: "Холл", lock: true },
     },
-  ];
+    count: 4
+  },
+];
