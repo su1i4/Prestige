@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export const Application = ({ number, square, lock }) => {
+export const Application = ({ square, lock, name }) => {
   const [form, setForm] = useState({ name: "", phone: "" });
   const lockText = lock ? 'Доступно': 'Недоступно для аренды'
   return (
     <div className="bg-[#DADADA] rounded-[20px] p-10">
-      <p className="text-[30px] text-center font-[600]">Офис №{number}</p>
+      <p className="text-[30px] text-center font-[600]">{name}</p>
       <p className="text-lg  mt-3 text-center">
         Площадь: {square} м2
       </p>

@@ -1,9 +1,9 @@
-import Floor1 from '../shared/images/floors/План 1 этаж/image 11.png'
-import Floor2 from '../shared/images/floors/План/3 этаж/image 16.png'
-import Floor4 from '../shared/images/floors/План/4 этаж/image 15.png'
-import Floor8 from '../shared/images/floors/План 8 этаж/план 9 этажа/планировка 9 этажа.png'
-import Floor11 from '../shared/images/floors/План 11 этаж/image 14.png'
-import Floor13 from '../shared/images/floors/План 13 этаж/image 12.png'
+import Floor1 from "../shared/images/floors/План 1 этаж/image 11.png";
+import Floor2 from "../shared/images/floors/План/3 этаж/image 16.png";
+import Floor4 from "../shared/images/floors/План/4 этаж/image 15.png";
+import Floor8 from "../shared/images/floors/План 8 этаж/план 9 этажа/планировка 9 этажа.png";
+import Floor11 from "../shared/images/floors/План 11 этаж/image 14.png";
+import Floor13 from "../shared/images/floors/План 13 этаж/image 12.png";
 
 export const floors = [
   {
@@ -11,18 +11,20 @@ export const floors = [
     left: { path: "M 620 244 L 620 214 L 444.5 126 L 444 167 Z" },
     label: "Horosho",
     floor: 13,
+    floorsImages: [],
     squints: {
       1: { square: 217.94, name: "Ресторан на терассе", lock: true },
       2: { square: 351.12, name: "Ресторан", lock: true },
     },
     count: 2,
-    image: Floor13
+    image: Floor13,
   },
   {
     rigth: { path: "M 444 198 L 444.5 166.5 L 154 300 L 154 324 Z" },
     left: { path: "M 620 274 L 620 244 L 444.5 166 L 444 198 Z" },
     label: "2 этаж",
     floor: 12,
+    floorsImages: [],
     squints: {
       1: { square: 165.2, name: "Офис №1", lock: true },
       2: { square: 140.53, name: "Офис №2", lock: true },
@@ -30,13 +32,14 @@ export const floors = [
       4: { square: 175.81, name: "Офис №4", lock: true },
     },
     count: 4,
-    image: Floor11
+    image: Floor11,
   },
   {
     rigth: { path: "M 444 231 L 444.5 198 L 154 323 L 154 349 Z" },
     left: { path: "M 620 302 L 620 274 L 444.5 198 L 444 231 Z" },
     label: "Horosho",
     floor: 11,
+    floorsImages: [],
     squints: {
       1: { square: 165.2, name: "Офис №1", lock: true },
       2: { square: 140.53, name: "Офис №2", lock: true },
@@ -44,13 +47,14 @@ export const floors = [
       4: { square: 175.81, name: "Офис №4", lock: true },
     },
     count: 4,
-    image: Floor11
+    image: Floor11,
   },
   {
     rigth: { path: "M 444 265 L 444.5 230.5 L 154 348 L 154 368 Z" },
     left: { path: "M 620 325 L 620 297 L 444.5 231 L 444 265 Z" },
     label: "Horosho",
     floor: 10,
+    floorsImages: [],
     squints: {
       1: { square: 77.69, name: "Офис №1", lock: true },
       2: { square: 76.59, name: "Офис №2", lock: true },
@@ -62,13 +66,14 @@ export const floors = [
       8: { square: 63.83, name: "Офис №8", lock: true },
     },
     count: 8,
-    image: Floor8
+    image: Floor8,
   },
   {
     rigth: { path: "M 444 298 L 444.5 265 L 154 368 L 154 390 Z" },
     left: { path: "M 620 350 L 620 326 L 444.5 265 L 444 298 Z" },
     label: "Horosho",
     floor: 9,
+    floorsImages: [],
     squints: {
       1: { square: 77.69, name: "Офис №1", lock: true },
       2: { square: 76.59, name: "Офис №2", lock: true },
@@ -80,13 +85,14 @@ export const floors = [
       8: { square: 63.83, name: "Офис №8", lock: true },
     },
     count: 8,
-    image: Floor8
+    image: Floor8,
   },
   {
     rigth: { path: "M 444 328 L 444.5 298 L 154 390 L 154 410 Z" },
     left: { path: "M 620 377 L 620 350 L 444.5 298 L 444 328 Z" },
     label: "Horosho",
     floor: 8,
+    floorsImages: [],
     squints: {
       1: { square: 77.69, name: "Офис №1", lock: true },
       2: { square: 76.59, name: "Офис №2", lock: true },
@@ -98,13 +104,14 @@ export const floors = [
       8: { square: 63.83, name: "Офис №8", lock: true },
     },
     count: 8,
-    image: Floor8
+    image: Floor8,
   },
   {
     rigth: { path: "M 444 360 L 444.5 328 L 154 410 L 154 430 Z" },
     left: { path: "M 620 402 L 620 377 L 444.5 328 L 444 360 Z" },
     label: "Horosho",
     floor: 7,
+    floorsImages: [],
     squints: {
       1: { square: 30.07, name: "Офис №1", lock: true },
       2: { square: 36.58, name: "Офис №2", lock: true },
@@ -121,13 +128,14 @@ export const floors = [
       13: { square: 63.83, name: "Офис №13", lock: true },
     },
     count: 13,
-    image: Floor4
+    image: Floor4,
   },
   {
     rigth: { path: "M 444 393 L 444.5 360 L 154 430 L 154 450 Z" },
     left: { path: "M 620 427 L 620 402 L 444.5 360 L 444 393 Z" },
     label: "Horosho",
     floor: 6,
+    floorsImages: [],
     squints: {
       1: { square: 30.07, name: "Офис №1", lock: true },
       2: { square: 36.58, name: "Офис №2", lock: true },
@@ -144,13 +152,14 @@ export const floors = [
       13: { square: 63.83, name: "Офис №13", lock: true },
     },
     count: 13,
-    image: Floor4
+    image: Floor4,
   },
   {
     rigth: { path: "M 444 426 L 444.5 393 L 154 450 L 154 472 Z" },
     left: { path: "M 620 454 L 620 427 L 444.5 393 L 444 426 Z" },
     label: "Horosho",
     floor: 5,
+    floorsImages: [],
     squints: {
       1: { square: 30.07, name: "Офис №1", lock: true },
       2: { square: 36.58, name: "Офис №2", lock: true },
@@ -167,13 +176,14 @@ export const floors = [
       13: { square: 63.83, name: "Офис №13", lock: true },
     },
     count: 13,
-    image:Floor4
+    image: Floor4,
   },
   {
     rigth: { path: "M 444 458 L 444.5 426 L 154 472 L 154 494 Z" },
     left: { path: "M 620 480 L 620 454 L 444.5 426 L 444 458 Z" },
     label: "Horosho",
     floor: 4,
+    floorsImages: [],
     squints: {
       1: { square: 30.07, name: "Офис №1", lock: true },
       2: { square: 36.58, name: "Офис №2", lock: true },
@@ -190,13 +200,14 @@ export const floors = [
       13: { square: 63.83, name: "Офис №13", lock: true },
     },
     count: 13,
-    image: Floor4
+    image: Floor4,
   },
   {
     rigth: { path: "M 444 488 L 444.5 458 L 154 494 L 154 514 Z" },
     left: { path: "M 620 503 L 620 480 L 444.5 458 L 444 488 Z" },
     label: "Horosho",
     floor: 3,
+    floorsImages: [],
     squints: {
       1: { square: 77.69, name: "Офис №1", lock: true },
       2: { square: 76.59, name: "Офис №2", lock: true },
@@ -208,13 +219,23 @@ export const floors = [
       8: { square: 63.83, name: "Офис №8", lock: true },
     },
     count: 8,
-    image: Floor2
+    image: Floor2,
   },
   {
     rigth: { path: "M 444 513 L 444.5 488 L 154 514 L 154 530 Z" },
     left: { path: "M 620 521 L 620 503 L 444.5 488 L 444 513 Z" },
     label: "Horosho",
     floor: 2,
+    floorsImages: [
+      {
+        path: "M0 0H334.5V69.5H285V127H334.5V252.5H329L328.036 496.523H182V520H43.8346H0V260H36L35 135.5H0V0Z",
+        x: 10,
+        y: 157,
+        width: 314,
+        height: 205,
+        scale: '0.7' 
+      },
+    ],
     squints: {
       1: { square: 77.69, name: "Офис №1", lock: true },
       2: { square: 76.59, name: "Офис №2", lock: true },
@@ -226,20 +247,54 @@ export const floors = [
       8: { square: 63.83, name: "Офис №8", lock: true },
     },
     count: 8,
-    image:Floor2
+    image: Floor2,
   },
   {
     rigth: { path: "M 484 583 L 484.5 513 L 96 534 L 96 575 Z" },
     left: { path: "M 687 581 L 687 527 L 484.5 514.5 L 484 583 Z" },
     label: "Horosho",
     floor: 1,
+    floorsImages: [
+      {
+        path: "M0 0H334.5V69.5H285V127H334.5V252.5H329L328.036 496.523H182V520H43.8346H0V260H36L35 135.5H0V0Z",
+        x: 10,
+        y: 157,
+        width: 335,
+        height: 520,
+        scale: '0.7' 
+      },
+      {
+        path: "M9 10H115V0H153V10V340H0L1.5 233.5L2.5 214.5V90H9V10Z",
+        x: 244,
+        y: 280,
+        width: 153,
+        height: 340,
+        scale: '0.7' 
+      },
+      {
+        path: "M0 0H140V49.5H232V392H142.5V327L15 327.5H0V0Z",
+        x: 351,
+        y: 246,
+        width: 292,
+        height: 392,
+        scale: '0.7' 
+      },
+      {
+        path: "M64 0H348.5L376.5 237.5L391 355.5L395.5 408L397 420.5L396.5 432.5L386 456L373 468.5L360 477L341.5 480H211.5V456H57V480H0V226H57V101H64V46.5V0Z",
+        x: 518,
+        y: 183,
+        width: 397,
+        height: 380,
+        scale: '0.7' 
+      },
+    ],
     squints: {
       1: { square: 337.77, name: "Торговое помещение №1", lock: true },
       2: { square: 84.43, name: "Кофейня", lock: true },
-      3: { square: 342.66, name: "Торговое помещение №2", lock: true },
-      4: { square: 342.66, name: "Холл", lock: true },
+      3: { square: 162.86, name: "Холл", lock: true },
+      4: { square: 342.66, name: "Торговое помещение №2", lock: true },
     },
     count: 4,
-    image: Floor1
+    image: Floor1,
   },
 ];
