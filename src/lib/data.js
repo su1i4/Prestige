@@ -1,3 +1,10 @@
+import Floor1 from '../shared/images/floors/План 1 этаж/image 11.png'
+import Floor2 from '../shared/images/floors/План/3 этаж/image 16.png'
+import Floor4 from '../shared/images/floors/План/4 этаж/image 15.png'
+import Floor8 from '../shared/images/floors/План 8 этаж/план 9 этажа/планировка 9 этажа.png'
+import Floor11 from '../shared/images/floors/План 11 этаж/image 14.png'
+import Floor13 from '../shared/images/floors/План 13 этаж/image 12.png'
+
 export const floors = [
   {
     rigth: { path: "M 444 167 L 444.5 126 L 154 269 L 154 300 Z" },
@@ -8,7 +15,8 @@ export const floors = [
       1: { square: 217.94, name: "Ресторан на терассе", lock: true },
       2: { square: 351.12, name: "Ресторан", lock: true },
     },
-    count: 2
+    count: 2,
+    image: Floor13
   },
   {
     rigth: { path: "M 444 198 L 444.5 166.5 L 154 300 L 154 324 Z" },
@@ -21,7 +29,8 @@ export const floors = [
       3: { square: 143.73, name: "Офис №3", lock: true },
       4: { square: 175.81, name: "Офис №4", lock: true },
     },
-    count: 4
+    count: 4,
+    image: Floor11
   },
   {
     rigth: { path: "M 444 231 L 444.5 198 L 154 323 L 154 349 Z" },
@@ -34,7 +43,8 @@ export const floors = [
       3: { square: 143.73, name: "Офис №3", lock: true },
       4: { square: 175.81, name: "Офис №4", lock: true },
     },
-    count: 4
+    count: 4,
+    image: Floor11
   },
   {
     rigth: { path: "M 444 265 L 444.5 230.5 L 154 348 L 154 368 Z" },
@@ -51,7 +61,8 @@ export const floors = [
       7: { square: 102.13, name: "Офис №7", lock: true },
       8: { square: 63.83, name: "Офис №8", lock: true },
     },
-    count: 8
+    count: 8,
+    image: Floor8
   },
   {
     rigth: { path: "M 444 298 L 444.5 265 L 154 368 L 154 390 Z" },
@@ -68,7 +79,8 @@ export const floors = [
       7: { square: 102.13, name: "Офис №7", lock: true },
       8: { square: 63.83, name: "Офис №8", lock: true },
     },
-    count: 8
+    count: 8,
+    image: Floor8
   },
   {
     rigth: { path: "M 444 328 L 444.5 298 L 154 390 L 154 410 Z" },
@@ -85,7 +97,8 @@ export const floors = [
       7: { square: 102.13, name: "Офис №7", lock: true },
       8: { square: 63.83, name: "Офис №8", lock: true },
     },
-    count: 8
+    count: 8,
+    image: Floor8
   },
   {
     rigth: { path: "M 444 360 L 444.5 328 L 154 410 L 154 430 Z" },
@@ -107,7 +120,8 @@ export const floors = [
       12: { square: 35.4, name: "Офис №12", lock: true },
       13: { square: 63.83, name: "Офис №13", lock: true },
     },
-    count: 13
+    count: 13,
+    image: Floor4
   },
   {
     rigth: { path: "M 444 393 L 444.5 360 L 154 430 L 154 450 Z" },
@@ -129,7 +143,8 @@ export const floors = [
       12: { square: 35.4, name: "Офис №12", lock: true },
       13: { square: 63.83, name: "Офис №13", lock: true },
     },
-    count: 13
+    count: 13,
+    image: Floor4
   },
   {
     rigth: { path: "M 444 426 L 444.5 393 L 154 450 L 154 472 Z" },
@@ -151,7 +166,8 @@ export const floors = [
       12: { square: 35.4, name: "Офис №12", lock: true },
       13: { square: 63.83, name: "Офис №13", lock: true },
     },
-    count: 13
+    count: 13,
+    image:Floor4
   },
   {
     rigth: { path: "M 444 458 L 444.5 426 L 154 472 L 154 494 Z" },
@@ -173,7 +189,8 @@ export const floors = [
       12: { square: 35.4, name: "Офис №12", lock: true },
       13: { square: 63.83, name: "Офис №13", lock: true },
     },
-    count: 13
+    count: 13,
+    image: Floor4
   },
   {
     rigth: { path: "M 444 488 L 444.5 458 L 154 494 L 154 514 Z" },
@@ -190,7 +207,8 @@ export const floors = [
       7: { square: 102.13, name: "Офис №7", lock: true },
       8: { square: 63.83, name: "Офис №8", lock: true },
     },
-    count: 8
+    count: 8,
+    image: Floor2
   },
   {
     rigth: { path: "M 444 513 L 444.5 488 L 154 514 L 154 530 Z" },
@@ -207,7 +225,8 @@ export const floors = [
       7: { square: 102.13, name: "Офис №7", lock: true },
       8: { square: 63.83, name: "Офис №8", lock: true },
     },
-    count: 8
+    count: 8,
+    image:Floor2
   },
   {
     rigth: { path: "M 484 583 L 484.5 513 L 96 534 L 96 575 Z" },
@@ -220,6 +239,7 @@ export const floors = [
       3: { square: 342.66, name: "Торговое помещение №2", lock: true },
       4: { square: 342.66, name: "Холл", lock: true },
     },
-    count: 4
+    count: 4,
+    image: Floor1
   },
 ];

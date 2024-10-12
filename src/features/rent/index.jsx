@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { floors } from "../../lib/data";
+import Hard from '../../shared/images/selling/hard.png'
+import { useNavigate } from "react-router-dom";
 
 const Container = ({ children }) => (
   <div className="relative inline-block w-full">{children}</div>
@@ -36,6 +38,7 @@ const Popover = ({ children, position }) => (
 );
 
 export const Rent = () => {
+  const navigate = useNavigate()
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
   const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
@@ -63,7 +66,7 @@ export const Rent = () => {
 
   return (
     <Container ref={containerRef}>
-      <Image src="/api/placeholder/800/600" alt="Building" />
+      <Image src={Hard} alt="Building" />
       <HighlightArea>
         {floors.map((floor, index) => (
           <React.Fragment key={index}>
@@ -94,7 +97,7 @@ export const Rent = () => {
             <p className="text-[#000000B2] text-xs font-medium">
               {floors[activeFloorIndex].count} свободных помещений на аренду
             </p>
-            <button className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 text-white">
+            <button onClick={() => navigate(`/rent/floors/${floors[activeFloorIndex].floor}`)} className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 text-white">
               Перейти
             </button>
           </div>
