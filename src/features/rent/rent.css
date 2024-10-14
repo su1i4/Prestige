@@ -1,0 +1,6 @@
+.darkened-image {
+    filter: brightness(0.7);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+  }

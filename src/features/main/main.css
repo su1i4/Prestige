@@ -1,0 +1,146 @@
+.nutral {
+  height: 100vh;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.background-section {
+  background-color: black;
+  width: 100%;
+  position: relative;
+  background-image: url('../../shared/icons/Landing\ page/image.png');
+  background-repeat: no-repeat;
+}
+
+.info-wrap {
+  border-left: 2px white solid;
+  padding-left: 30px;
+}
+
+.info-wrap > h1 {
+  font-size: 150px;
+  color: white;
+  /* line-height: 10px; */
+}
+
+.info-wrap > p {
+  font-family: "Geologica", sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.buttons > button {
+  height: 60px;
+  width: 250px;
+  border-radius: 20px;
+  font-family: "Geologica", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.buttons button:nth-child(1) {
+  background-color: #cccccc;
+}
+
+.buttons button:nth-child(2) {
+  background-color: #686868;
+  color: white;
+}
+
+.about{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.inner{
+  padding: 20px;
+  width: 90%;
+  background-color: black;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.inner > h2{
+  width: 70%;
+  border-bottom: 1px white solid;
+  font-size: 40px;
+  color: white;
+}
+
+.text-wrap{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.list{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.icons{
+  color: white;
+  font-size: 20px;
+}
+
+.icons > .wrapp{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.swipers{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* padding: 50px; */
+  position: relative;
+}
+
+.slide-content{
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  background-size: cover;
+  position: relative;
+}
+
+#one{
+  background-image: url('../../shared/images/Rectangle.png');
+}
+
+#two{
+  background-image: url('../../shared/images/Layer_1.png');
+}
+#three{
+  background-image: url('../../shared/images/Layer_1\ \(1\).png');
+}
+#four{
+  background-image: url('../../shared/images/Конференц\ зал.png');
+}
+#five{
+  background-image: url('../../shared/images/image\ 20.png');
+}
+#six{
+  background-image: url('../../shared/images/_Р\ РµР¶РёРј_РёР·РѕР»СЏС†РёРё.png');
+}
