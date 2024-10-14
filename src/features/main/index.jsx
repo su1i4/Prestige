@@ -201,10 +201,10 @@ export const Main = () => {
               <SwiperSlide>
                 <div id="one" className="slide-content small-font">
                   <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
-                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider">
+                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Холл
                     </h2>
-                    <p className="text-white text-xl small-font">
+                    <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
                       Репутация и значимость любого Бизнес-Центра начинается со
                       входа, ведь именно он создает первое впечатление
                     </p>
@@ -213,11 +213,11 @@ export const Main = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div id="two" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
-                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider">
+                  <div className="absolute left-4 bottom-10 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
+                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Ресторан
                     </h2>
-                    <p className="text-white text-xl small-font">
+                    <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
                       В Бизнес-центра “prestige tower” на 13 этаже будет
                       расположен ресторан высокой кухни в современном стиле{" "}
                     </p>
@@ -226,11 +226,11 @@ export const Main = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div id="three" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
-                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider">
+                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1">
+                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Намазкана
                     </h2>
-                    <p className="text-white text-xl small-font">
+                    <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
                       Для вашего удобства, на -1 этаже Бизнес-центра “prestige
                       tower” будет расположена мужская и женская Намазкана
                     </p>
@@ -239,11 +239,11 @@ export const Main = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div id="four" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
-                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider">
+                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1">
+                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Конференц-залы
                     </h2>
-                    <p className="text-white text-xl small-font">
+                    <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
                       Идеальное место для проведения вашего делового мероприятия
                       - зал конференций в БЦ “Prestige Tower”
                     </p>
@@ -252,11 +252,11 @@ export const Main = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div id="five" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
-                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider">
+                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1">
+                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Офисы под ключ
                     </h2>
-                    <p className="text-white text-xl small-font">
+                    <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
                       Офис под ключ позволяет сократить время и услилия
                       связанные с ремонтом, а также, обеспечить высокое качество
                       выполненных работ.
@@ -266,11 +266,11 @@ export const Main = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div id="six" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
-                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider">
+                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1">
+                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Паркинг
                     </h2>
-                    <p className="text-white text-xl small-font">
+                    <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
                       Для удобства автовладельцев предусмотрен удобный,
                       двухуровневый, подземный паркинг на 61 машин
                     </p>
@@ -280,10 +280,10 @@ export const Main = () => {
               <div className="swiper-button-prev noselect"></div>
               <div className="swiper-button-next noselect"></div>
             </Swiper>
-            <div className="absolute bg-black bottom-0 left-0 right-0 w-full h-[560px]"></div>
+            <div className="absolute bg-black bottom-0 left-0 right-0 w-full h-[560px] lg:h-[400px] sm:h-[300px] "></div>
           </div>
-          <div className="w-full justify-center px-24 flex flex-col gap-4 bg-black">
-            <p className="main-font font-[600] text-[50px] text-white">
+          <div className="w-full justify-center lg:justify-start px-24 lg:px-14 sm:px-6 xs:px-2 flex flex-col gap-4 bg-black">
+            <p className="main-font font-[600] text-[50px] lg:text-[40px] sm:text-[30px] xs:text-[23px] text-white">
               Видеообзор
             </p>
             {/* <video
@@ -297,20 +297,20 @@ export const Main = () => {
 
             <img src={Video} className="" />
           </div>
-          <div className="p-4 bg-black">
-            <div className="w-full flex bg-[#151515] rounded-[20px] ">
-              <div className="w-[45%] p-8">
-                <p className="text-4xl text-white text-end small-font">
+          <div className="p-4 xs:p-2 bg-black">
+            <div className="w-full flex sm:flex-col bg-[#151515] rounded-[20px] ">
+              <div className="w-[45%] p-8 sm:p-4 xs:p-2 sm:w-full">
+                <p className="text-4xl sm:text-2xl main-font xs:text-[23px] text-white text-end sm:text-start">
                   Преимущества
                 </p>
-                <div className="flex justify-end">
-                  <p className="text-lg text-end text-white font-[300] mt-8 w-[70%] leading-10 tracking-wider small-font">
+                <div className="flex justify-end sm:justify-start">
+                  <p className="text-lg text-end sm:text-start text-white font-[300] mt-8 sm:mt-4 w-[70%] sm:w-full sm:leading-normal sm:text-md xs:text-sm leading-10 tracking-wider small-font">
                     Мы сделали акцент на современности и минимализм, чтобы
                     создать комфортную атмосферу в бурлящей деловой жизни{" "}
                   </p>
                 </div>
               </div>
-              <div className="w-[55%]">
+              <div className="w-[55%] sm:w-full">
                 <img
                   src={Summer}
                   alt="Prestige Tower в зимнее время"
@@ -319,7 +319,7 @@ export const Main = () => {
               </div>
             </div>
           </div>
-          <p className="main-font font-[600] text-[50px] text-white pl-24 py-4 bg-black">
+          <p className="main-font font-[600] text-[50px] lg:text-[40px] sm:text-[30px] xs:text-[23px] text-white pl-24 lg:pl-16 sm:pl-8 xs:pl-2 py-4 xs:py-2 bg-black">
             Планировки
           </p>
           <Container ref={containerRef}>
@@ -367,11 +367,11 @@ export const Main = () => {
               </Popover>
             )}
           </Container>
-          <div className="text-white pl-10 flex flex-col gap-4 py-2 bg-black">
-            <p className="text-[40px] font-[600] main-font text">
+          <div className="text-white pl-10 lg:pl-7 sm:pl-4 xs:pl-2 flex flex-col gap-4 xs:gap-2 py-2 bg-black">
+            <p className="text-[40px] sm:text-[30px] xs:text-[23px] font-[600] main-font text">
               Местоположение{" "}
             </p>
-            <p className="text-xl ">
+            <p className="text-xl lg:text-lg sm:text-md xs:text-xs">
               Бизнес-центр “Prestige-tower” расположен в самой топовой локации
               города бишкек{" "}
             </p>
@@ -379,7 +379,7 @@ export const Main = () => {
           <div className="bg-black">
             <Mapik />
           </div>
-          <div className="p-4 bg-black">
+          <div className="p-4 xs:p-2 bg-black">
             <Consultation />
           </div>
           <Footer />

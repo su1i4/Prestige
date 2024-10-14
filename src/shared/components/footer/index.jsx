@@ -7,7 +7,7 @@ import { MdEmail } from "react-icons/md";
 
 export const Footer = () => {
   return (
-    <div className="bg-[#151515] flex justify-between p-8">
+    <div className="bg-[#151515] flex flex-wrap xs:flex-col xs:gap-4 justify-between p-8 sm:p-4 xs:p-2">
       <div className="flex justify-center items-center">
         <Logo />
       </div>
@@ -31,7 +31,7 @@ export const Footer = () => {
           <p className="text-white">PRESTIGE.TOWER.KG@GMAIL.COM</p>
         </div>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 sm:mt-4">
         <div className="flex items-center gap-4">
           <Geo />
           <div className="text-white">

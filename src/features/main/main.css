@@ -68,12 +68,15 @@ button:hover {
   width: 100%;
   display: flex;
   justify-content: end;
+  background-color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .inner {
   padding: 20px;
   width: 90%;
-  background-color: black;
+  background-color: #151515;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
@@ -203,6 +206,9 @@ button:hover {
   .swipers{
     padding: 60px;
   }
+  .slide-content {
+    height: 450px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -236,7 +242,7 @@ button:hover {
     transform: scale(0.7);
   }
   .wrapp {
-    font-size: 15px;
+    font-size: 14px;
     gap: 7px;
   }
   .nutral{
@@ -250,6 +256,9 @@ button:hover {
   }
   .swipers{
     padding: 20px;
+  }
+  .slide-content {
+    height: 380px;
   }
 }
 
@@ -274,5 +283,11 @@ button:hover {
   }
   .swipers{
     padding: 5px;
+  }
+  .slide-content {
+    height: 280px;
+  }
+  .slide-content {
+    border-radius: 10px;
   }
 }

@@ -3,12 +3,12 @@ import { useState } from "react";
 export const Consultation = () => {
   const [form, setForm] = useState({ name: "", phone: "" });
   return (
-    <div className="bg-[#151515] rounded-[20px] p-10">
-      <p className="text-3xl text-white">Получить консультацию </p>
-      <p className="text-lg text-white mt-6">
+    <div className="bg-[#151515] rounded-[20px] p-10 sm:p-6 xs:p-2">
+      <p className="text-3xl text-white sm:text-xl">Получить консультацию </p>
+      <p className="text-lg text-white mt-6 sm:text-sm sm:mt-4">
         Расскажем о бизнес - центре и поможем выбрать офис
       </p>
-      <div className="flex justify-between gap-10 my-10 ">
+      <div className="flex justify-between sm:flex-col gap-10 my-10 sm:my-6 ">
         <div className="w-full">
           <p className="text-white">Ваше имя</p>
           <input
@@ -28,14 +28,14 @@ export const Consultation = () => {
           />
         </div>
       </div>
-      <button className="bg-[#848484] rounded-[15px] text-white px-4 py-2">
+      <button className="bg-[#848484] rounded-[15px] text-white px-4 py-2 sm:w-full">
         Оставить заявку
       </button>
-      <div className="mt-4 flex items-center gap-8">
-        <button className="bg-white rounded-[15px] text-black px-4 py-2">
+      <div className="mt-4 flex items-center gap-8 sm:flex-col sm:items-start sm:gap-4">
+        <button className="bg-white rounded-[15px] text-black px-4 py-2 sm:w-full">
           Оставить заявку
         </button>
-        <p className="text-[15px] text-white/50">
+        <p className="text-[15px] text-white/50 xs:text-[13px]">
           Нажимая на кнопку, вы принимаете условия политики конфеденциальности
         </p>
       </div>
