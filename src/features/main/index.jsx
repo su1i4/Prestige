@@ -17,19 +17,10 @@ import { Vector } from "../../shared/icons/Vector";
 import { Ruler } from "../../shared/icons/ruler";
 import { Next } from "../../shared/icons/Next";
 import Smamage from "../../shared/images/Smamage.png";
-import Restoran from "../../shared/images/Layer_1.png";
-import Namaz from "../../shared/images/Layer_1 (1).png";
-import Parking from "../../shared/images/_Р РµР¶РёРј_РёР·РѕР»СЏС†РёРё.png";
-import Office from "../../shared/images/image 20.png";
-import Xoll from "../../shared/images/Rectangle.png";
-import Konf from "../../shared/images/Конференц зал.png";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import SwitchContact from "../../shared/components/switch-contact";
-import { ReactComponent as Nextik } from "../../shared/icons/next.svg";
-import { ReactComponent as Prev } from "../../shared/icons/prev.svg";
 import { ReactComponent as Mapik } from "../../shared/icons/Landing page/карта.svg";
-import { ReactComponent as Back } from "../../shared/icons/Landing page/image.svg";
 import Imagik from "../../shared/icons/Landing page/image.png";
 import Video from "../../shared/icons/Landing page/image 17.png";
 
@@ -303,7 +294,7 @@ export const Main = () => {
             muted
             className="custom-video w-full rounded-md"
           /> */}
-          
+
             <img src={Video} className="" />
           </div>
           <div className="p-4 bg-black">
