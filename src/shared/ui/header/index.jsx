@@ -1,17 +1,26 @@
+import React, { useState } from "react";
 import "./header.css";
 import { ReactComponent as Logo } from "../../icons/Логотип.svg";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { NavLink, useNavigate } from "react-router-dom";
 import { links } from "../../../lib/links";
 import styled from "styled-components";
 
 export const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false); 
   const navigate = useNavigate();
+
   return (
     <div className="Header">
-      <div className="cursor-pointer" onClick={() => navigate('/')}>
+      <div className="cursor-pointer" onClick={() => navigate("/")}>
         <Logo />
       </div>
-      <div className="Routes">
+
+      <div className="BurgerMenu" onClick={() => setMenuOpen(!menuOpen)}>
+        <RxHamburgerMenu size={25} className="text-white" />
+      </div>
+
+      <div className={`Routes ${menuOpen ? "open" : ""}`}>
         <StyledLink to={links.selling}>
           <NavText>Продажа</NavText>
         </StyledLink>

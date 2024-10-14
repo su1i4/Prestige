@@ -1,27 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 .Header {
-    border-radius: 30px;
-    height: 60px;
-    width: 90%;
-    border: 0.5px white solid;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 30px 0px;
-    z-index: 99999;
-    backdrop-filter: blur(10px);
-  }
+  border-radius: 30px;
+  height: 60px;
+  width: 90%;
+  border: 0.5px white solid;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px 0px;
+  z-index: 99999;
+  backdrop-filter: blur(10px);
+}
 
 .Routes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
 }
+
+/* Скрываем бургер-меню на больших экранах */
+.BurgerMenu {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .Routes {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: none; /* По умолчанию скрыто */
+  }
+
+  .Routes.open {
+    display: flex; /* Отображаем меню, если оно открыто */
+  }
+
+  .BurgerMenu {
+    display: block; /* Отображаем бургер-меню на малых экранах */
+  }
+}
+
   

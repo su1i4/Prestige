@@ -108,7 +108,7 @@ export const Main = () => {
     <>
       <div class="background-section">
         <img src={Imagik} className="w-full absolute" />
-        <div className="absolute top-0 left-0 right-0 h-[400vh] bg-black/40"></div>
+        <div className="absolute top-0 left-0 right-0 h-[400vh] bg-black/50"></div>
         <div className="w-full z-[9999] absolute">
           <div className="nutral">
             <div className="info-wrap">
@@ -144,7 +144,7 @@ export const Main = () => {
                     <Apartment />
                     Этажность: 13 этажей
                   </div>
-                  <div style={{ marginTop: "50px" }} className="wrapp">
+                  <div id="lox" className="wrapp">
                     <File />
                     Красная книга
                   </div>
@@ -156,7 +156,7 @@ export const Main = () => {
                     <Mark />
                     завершение строительства : 4 кв. 2026 г
                   </div>
-                  <div style={{ marginTop: "50px" }} className="wrapp">
+                  <div id="lox" className="wrapp">
                     <Vector />
                     офисы под ключ
                   </div>
@@ -196,7 +196,7 @@ export const Main = () => {
               }}
               pagination={{ clickable: true }}
               scrollbar={{ draggable: true }}
-              style={{ width: "100%", margin: "100px", borderRadius: "20px" }}
+              style={{ width: "100%", borderRadius: "20px" }}
             >
               <SwiperSlide>
                 <div id="one" className="slide-content small-font">
