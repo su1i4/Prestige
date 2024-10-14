@@ -78,17 +78,17 @@ export const Rent = () => {
 
   return (
     <>
-      <div className="w-full h-[100vh] relative">
+      <div className="w-full h-[100vh] lg:h-fit relative">
         <img src={Main} className="darkened-image" />
-        <div className="absolute bottom-10 right-8 left-8 border-l-[3px] border-white border-solid pl-8 p-4 bg-black/30 ">
-          <p className="text-[60px] text-white main-font font-[600] tracking-widest">
+        <div className="absolute bottom-10 right-8 sm:bottom-6 sm:left-4 sm:right-4 xs:bottom-1 xs:left-1 xs:right-1 left-8 border-l-[3px] border-white border-solid pl-8 p-4 sm:p-2 xs:p-1 bg-black/30 ">
+          <p className="text-[60px] lg:text-[45px] sm:text-[30px] xs:text-[22px] text-white main-font font-[600] tracking-widest">
             Аренда и продажа офисов
           </p>
-          <p className="text-xl text-white small-font font-[500]">
+          <p className="text-xl text-white lg:text-lg sm:text-sm xs:text-[14px] small-font font-[500]">
             Современный бизнес центр для вашего комфорта
           </p>
           <div className="w-full flex justify-end">
-            <button className="text-xl text-white bg-[#848484] rounded-[15px] px-4 py-2">
+            <button className="text-xl lg:text-lg sm:text-sm xs:text-xs sm:px-3 xs:py-1 text-white bg-[#848484] rounded-[15px] px-4 py-2">
               Контакты
             </button>
           </div>
@@ -138,7 +138,7 @@ export const Rent = () => {
           </Popover>
         )}
       </Container>
-      <div className="w-full py-20 px-10 bg-black">
+      <div className="w-full py-20 px-10 sm:py-4 sm:px-4 xs:py-2 xs:px-2 bg-black">
         <Consultation />
       </div>
       <Footer />

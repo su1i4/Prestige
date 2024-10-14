@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const HighlightArea = ({ children }) => (
   <div className="relative w-full h-auto aspect-[4/3]">
     <svg
-      className="absolute top-[-100px] left-0 w-full h-full pointer-events-none"
+      className="absolute top-[-100px] lg:top-[-75px] sm:mt-[50px] xs:mt-[30px] left-0 w-full h-full pointer-events-none"
       viewBox="0 0 800 600"
       preserveAspectRatio="xMidYMid meet"
     >
@@ -72,14 +72,14 @@ export const Floors = () => {
   );
 
   return (
-    <div className="w-full px-10">
+    <div className="w-full px-10 sm:px-4 xs:px-2 py-2">
       <div className="w-full flex items-center justify-between">
         <IoArrowBack
           onClick={() => navigate(-1)}
           size={30}
           className="cursor-pointer"
         />
-        <p className="text-[50px] main-font font-[500] noselect">
+        <p className="text-[50px] main-font lg:text-[40px] sm:text-[30px] xs:text-[20px] font-[500] noselect">
           Типовой план {id} этажа
         </p>
         <div onClick={() => navigate('/')} className="cursor-pointer" >
@@ -115,7 +115,7 @@ export const Floors = () => {
           ))}
         </HighlightArea>
       </div>
-      <div className="mt-[-200px]">
+      <div className="mt-[-200px] lg:mt-[-70px] ">
         <Application
           square={thisFloor.squints[String(activeFloorIndex + 1)].square}
           lock={thisFloor.squints[String(activeFloorIndex + 1)].lock}
