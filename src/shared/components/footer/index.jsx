@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from "../../icons/Logo.svg";
+import { ReactComponent as Logo } from "../../icons/Логотип.svg";
 import { ReactComponent as Geo } from "../../icons/Geo.svg";
 
 import { FaPhoneAlt } from "react-icons/fa";
