@@ -5,10 +5,13 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { NavLink, useNavigate } from "react-router-dom";
 import { links } from "../../../lib/links";
 import styled from "styled-components";
+import { useScrollToSection } from "../../utils";
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false); 
   const navigate = useNavigate();
+
+  const { activeSection, scrollToSection } = useScrollToSection()
 
   return (
     <div className="Header">
@@ -22,19 +25,19 @@ export const Header = () => {
 
       <div className={`Routes ${menuOpen ? "open" : ""}`}>
         <StyledLink to={links.selling}>
-          <NavText>Продажа</NavText>
+          <NavText className="small-font">Продажа</NavText>
         </StyledLink>
         <StyledLink to={links.rent}>
-          <NavText>Аренда</NavText>
+          <NavText className="small-font">Аренда</NavText>
         </StyledLink>
         <StyledLink to={links.location}>
-          <NavText>Расположение</NavText>
+          <NavText className="small-font">Преимущества</NavText>
         </StyledLink>
         <StyledLink>
-          <NavText>О нас</NavText>
+        <p className="text-white small-font" onClick={() => scrollToSection('sulaiman')}>О нас</p>
         </StyledLink>
         <StyledLink>
-          <NavText>Контакты</NavText>
+          <p className="text-white small-font" onClick={() => scrollToSection('footer')}>Контакты</p>
         </StyledLink>
       </div>
     </div>
@@ -48,7 +51,6 @@ const NavText = styled.p`
   font-size: 17px;
   letter-spacing: 1px;
   font-weight: 500;
-  font-family: "Oswald", sans-serif;
 
   &::after {
     content: "";

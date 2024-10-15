@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { Consultation } from "../../shared/components/consultation";
 import { Footer } from "../../shared/components/footer";
 import SwitchContact from "../../shared/components/switch-contact";
-import Tooltip from "@mui/material/Tooltip";
+import Tooltip from "@mui/material/Tooltip"; 
+import { useScrollToSection } from "../../shared/utils";
 
 const Container = ({ children }) => (
   <div className="relative inline-block w-full">{children}</div>
@@ -46,6 +47,7 @@ const Popover = ({ children, position }) => (
 );
 
 export const Rent = () => {
+  const { activeSection, scrollToSection } =  useScrollToSection()
   const navigate = useNavigate();
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
   const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
@@ -55,7 +57,7 @@ export const Rent = () => {
     setActiveFloorIndex(index);
     setPopoverPosition({
       x: event.clientX,
-      y: event.clientY -100,
+      y: event.clientY - 100,
     });
   };
 
@@ -73,14 +75,24 @@ export const Rent = () => {
   }, []);
 
   useEffect(() => {
-    setPopoverPosition(popoverPosition)
+    setPopoverPosition(popoverPosition);
   }, [popoverPosition]);
+
+  console.log(floors[activeFloorIndex]?.floor, 'active')
 
   return (
     <>
       <div className="w-full h-[100vh] lg:h-fit relative">
-        <img src={Main} className="darkened-image" />
-        <div className="absolute bottom-10 right-8 sm:bottom-6 sm:left-4 sm:right-4 xs:bottom-1 xs:left-1 xs:right-1 left-8 border-l-[3px] border-white border-solid pl-8 p-4 sm:p-2 xs:p-1 bg-black/30 ">
+        <div />
+        <img
+          src={Main}
+          className="w-full h-full object-cover absolute inset-0 z-0"
+          alt="background image"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 z-10" />
+
+        <div className="absolute bottom-10 right-8 sm:bottom-6 sm:left-4 sm:right-4 xs:bottom-1 xs:left-1 xs:right-1 left-8 border-l-[3px] border-white border-solid pl-8 p-4 sm:p-2 xs:p-1 bg-black/30 z-20">
           <p className="text-[60px] lg:text-[45px] sm:text-[30px] xs:text-[22px] text-white main-font font-[600] tracking-widest">
             Аренда и продажа офисов
           </p>
@@ -88,12 +100,13 @@ export const Rent = () => {
             Современный бизнес центр для вашего комфорта
           </p>
           <div className="w-full flex justify-end">
-            <button className="text-xl lg:text-lg sm:text-sm xs:text-xs sm:px-3 xs:py-1 text-white bg-[#848484] rounded-[15px] px-4 py-2">
+            <button onClick={() => scrollToSection('footer')} className="text-xl lg:text-lg sm:text-sm xs:text-xs sm:px-3 xs:py-1 text-white bg-[#848484] rounded-[15px] px-4 py-2">
               Контакты
             </button>
           </div>
         </div>
       </div>
+
       <Container ref={containerRef}>
         <Image src={Hard} alt="Building" />
         <HighlightArea>
@@ -124,7 +137,7 @@ export const Rent = () => {
                 <div className="w-[50px] h-[3px] bg-black" />
               </div>
               <p className="text-[#000000B2] text-sm font-medium">
-                {floors[activeFloorIndex].count} свободных помещений на аренду
+                {floors[activeFloorIndex].count} свободных помещений {floors[activeFloorIndex]?.floor < 4 ? 'в аренду': 'на продажу'}
               </p>
               <button
                 onClick={() =>

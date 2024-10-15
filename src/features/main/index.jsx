@@ -26,11 +26,15 @@ import Video from "../../shared/icons/Landing page/image 17.png";
 
 import Summer from "../../shared/images/seasons/summer.png";
 import { Footer } from "../../shared/components/footer";
+import VideoPlayer from "../../shared/components/video";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Consultation } from "../../shared/components/consultation";
+
+import videojs from "video.js";
+import "video.js/dist/video-js.css";
 
 const Container = ({ children }) => (
   <div className="relative inline-block w-full bg-black">{children}</div>
@@ -104,18 +108,41 @@ export const Main = () => {
     swiper.slidePrev();
   };
 
+  const videoRef = useRef(null);
+  const playerRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      const videoElement = videoRef.current;
+
+      playerRef.current = videojs(videoElement, {
+        controls: true,
+        autoplay: false,
+        preload: "auto",
+        responsive: true,
+        fluid: true,
+      });
+
+      return () => {
+        if (playerRef.current) {
+          playerRef.current.dispose();
+        }
+      };
+    }
+  }, []);
+
   return (
     <>
       <div class="background-section">
         <img src={Imagik} className="w-full absolute" />
-        <div className="absolute top-0 left-0 right-0 h-[400vh] bg-black/50"></div>
+        <div className="absolute top-0 left-0 right-0 h-[400vh] bg-black/80"></div>
         <div className="w-full z-[9999] absolute">
           <div className="nutral">
             <div className="info-wrap">
               <h1 className="main-font font-[500]">Prestige tower</h1>
-              <p className="small-font">
+              <p className="small-font max-w-[70%] sm:max-w-full">
                 Это современный бизнес-центр класса «А», спроектированный
-                новейшим технологиями мирового стандарта.{" "}
+                новейшими технологиями мирового стандарта{" "}
               </p>
             </div>
             <div className="buttons small-font">
@@ -123,26 +150,27 @@ export const Main = () => {
               <button>Аренда</button>
             </div>
           </div>
-          <div className="about">
+          <div id="sulaiman" className="about">
             <div className="inner">
-              <h2 className="small-font">Об объекте</h2>
+              <h2 className="main-font">Об объекте</h2>
               <div className="list">
                 <div className="icons small-font">
                   <div className="wrapp">
                     <Geo />
-                    Територия: 21 сотка
+                    Территория:<span className="bold">21 сотка</span>
                   </div>
                   <div className="wrapp">
                     <Ruler />
-                    Плошадь: от 30.07 м2 до 625.27 м2
+                    Плошадь:{" "}
+                    <span className="bold">от 30.07 м2 до 625.27 м2</span>
                   </div>
                   <div className="wrapp">
                     <Arrow />
-                    Высота потолков: от 3 до 6м.
+                    Высота потолков: <span className="bold">от 3 до 6м.</span>
                   </div>
                   <div className="wrapp">
                     <Apartment />
-                    Этажность: 13 этажей
+                    Этажность: <span className="bold">13 этажей</span>
                   </div>
                   <div id="lox" className="wrapp">
                     <File />
@@ -150,15 +178,17 @@ export const Main = () => {
                   </div>
                   <div className="wrapp">
                     <Next />
-                    Начало строительства : 3 кв. 2023 г
+                    Начало строительства:
+                    <span className="bold">3 кв. 2023 г</span>
                   </div>
                   <div className="wrapp">
                     <Mark />
-                    завершение строительства : 4 кв. 2026 г
+                    Завершение строительства:
+                    <span className="bold">4 кв. 2026 г</span>
                   </div>
                   <div id="lox" className="wrapp">
                     <Vector />
-                    офисы под ключ
+                    Офисы под ключ
                   </div>
                   <div className="wrapp">
                     <Coffee />
@@ -286,28 +316,33 @@ export const Main = () => {
             <p className="main-font font-[600] text-[50px] lg:text-[40px] sm:text-[30px] xs:text-[23px] text-white">
               Видеообзор
             </p>
-            {/* <video
-            src='https://www.youtube.com/watch?v=fJkVpLSNM14&list=RDfJkVpLSNM14&start_radio=1'
-            controls
-            autoPlay
-            loop
-            muted
-            className="custom-video w-full rounded-md"
-          /> */}
-
-            <img src={Video} className="" />
+            <iframe
+              src="https://www.youtube.com/embed/atjyAEKoeQI"
+              className="w-full h-[600px] lg:h-[500px] sm:h-[400px] xs:h-[350px]"
+            ></iframe>
+            {/* <img src={Video} className="" /> */}
           </div>
           <div className="p-4 xs:p-2 bg-black">
             <div className="w-full flex sm:flex-col bg-[#151515] rounded-[20px] ">
               <div className="w-[45%] p-8 sm:p-4 xs:p-2 sm:w-full">
-                <p className="text-4xl sm:text-2xl main-font xs:text-[23px] text-white text-end sm:text-start">
-                  Преимущества
-                </p>
+                <div className="flex justify-end  ">
+                  <p className="w-[70%] text-[50px] font-[600] sm:text-2xl main-font xs:text-[23px] text-white text-start sm:text-start">
+                    Преимущества
+                  </p>
+                </div>
                 <div className="flex justify-end sm:justify-start">
-                  <p className="text-lg text-end sm:text-start text-white font-[300] mt-8 sm:mt-4 w-[70%] sm:w-full sm:leading-normal sm:text-md xs:text-sm leading-10 tracking-wider small-font">
+                  <p className="text-lg text-start sm:text-start text-white font-[300] mt-8 sm:mt-4 w-[70%] sm:w-full sm:leading-normal sm:text-md xs:text-sm leading-10 tracking-wider small-font">
                     Мы сделали акцент на современности и минимализм, чтобы
                     создать комфортную атмосферу в бурлящей деловой жизни{" "}
                   </p>
+                </div>
+                <div className="w-full flex justify-end mt-4">
+                  <button
+                    onClick={() => navigate("/location-andvantages")}
+                    className="bg-[#848484] rounded-[15px] px-3 py-2 text-white small-font text-xl sm:text-lg xs:text-sm font-[500]"
+                  >
+                    Подробнее
+                  </button>
                 </div>
               </div>
               <div className="w-[55%] sm:w-full">
@@ -368,7 +403,7 @@ export const Main = () => {
             )}
           </Container>
           <div className="text-white pl-10 lg:pl-7 sm:pl-4 xs:pl-2 flex flex-col gap-4 xs:gap-2 py-2 bg-black">
-            <p className="text-[40px] sm:text-[30px] xs:text-[23px] font-[600] main-font text">
+            <p className="text-[50px] sm:text-[40px] xs:text-[23px] font-[600] main-font text">
               Местоположение{" "}
             </p>
             <p className="text-xl lg:text-lg sm:text-md xs:text-xs">

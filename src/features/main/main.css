@@ -13,7 +13,7 @@
   width: 100%;
   position: relative;
   background-image: url("../../shared/icons/Landing\ page/image.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 
 .info-wrap {
@@ -60,7 +60,7 @@ button:hover {
 }
 
 .buttons button:nth-child(2) {
-  background-color: #686868;
+  background-color: #848484;
   color: white;
 }
 
@@ -68,17 +68,21 @@ button:hover {
   width: 100%;
   display: flex;
   justify-content: end;
-  background-color: black;
+  /* background-color: black; */
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .inner {
   padding: 20px;
-  width: 90%;
+  width: 92%;
   background-color: #151515;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+}
+
+.bold{
+  font-weight: 600;
 }
 
 .inner > h2 {
@@ -86,6 +90,7 @@ button:hover {
   border-bottom: 1px white solid;
   font-size: 40px;
   color: white;
+  font-weight: 600;
 }
 
 .text-wrap {
@@ -103,6 +108,8 @@ button:hover {
 .icons {
   color: white;
   font-size: 20px;
+  font-weight: 200;
+  font-family: "Geologica", sans-serif;
 }
 
 .wrapp {
@@ -110,6 +117,8 @@ button:hover {
   align-items: center;
   gap: 10px;
   margin-top: 10px;
+  font-weight: 200;
+  font-family: "Geologica", sans-serif;
 }
 
 .swipers {
@@ -192,6 +201,7 @@ button:hover {
     gap: 10px;
     margin-top: 0px;
     font-size: 18px;
+    font-weight: 300;
   }
 
   .wrapp > svg{
