@@ -22,19 +22,15 @@ import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import SwitchContact from "../../shared/components/switch-contact";
 import { ReactComponent as Mapik } from "../../shared/icons/Landing page/карта.svg";
 import Imagik from "../../shared/icons/Landing page/image.png";
-import Video from "../../shared/icons/Landing page/image 17.png";
-
+import { GrPrevious } from "react-icons/gr";
+import { GrNext } from "react-icons/gr";
 import Summer from "../../shared/images/seasons/summer.png";
 import { Footer } from "../../shared/components/footer";
-import VideoPlayer from "../../shared/components/video";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Consultation } from "../../shared/components/consultation";
-
-import videojs from "video.js";
-import "video.js/dist/video-js.css";
 
 const Container = ({ children }) => (
   <div className="relative inline-block w-full bg-black">{children}</div>
@@ -99,37 +95,20 @@ export const Main = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  const swiper = useSwiper();
-  const handleNext = () => {
-    swiper.slideNext();
-  };
 
-  const handlePrev = () => {
-    swiper.slidePrev();
-  };
+  const swiperRef = useRef();
 
-  const videoRef = useRef(null);
-  const playerRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      const videoElement = videoRef.current;
-
-      playerRef.current = videojs(videoElement, {
-        controls: true,
-        autoplay: false,
-        preload: "auto",
-        responsive: true,
-        fluid: true,
-      });
-
-      return () => {
-        if (playerRef.current) {
-          playerRef.current.dispose();
-        }
-      };
+  const goNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
     }
-  }, []);
+  };
+
+  const goPrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
 
   return (
     <>
@@ -220,10 +199,7 @@ export const Main = () => {
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={50}
               slidesPerView={1}
-              navigation={{
-                prevEl: ".swiper-button-prev",
-                nextEl: ".swiper-button-next",
-              }}
+              ref={swiperRef}
               pagination={{ clickable: true }}
               scrollbar={{ draggable: true }}
               style={{ width: "100%", borderRadius: "20px" }}
@@ -307,10 +283,14 @@ export const Main = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <div className="swiper-button-prev noselect"></div>
-              <div className="swiper-button-next noselect"></div>
             </Swiper>
             <div className="absolute bg-black bottom-0 left-0 right-0 w-full h-[560px] lg:h-[400px] sm:h-[300px] "></div>
+            <div className="absolute top-0 bottom-0 left-10 flex items-center">
+              <GrPrevious onClick={goNext} size={38} className="text-white active:scale-105 active:translate-x-[-20px] transition-all duration-200 " />
+            </div>
+            <div className="absolute top-0 bottom-0 right-10 flex items-center">
+              <GrNext onClick={goPrev} size={38} className="text-white active:scale-105 active:translate-x-[20px] transition-all duration-200 " />
+            </div>
           </div>
           <div className="w-full justify-center lg:justify-start px-24 lg:px-14 sm:px-6 xs:px-2 flex flex-col gap-4 bg-black">
             <p className="main-font font-[600] text-[50px] lg:text-[40px] sm:text-[30px] xs:text-[23px] text-white">
@@ -320,7 +300,6 @@ export const Main = () => {
               src="https://www.youtube.com/embed/atjyAEKoeQI"
               className="w-full h-[600px] lg:h-[500px] sm:h-[400px] xs:h-[350px]"
             ></iframe>
-            {/* <img src={Video} className="" /> */}
           </div>
           <div className="p-4 xs:p-2 bg-black">
             <div className="w-full flex sm:flex-col bg-[#151515] rounded-[20px] ">
