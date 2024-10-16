@@ -11,12 +11,12 @@ export const Footer = () => {
   return (
     <div
       id="footer"
-      className="bg-[#151515] flex flex-wrap xs:flex-col xs:gap-4 justify-between p-8 sm:p-4 xs:p-2"
+      className="bg-[#151515] flex flex-wrap xs:flex-col xs:gap-6 justify-between p-8 sm:p-6"
     >
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center sm:justify-start">
         <Logo />
       </div>
-      <div className="flex flex-col gap-4 text-white underline">
+      <div className="flex flex-col gap-4 text-white underline small-font">
         <a href="/rent">Продажа и Аренда</a>
         <p onClick={() => scrollToSection("sulaiman")}>О нас</p>
         <a href="/location-andvantages">Преимущества</a>
@@ -25,7 +25,7 @@ export const Footer = () => {
       <div className="flex flex-col gap-4">
         <div className="flex gap-4 items-center text-white">
           <FaPhoneAlt size={20} className="pl-[2px]" />
-          <a href="tel:+996995090090" className="text-white underline pl-[2px]">
+          <a href="tel:+996995090090" className="text-white underline pl-[2px] small-font">
             0995 090 090
           </a>
         </div>
@@ -33,14 +33,14 @@ export const Footer = () => {
           <RiInstagramFill size={24} />
           <a
             href="https://www.instagram.com/PRESTIGE.TOWER/"
-            className="text-white underline"
+            className="text-white underline small-font"
           >
             PRESTIGE.TOWER
           </a>
         </div>
         <div className="flex gap-4 items-center text-white">
           <MdEmail size={24} />
-          <a href="mailto:prestige.tower.kg@gmail.com">
+          <a className="small-font" href="mailto:prestige.tower.kg@gmail.com">
             prestige.tower.kg@gmail.com
           </a>
         </div>
@@ -54,10 +54,10 @@ export const Footer = () => {
         >
           <Geo />
           <div className="text-white">
-            <p className="text-md border-b-[1px] border-white border-solid">
+            <p className="text-md border-b-[1px] border-white border-solid small-font">
               Отдел продаж
             </p>
-            <p className="text-xs">
+            <p className="text-xs small-font">
               ул. Токтогула 125/1 Tower B, 5 этаж, офис 503
             </p>
           </div>
@@ -71,10 +71,10 @@ export const Footer = () => {
         >
           <Geo />
           <div className="text-white">
-            <p className="text-md border-b-[1px] border-white border-solid">
+            <p className="text-md border-b-[1px] border-white border-solid small-font">
               Адрес Бизнес центра
             </p>
-            <p className="text-xs">ул. Чуй 127/1</p>
+            <p className="text-xs small-font">ул. Чуй 127/1</p>
           </div>
         </a>
       </div>
