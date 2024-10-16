@@ -31,6 +31,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Consultation } from "../../shared/components/consultation";
+import useWindowWidth from "../../shared/utils";
 
 const Container = ({ children }) => (
   <div className="relative inline-block w-full bg-black">{children}</div>
@@ -74,12 +75,15 @@ export const Main = () => {
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
   const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
+  const [suka, setSuka] = useState(150)
+
+  const windowWidth = useWindowWidth()
 
   const handleFloorActivate = (event, index) => {
     setActiveFloorIndex(index);
     setPopoverPosition({
       x: event.clientX,
-      y: event.clientY - 20,
+      y: event.clientY - suka,
     });
   };
 
@@ -109,6 +113,22 @@ export const Main = () => {
       swiperRef.current.swiper.slidePrev();
     }
   };
+
+  useEffect(() => {
+    if (windowWidth < 400) {
+      setSuka(500)
+    } else if (windowWidth < 460) {
+      setSuka(300)
+    } else if (windowWidth < 600) {
+      setSuka(350)
+    } else if (windowWidth < 800) {
+      setSuka(300)
+    } else if (windowWidth < 1000) {
+      setSuka(200)
+    }else{
+      setSuka(150)
+    }
+  }, [windowWidth]);
 
   return (
     <>
