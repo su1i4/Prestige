@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { Consultation } from "../../shared/components/consultation";
 import { Footer } from "../../shared/components/footer";
 import SwitchContact from "../../shared/components/switch-contact";
-import Tooltip from "@mui/material/Tooltip"; 
 import { useScrollToSection } from "../../shared/utils";
+import useWindowWidth from "../../shared/utils";
 
 const Container = ({ children }) => (
   <div className="relative inline-block w-full">{children}</div>
@@ -37,7 +37,7 @@ const HighlightPath = ({ d, isActive, onMouseEnter, onClick }) => (
   />
 );
 
-const Popover = ({ children, position }) => (
+const Popover = ({ children, position, suka }) => (
   <div
     className="absolute bg-white rounded-md border border-gray-300 p-2.5 shadow-lg z-10 transform -translate-x-1/2 -translate-y-full"
     style={{ top: `${position.y + 300}px`, left: `${position.x}px` }}
@@ -52,12 +52,15 @@ export const Rent = () => {
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
   const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
+  const [suka, setSuka] = useState()
+
+  const windowWidth = useWindowWidth()
 
   const handleFloorActivate = (event, index) => {
     setActiveFloorIndex(index);
     setPopoverPosition({
       x: event.clientX,
-      y: event.clientY - 100,
+      y: event.clientY - suka,
     });
   };
 
@@ -75,14 +78,28 @@ export const Rent = () => {
   }, []);
 
   useEffect(() => {
+    if (windowWidth < 400) {
+      setSuka(500)
+    } else if (windowWidth < 460) {
+      setSuka(460)
+    } else if (windowWidth < 600) {
+      setSuka(350)
+    } else if (windowWidth < 800) {
+      setSuka(300)
+    } else if (windowWidth < 1000) {
+      setSuka(200)
+    }else{
+      setSuka(150)
+    }
+  }, [windowWidth]);
+
+  useEffect(() => {
     setPopoverPosition(popoverPosition);
   }, [popoverPosition]);
 
-  console.log(floors[activeFloorIndex]?.floor, 'active')
-
   return (
     <>
-      <div className="w-full h-[100vh] lg:h-fit relative">
+      <div className="w-full h-[100vh] lg:h-[80vh] sm:h-[60vh] xs:h-[45vh] relative">
         <div />
         <img
           src={Main}
@@ -128,22 +145,22 @@ export const Rent = () => {
           ))}
         </HighlightArea>
         {activeFloorIndex !== null && (
-          <Popover position={popoverPosition}>
-            <div className="w-[270px] flex flex-col justify-center items-center gap-4">
+          <Popover suka={suka} position={popoverPosition}>
+            <div className="w-[270px] sm:w-[200px] flex flex-col justify-center items-center gap-4 sm:gap-2">
               <div className="w-full flex flex-col justify-center items-center">
-                <p className="text-black text-[23px] font-semibold small-font">
+                <p className="text-black text-[23px] sm:text-sm font-semibold small-font">
                   {floors[activeFloorIndex].floor} этаж
                 </p>
                 <div className="w-[50px] h-[3px] bg-black" />
               </div>
-              <p className="text-[#000000B2] text-sm font-medium small-font">
+              <p className="text-[#000000B2] text-sm font-medium small-font sm:text-xs sm:text-center">
                 {floors[activeFloorIndex].count} свободных помещений {floors[activeFloorIndex]?.floor < 4 ? 'в аренду': 'на продажу'}
               </p>
               <button
                 onClick={() =>
                   navigate(`/rent/floors/${floors[activeFloorIndex].floor}`)
                 }
-                className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 text-white small-font"
+                className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 sm:px-3 sm:py-1 text-white small-font sm:text-xs"
               >
                 Перейти
               </button>

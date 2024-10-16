@@ -17,7 +17,7 @@ export const Advantage = () => {
               <p className="text-3xl text-white sm:text-2xl xs:text-xl font-[600x] main-font">Генеральный план </p>
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
-            <p className="text-white mt-8 sm:mt-4 max-w-[70%] text-center sm:text-start">
+            <p className="text-white mt-8 sm:mt-4 max-w-[70%] text-center sm:text-start small-font">
               Бизнес-центр “Prestige-tower” расположен в самой топовой локации
               города бишкек{" "}
             </p>
@@ -36,57 +36,57 @@ export const Advantage = () => {
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[gainsboro]">
+              <p className="text-[gainsboro] small-font">
                 5 м <span className="text-white">1000 мелочей</span>
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[gainsboro]">
+              <p className="text-[gainsboro] small-font">
                 20 м <span className="text-white">Technodom.kg</span>
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[gainsboro]">
+              <p className="text-[gainsboro] small-font">
                 50 м <span className="text-white">Образовательные центры</span>
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[gainsboro]">
+              <p className="text-[gainsboro] small-font">
                 70 м <span className="text-white">Магазины</span>
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[gainsboro]">
+              <p className="text-[gainsboro] small-font">
                 170 м <span className="text-white">Кыргыз почтасы</span>
               </p>
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 small-font">
               <p className="text-[gainsboro]">
                 230 м <span className="text-white">Детский мир</span>
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[gainsboro]">
+              <p className="text-[gainsboro] small-font">
                 260 м <span className="text-white">Дордой плаза</span>
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[gainsboro]">
+              <p className="text-[gainsboro] small-font">
                 440 м <span className="text-white">Спорт - клуб "Karven"</span>
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[gainsboro]">
+              <p className="text-[gainsboro] small-font">
                 630 м <span className="text-white">Гум</span>
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[gainsboro]">
+              <p className="text-[gainsboro] small-font">
                 680 м <span className="text-white">Цум Айчурок</span>
               </p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[gainsboro]">
+              <p className="text-[gainsboro] small-font">
                 680 м <span className="text-white">Центральная мечеть</span>
               </p>
             </div>
@@ -98,16 +98,16 @@ export const Advantage = () => {
               <p className="text-3xl text-white sm:text-2xl xs:text-xl font-[600x] main-font">Офисы под ключ</p>
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
-            <p className="text-white mt-12 sm:mt-4 xs:mt-2 sm:text-start max-w-[70%] text-center">
+            <p className="text-white mt-12 sm:mt-4 xs:mt-2 sm:text-start max-w-[70%] text-center small-font">
               Офис под ключ позволяет сократить время и усилия связаные с
               ремонтом, а также, обеспечить высокое качество выполненных работ.
             </p>
-            <p className="text-white mt-12 sm:mt-4 xs:mt-2 sm:text-start max-w-[70%] text-center">
+            <p className="text-white mt-12 sm:mt-4 xs:mt-2 sm:text-start max-w-[70%] text-center small-font">
               Откройте двери в ваше новое рабочее пространство! Офисы “Prestige
               Tower” - это не просто место для работы, а уютные уголки для
               вдохновения.
             </p>
-            <p className="text-white mt-12 sm:mt-4 xs:mt-2 sm:text-start max-w-[70%] text-center">
+            <p className="text-white mt-12 sm:mt-4 xs:mt-2 sm:text-start max-w-[70%] text-center small-font">
               Здесь вы найдете все для комфортной работы!
             </p>
           </div>
@@ -124,7 +124,7 @@ export const Advantage = () => {
               <p className="text-3xl text-white sm:text-xl xs:text-xl font-[600] main-font">Доступ 24/7</p>
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
-            <p className="text-white mt-12 max-w-[70%] sm:max-w-full text-center sm:text-start sm:mt-4">
+            <p className="text-white mt-12 max-w-[70%] sm:max-w-full text-center sm:text-start sm:mt-4 small-font">
               Круглосуточный доступ в бизнес-центр «Prestige Tower» - может
               способствовать росту вашего бизнеса, поскольку он позволяет вам
               быть контактным и доступным для клиентов в любое время.
@@ -137,7 +137,7 @@ export const Advantage = () => {
               <p className="text-3xl text-white sm:text-2xl xs:text-xl font-[600x] main-font">Безопасность</p>
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
-            <p className="text-white mt-12 max-w-[70%] sm:max-w-full text-center sm:text-start sm:mt-4">
+            <p className="text-white mt-12 max-w-[70%] sm:max-w-full text-center sm:text-start sm:mt-4 small-font">
               Видеонаблюдение по всему БЦ Охрана 24/7 Ресепшен-зона Чипированные
               карты Пожарная безопасность Эвакуационные выходы
             </p>

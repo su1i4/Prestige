@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const useScrollToSection = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -19,3 +19,27 @@ export const useScrollToSection = () => {
 
   return { activeSection, scrollToSection };
 };
+
+
+function useWindowWidth() {
+  const [windowWidth, setWindowWidth] = useState(1300);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowWidth(window.innerWidth);
+
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
+
+  return windowWidth;
+}
+
+export default useWindowWidth;
