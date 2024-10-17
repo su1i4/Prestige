@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import "./header.css";
 import { ReactComponent as Logo } from "../../icons/Логотип.svg";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { links } from "../../../lib/links";
 import styled from "styled-components";
 import { useScrollToSection } from "../../utils";
 
 export const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false); 
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  const { activeSection, scrollToSection } = useScrollToSection()
+  const { activeSection, scrollToSection } = useScrollToSection();
+
+  const link = window.location.pathname;
 
   return (
     <div className="Header">
@@ -33,11 +35,17 @@ export const Header = () => {
         <StyledLink to={links.location}>
           <NavText className="small-font">Преимущества</NavText>
         </StyledLink>
-        <StyledLink>
-        <p className="text-white small-font" onClick={() => scrollToSection('sulaiman')}>О нас</p>
+        <StyledLink to={"/"}>
+          <NavText
+            onClick={() => {
+              scrollToSection("sulaiman");
+            }}
+          >
+            О нас
+          </NavText>
         </StyledLink>
         <StyledLink>
-          <p className="text-white small-font" onClick={() => scrollToSection('footer')}>Контакты</p>
+          <NavText onClick={() => scrollToSection("footer")}>Контакты</NavText>
         </StyledLink>
       </div>
     </div>

@@ -6,11 +6,12 @@ import { floors } from "../../lib/data";
 import { useNavigate } from "react-router-dom";
 import { DarkLogo } from "../../shared/icons/darklogo";
 import useWindowWidth from "../../shared/utils";
+import { Compass } from "../../shared/icons/compass";
 
 const HighlightArea = ({ children }) => (
   <div className="relative w-full h-auto aspect-[4/3]">
     <svg
-      className="absolute top-[-100px] lg:top-[-75px] sm:mt-[50px] xs:mt-[30px] left-0 w-full h-full pointer-events-none"
+      className="absolute top-[-100px] lg:top-[-75px] sm:mt-[50px] xs:mt-[50px] left-0 w-full h-full pointer-events-none"
       viewBox="0 0 800 600"
       preserveAspectRatio="xMidYMid meet"
     >
@@ -54,9 +55,9 @@ export const Floors = () => {
   const { id } = useParams();
   const thisFloor = floors[13 - id];
 
-  const windowWidth = useWindowWidth()
+  const windowWidth = useWindowWidth();
 
-  const [suka, setSuka] = useState({width: '107', height: '43'});
+  const [suka, setSuka] = useState({ width: "107", height: "43" });
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
   const [updatedFloorsImages, setUpdatedFloorsImages] = useState(
     thisFloor.floorsImages
@@ -72,13 +73,13 @@ export const Floors = () => {
 
   useEffect(() => {
     if (windowWidth < 460) {
-      setSuka({width: '80', height: '30'});
+      setSuka({ width: "80", height: "30" });
     } else if (windowWidth < 768) {
-      setSuka({width: '90', height: '35'});
+      setSuka({ width: "90", height: "35" });
     } else {
-      setSuka({width: '107', height: '43'});
+      setSuka({ width: "107", height: "43" });
     }
-  }, [windowWidth])
+  }, [windowWidth]);
 
   return (
     <div className="w-full px-10 sm:px-4 xs:px-2 py-2">
@@ -88,13 +89,16 @@ export const Floors = () => {
           size={30}
           className="cursor-pointer"
         />
-        <p className="text-[50px] main-font lg:text-[40px] sm:text-[30px] xs:text-[20px] font-[500] noselect">
+        <p className="text-[50px] main-font lg:text-[40px] sm:text-[30px] xs:text-[20px] font-[500] noselect xs:hidden">
           Типовой план {id} этажа
         </p>
-        <div onClick={() => navigate('/')} className="cursor-pointer" >
+        <div onClick={() => navigate("/")} className="cursor-pointer">
           <DarkLogo width={suka.width} height={suka.height} />
         </div>
       </div>
+      <p className="text-[50px] text-center main-font lg:text-[40px] sm:text-[30px] xs:text-[20px] font-[500] noselect hidden xs:block">
+        Типовой план {id} этажа
+      </p>
       <div className="">
         <HighlightArea>
           <image
@@ -124,7 +128,10 @@ export const Floors = () => {
           ))}
         </HighlightArea>
       </div>
-      <div className="mt-[-200px] lg:mt-[-70px] ">
+      <div className="mt-[-220px] lg:mt-[-70px] w-full flex justify-end">
+        <Compass />
+      </div>
+      <div className="">
         <Application
           square={thisFloor.squints[String(activeFloorIndex + 1)].square}
           lock={thisFloor.squints[String(activeFloorIndex + 1)].lock}

@@ -26,6 +26,7 @@ import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
 import Summer from "../../shared/images/seasons/summer.png";
 import { Footer } from "../../shared/components/footer";
+import YandexMap from "../../shared/components/map";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -74,21 +75,27 @@ export const Main = () => {
   const navigate = useNavigate();
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
   const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
+  const [firstClick, setFirstClick] = useState(false);
+  const [isPopoverFrozen, setIsPopoverFrozen] = useState(false);
   const containerRef = useRef(null);
+  const [offset, setOffset] = useState();
   const [suka, setSuka] = useState(150);
 
   const windowWidth = useWindowWidth();
 
   const handleFloorActivate = (event, index) => {
-    setActiveFloorIndex(index);
-    setPopoverPosition({
-      x: event.clientX,
-      y: event.clientY - suka,
-    });
+    if (!firstClick) {
+      setActiveFloorIndex(index);
+      setPopoverPosition({ x: event.clientX, y: event.clientY - suka });
+    }
   };
 
   const handleClickOutside = (event) => {
-    if (containerRef.current && !containerRef.current.contains(event.target)) {
+    if (
+      containerRef.current &&
+      !containerRef.current.contains(event.target) &&
+      !isPopoverFrozen
+    ) {
       setActiveFloorIndex(null);
     }
   };
@@ -98,7 +105,22 @@ export const Main = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [isPopoverFrozen]);
+
+  const handlePopoverClick = (index) => {
+    if (!firstClick) {
+      setFirstClick(true);
+      setIsPopoverFrozen(true); // Заморозка поповера
+
+      setTimeout(() => {
+        setIsPopoverFrozen(false); // Размораживание поповера через 4 секунды
+        setFirstClick(false); // Сброс первого клика
+      }, 2500);
+    } else {
+      // Второе нажатие — переход на страницу
+      navigate(`/rent/floors/${floors[index].floor}`);
+    }
+  };
 
   const swiperRef = useRef();
 
@@ -145,8 +167,8 @@ export const Main = () => {
               </p>
             </div>
             <div className="buttons small-font">
-              <button>Продажа</button>
-              <button>Аренда</button>
+              <button onClick={() => navigate("rent")}>Продажа</button>
+              <button onClick={() => navigate("rent")}>Аренда</button>
             </div>
           </div>
           <div id="sulaiman" className="about">
@@ -300,14 +322,14 @@ export const Main = () => {
               <GrPrevious
                 onClick={goPrev}
                 size={38}
-                className="text-white active:scale-105 active:translate-x-[-20px] transition-all duration-200 "
-                />
+                className="text-white active:scale-105 active:translate-x-[-10px] transition-all duration-200 "
+              />
             </div>
             <div className="sm:hidden absolute top-0 bottom-0 right-10 flex items-center">
               <GrNext
                 onClick={goNext}
                 size={38}
-                className="text-white active:scale-105 active:translate-x-[20px] transition-all duration-200 "
+                className="text-white active:scale-105 active:translate-x-[10px] transition-all duration-200 "
               />
             </div>
           </div>
@@ -364,13 +386,13 @@ export const Main = () => {
                     d={floor.rigth.path}
                     isActive={activeFloorIndex === index}
                     onMouseEnter={(e) => handleFloorActivate(e, index)}
-                    onClick={(e) => handleFloorActivate(e, index)}
+                    onClick={(e) => handlePopoverClick(index)}
                   />
                   <HighlightPath
                     d={floor.left.path}
                     isActive={activeFloorIndex === index}
                     onMouseEnter={(e) => handleFloorActivate(e, index)}
-                    onClick={(e) => handleFloorActivate(e, index)}
+                    onClick={(e) => handlePopoverClick(index)}
                   />
                 </React.Fragment>
               ))}
@@ -409,8 +431,8 @@ export const Main = () => {
               города бишкек{" "}
             </p>
           </div>
-          <div className="bg-black">
-            <Mapik />
+          <div className="bg-black h-[70vh] overflow-hidden">
+            <YandexMap />
           </div>
           <div className="p-4 xs:p-2 bg-black">
             <Consultation />
