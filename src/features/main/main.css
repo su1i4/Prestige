@@ -131,7 +131,7 @@ button:hover {
 
 .slide-content {
   width: 100%;
-  height: 570px;
+  height: 90vh;
   border-radius: 20px;
   background-size: cover;
   position: relative;
@@ -139,22 +139,28 @@ button:hover {
 
 #one {
   background-image: url("../../shared/images/Rectangle.png");
+  background-size: cover;
 }
 
 #two {
   background-image: url("../../shared/images/swiper/htcn.png");
+  background-size: cover;
 }
 #three {
   background-image: url("../../shared/images/swiper/Rectangle\ \(1\).png");
+  background-size: cover;
 }
 #four {
   background-image: url("../../shared/images/swiper/Vmake-1729059017.jpg");
+  background-size: cover;
 }
 #five {
   background-image: url("../../shared/images/swiper/щашсу.png");
+  background-size: cover;
 }
 #six {
   background-image: url("../../shared/images/swiper/Turbotext\ AI\ Image\ 4068954.png");
+  background-size: cover;
 }
 
 #lox{
