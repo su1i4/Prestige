@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@yandex/ymaps3-types": "^0.0.15101134",
     "tailwindcss": "^3.4.13"
   }
 }

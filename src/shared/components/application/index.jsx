@@ -23,9 +23,9 @@ export const Application = ({ square, lock, name }) => {
           />
         </div>
         <div className="w-full">
-          <p className="text-[#555555] small-font">Введите ваш номер телефона</p>
+          <p className="text-[#555555] small-font">Введите номер телефона</p>
           <input
-            placeholder="Введите ваше имя"
+            placeholder="+996"
             className="w-full bg-transparent small-font border-b-[1px] border-gray-700 border-solid focus:outline-none focus:border-transparent text-[#555555]"
             value={form.phone}
             onChange={(e) => setForm({ ...form, phone: e.target.value })}

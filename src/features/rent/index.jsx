@@ -37,7 +37,7 @@ const HighlightPath = ({ d, isActive, onMouseEnter, onClick }) => (
   />
 );
 
-const Popover = ({ children, position, suka }) => (
+const Popover = ({ children, position}) => (
   <div
     className="absolute bg-white rounded-md border border-gray-300 p-2.5 shadow-lg z-10 transform -translate-x-1/2 -translate-y-full"
     style={{ top: `${position.y + 300}px`, left: `${position.x}px` }}
@@ -79,17 +79,17 @@ export const Rent = () => {
 
   useEffect(() => {
     if (windowWidth < 400) {
-      setSuka(500)
+      setSuka(500);
     } else if (windowWidth < 460) {
-      setSuka(460)
+      setSuka(600);
     } else if (windowWidth < 600) {
-      setSuka(350)
+      setSuka(50);
     } else if (windowWidth < 800) {
-      setSuka(300)
+      setSuka(0);
     } else if (windowWidth < 1000) {
-      setSuka(200)
-    }else{
-      setSuka(150)
+      setSuka(-300);
+    } else {
+      setSuka(10);
     }
   }, [windowWidth]);
 
@@ -113,7 +113,7 @@ export const Rent = () => {
           <p className="text-[60px] lg:text-[45px] sm:text-[30px] xs:text-[22px] text-white main-font font-[600] tracking-widest">
             Аренда и продажа офисов
           </p>
-          <p className="text-xl text-white lg:text-lg sm:text-sm xs:text-[14px] small-font font-[500]">
+          <p className="text-2xl text-white lg:text-lg sm:text-sm xs:text-[14px] small-font font-light">
             Современный бизнес центр для вашего комфорта
           </p>
           <div className="w-full flex justify-end">
@@ -145,7 +145,7 @@ export const Rent = () => {
           ))}
         </HighlightArea>
         {activeFloorIndex !== null && (
-          <Popover suka={suka} position={popoverPosition}>
+          <Popover position={popoverPosition}>
             <div className="w-[270px] sm:w-[200px] flex flex-col justify-center items-center gap-4 sm:gap-2">
               <div className="w-full flex flex-col justify-center items-center">
                 <p className="text-black text-[23px] sm:text-sm font-semibold small-font">

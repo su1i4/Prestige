@@ -1113,7 +1113,7 @@ export const floors = [
       3: { square: 162.86, name: "Холл", lock: true },
       4: { square: 342.66, name: "Торговое помещение №2", lock: true },
     },
-    count: 4,
+    count: 3,
     image: Floor1,
   },
 ];

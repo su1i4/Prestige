@@ -19,9 +19,9 @@ export const Consultation = () => {
           />
         </div>
         <div className="w-full">
-          <p className="text-white main-font">Ваше имя</p>
+          <p className="text-white main-font">Введите ваш номер телефона</p>
           <input
-            placeholder="Введите ваше имя"
+            placeholder="+996"
             className="w-full bg-transparent border-b-[1px] border-gray-700 border-solid focus:outline-none focus:border-transparente text-white small-font"
             value={form.phone}
             onChange={(e) => setForm({ ...form, phone: e.target.value })}

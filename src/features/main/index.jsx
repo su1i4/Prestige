@@ -75,9 +75,9 @@ export const Main = () => {
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
   const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
-  const [suka, setSuka] = useState(150)
+  const [suka, setSuka] = useState(150);
 
-  const windowWidth = useWindowWidth()
+  const windowWidth = useWindowWidth();
 
   const handleFloorActivate = (event, index) => {
     setActiveFloorIndex(index);
@@ -116,17 +116,17 @@ export const Main = () => {
 
   useEffect(() => {
     if (windowWidth < 400) {
-      setSuka(500)
+      setSuka(300);
     } else if (windowWidth < 460) {
-      setSuka(300)
+      setSuka(300);
     } else if (windowWidth < 600) {
-      setSuka(350)
+      setSuka(50);
     } else if (windowWidth < 800) {
-      setSuka(300)
+      setSuka(0);
     } else if (windowWidth < 1000) {
-      setSuka(200)
-    }else{
-      setSuka(150)
+      setSuka(-300);
+    } else {
+      setSuka(-250);
     }
   }, [windowWidth]);
 
@@ -155,12 +155,16 @@ export const Main = () => {
               <div className="list">
                 <div className="icons small-font">
                   <div className="wrapp">
+                    <File />
+                    Красная книга
+                  </div>
+                  <div className="wrapp">
                     <Geo />
                     Территория:<span className="bold">21 сотка</span>
                   </div>
                   <div className="wrapp">
                     <Ruler />
-                    Плошадь:{" "}
+                    Площадь:{" "}
                     <span className="bold">от 30.07 м2 до 625.27 м2</span>
                   </div>
                   <div className="wrapp">
@@ -170,20 +174,6 @@ export const Main = () => {
                   <div className="wrapp">
                     <Apartment />
                     Этажность: <span className="bold">13 этажей</span>
-                  </div>
-                  <div id="lox" className="wrapp">
-                    <File />
-                    Красная книга
-                  </div>
-                  <div className="wrapp">
-                    <Next />
-                    Начало строительства:
-                    <span className="bold">3 кв. 2023 г</span>
-                  </div>
-                  <div className="wrapp">
-                    <Mark />
-                    Завершение строительства:
-                    <span className="bold">4 кв. 2026 г</span>
                   </div>
                   <div id="lox" className="wrapp">
                     <Vector />
@@ -219,6 +209,7 @@ export const Main = () => {
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={50}
               slidesPerView={1}
+              loop={true}
               ref={swiperRef}
               pagination={{ clickable: true }}
               scrollbar={{ draggable: true }}
@@ -238,27 +229,15 @@ export const Main = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div id="two" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
-                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
-                      Ресторан
-                    </h2>
-                    <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      В Бизнес-центра “prestige tower” на 13 этаже будет
-                      расположен ресторан высокой кухни в современном стиле{" "}
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div id="three" className="slide-content small-font">
+                <div id="five" className="slide-content small-font">
                   <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1">
                     <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
-                      Намазкана
+                      Офисы под ключ
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      Для вашего удобства, на -1 этаже Бизнес-центра “prestige
-                      tower” будет расположена мужская и женская Намазкана
+                      Офис под ключ позволяет сократить время и услилия
+                      связанные с ремонтом, а также, обеспечить высокое качество
+                      выполненных работ.
                     </p>
                   </div>
                 </div>
@@ -277,15 +256,27 @@ export const Main = () => {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div id="five" className="slide-content small-font">
+                <div id="three" className="slide-content small-font">
                   <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1">
                     <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
-                      Офисы под ключ
+                      Намазкана
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      Офис под ключ позволяет сократить время и услилия
-                      связанные с ремонтом, а также, обеспечить высокое качество
-                      выполненных работ.
+                      Для вашего удобства, на -1 этаже Бизнес-центра “prestige
+                      tower” будет расположена мужская и женская Намазкана
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div id="two" className="slide-content small-font">
+                  <div className="absolute left-4 bottom-10 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
+                    <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
+                      Ресторан
+                    </h2>
+                    <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
+                      В Бизнес-центра “prestige tower” на 13 этаже будет
+                      расположен ресторан высокой кухни в современном стиле{" "}
                     </p>
                   </div>
                 </div>
@@ -306,14 +297,22 @@ export const Main = () => {
             </Swiper>
             <div className="absolute bg-black bottom-0 left-0 right-0 w-full h-[560px] lg:h-[400px] sm:h-[300px] "></div>
             <div className="sm:hidden absolute top-0 bottom-0 left-10 flex items-center">
-              <GrPrevious onClick={goNext} size={38} className="text-white active:scale-105 active:translate-x-[-20px] transition-all duration-200 " />
+              <GrPrevious
+                onClick={goPrev}
+                size={38}
+                className="text-white active:scale-105 active:translate-x-[-20px] transition-all duration-200 "
+                />
             </div>
             <div className="sm:hidden absolute top-0 bottom-0 right-10 flex items-center">
-              <GrNext onClick={goPrev} size={38} className="text-white active:scale-105 active:translate-x-[20px] transition-all duration-200 " />
+              <GrNext
+                onClick={goNext}
+                size={38}
+                className="text-white active:scale-105 active:translate-x-[20px] transition-all duration-200 "
+              />
             </div>
           </div>
           <div className="w-full justify-center lg:justify-start px-24 lg:px-14 sm:px-6 xs:px-2 flex flex-col gap-4 bg-black">
-            <p className="main-font font-[600] text-[50px] lg:text-[40px] sm:text-[30px] xs:text-[23px] text-white">
+            <p className="main-font font-[600] text-[50px] lg:text-[40px] sm:text-[30px] xs:text-[23px] text-white noselect">
               Видеообзор
             </p>
             <iframe

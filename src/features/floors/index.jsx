@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { IoArrowBack } from "react-icons/io5";
-import { ReactComponent as Logo } from "../../shared/icons/DarkLogo.svg";
 import { Application } from "../../shared/components/application";
 import { floors } from "../../lib/data";
 import { useNavigate } from "react-router-dom";
+import { DarkLogo } from "../../shared/icons/darklogo";
+import useWindowWidth from "../../shared/utils";
 
 const HighlightArea = ({ children }) => (
   <div className="relative w-full h-auto aspect-[4/3]">
@@ -53,6 +54,9 @@ export const Floors = () => {
   const { id } = useParams();
   const thisFloor = floors[13 - id];
 
+  const windowWidth = useWindowWidth()
+
+  const [suka, setSuka] = useState({width: '107', height: '43'});
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
   const [updatedFloorsImages, setUpdatedFloorsImages] = useState(
     thisFloor.floorsImages
@@ -66,14 +70,19 @@ export const Floors = () => {
     setUpdatedFloorsImages(updatedImages);
   };
 
-  console.log(
-    thisFloor.squints[String(activeFloorIndex + 1)].name,
-    "this is floorIndex"
-  );
+  useEffect(() => {
+    if (windowWidth < 460) {
+      setSuka({width: '80', height: '30'});
+    } else if (windowWidth < 768) {
+      setSuka({width: '90', height: '35'});
+    } else {
+      setSuka({width: '107', height: '43'});
+    }
+  }, [windowWidth])
 
   return (
     <div className="w-full px-10 sm:px-4 xs:px-2 py-2">
-      <div className="w-full flex items-center justify-between">
+      <div className="w-full flex items-center justify-between mb-2">
         <IoArrowBack
           onClick={() => navigate(-1)}
           size={30}
@@ -83,7 +92,7 @@ export const Floors = () => {
           Типовой план {id} этажа
         </p>
         <div onClick={() => navigate('/')} className="cursor-pointer" >
-          <Logo />
+          <DarkLogo width={suka.width} height={suka.height} />
         </div>
       </div>
       <div className="">
