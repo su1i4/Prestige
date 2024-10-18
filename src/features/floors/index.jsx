@@ -128,7 +128,7 @@ export const Floors = () => {
           ))}
         </HighlightArea>
       </div>
-      <div className="mt-[-220px] lg:mt-[-70px] w-full flex justify-end">
+      <div className="mt-[-220px] lg:mt-[-70px] w-full flex justify-end mb-4 xs:scale-90">
         <Compass />
       </div>
       <div className="">
