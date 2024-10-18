@@ -306,4 +306,7 @@ button:hover {
   .slide-content {
     border-radius: 10px;
   }
+  .list{
+    gap: 5px;
+  }
 }

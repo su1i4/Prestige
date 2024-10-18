@@ -44,7 +44,7 @@ const HighlightPath = ({ d, isActive, onMouseEnter, onClick }) => (
 
 const Popover = ({ children, position }) => (
   <div
-    className="absolute bg-white rounded-md border border-gray-300 p-2.5 shadow-lg z-10 transform -translate-x-1/2 -translate-y-full"
+    className="absolute bg-white rounded-md border border-gray-300 p-2.5 shadow-lg transform -translate-x-1/2 -translate-y-full z-[999]"
     style={{ top: `${position.y + 300}px`, left: `${position.x}px` }}
   >
     {children}
@@ -106,14 +106,13 @@ export const Rent = () => {
   const handlePopoverClick = (index) => {
     if (!firstClick) {
       setFirstClick(true);
-      setIsPopoverFrozen(true); // Заморозка поповера
+      setIsPopoverFrozen(true);
 
       setTimeout(() => {
-        setIsPopoverFrozen(false); // Размораживание поповера через 4 секунды
-        setFirstClick(false); // Сброс первого клика
+        setIsPopoverFrozen(false);
+        setFirstClick(false); 
       }, 4000);
     } else {
-      // Второе нажатие — переход на страницу
       navigate(`/rent/floors/${floors[index].floor}`);
     }
   };
@@ -141,7 +140,7 @@ export const Rent = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.1 }}
           className="w-full h-full object-cover absolute inset-0 z-0"
           alt="background image"
         />
@@ -149,7 +148,7 @@ export const Rent = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 z-10" />
 
         <div className="absolute bottom-10 right-8 sm:bottom-6 sm:left-4 sm:right-4 xs:bottom-1 xs:left-1 xs:right-1 left-8 border-l-[3px] border-white border-solid pl-8 p-4 sm:p-2 xs:p-1 bg-black/30 z-20">
-          <p className="text-[60px] lg:text-[45px] sm:text-[30px] xs:text-[22px] text-white main-font font-[600] tracking-widest">
+          <p className="text-[60px] lg:text-[45px] sm:text-[30px] xs:text-[27px] text-white main-font font-[600] tracking-widest xs:tracking-normal">
             Аренда и продажа офисов
           </p>
           <p className="text-2xl text-white lg:text-lg sm:text-sm xs:text-[14px] small-font font-light">
@@ -158,7 +157,7 @@ export const Rent = () => {
           <div className="w-full flex justify-end">
             <button
               onClick={() => scrollToSection("footer")}
-              className="text-xl lg:text-lg sm:text-sm xs:text-xs sm:px-3 xs:py-1 text-white bg-[#848484] rounded-[15px] px-4 py-2"
+              className="text-xl lg:text-lg sm:text-sm sm:px-3 xs:py-[6px] text-white bg-[#848484] rounded-[15px] px-4 py-2 xs:mt-2"
             >
               Контакты
             </button>

@@ -160,10 +160,10 @@ export const Main = () => {
         <div className="w-full z-[9999] absolute">
           <div className="nutral">
             <div className="info-wrap">
-              <h1 className="main-font font-[500]">Prestige tower</h1>
-              <p className="small-font max-w-[70%] sm:max-w-full">
-                Это современный бизнес-центр класса «А», спроектированный
-                новейшими технологиями мирового стандарта{" "}
+              <h1 className="main-font font-[600]">Prestige tower</h1>
+              <p className="small-font max-w-[70%] sm:max-w-full xs:text-sm">
+                Это современный бизнес-центр класса «А», спроектированный по
+                новейшим технологиям мирового стандарта{" "}
               </p>
             </div>
             <div className="buttons small-font">
@@ -173,8 +173,8 @@ export const Main = () => {
           </div>
           <div id="sulaiman" className="about">
             <div className="inner">
-              <h2 className="main-font">Об объекте</h2>
-              <div className="list">
+              <h2 className="main-font xs:py-2">Об объекте</h2>
+              <div className="list xs:mt-2">
                 <div className="icons small-font">
                   <div className="wrapp">
                     <File />
@@ -252,7 +252,7 @@ export const Main = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div id="five" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1">
+                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:left-3  xs:left-1 xs:p-1">
                     <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Офисы под ключ
                     </h2>
@@ -266,7 +266,7 @@ export const Main = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div id="four" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1">
+                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:left-3 xs:left-1 xs:p-1">
                     <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Конференц-залы
                     </h2>
@@ -279,7 +279,7 @@ export const Main = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div id="three" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1">
+                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:left-3  xs:left-1 xs:p-1">
                     <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Намазкана
                     </h2>
@@ -292,7 +292,7 @@ export const Main = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div id="two" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
+                  <div className="absolute left-4 bottom-10 sm:left-3 xs:left-1 xs:p-1 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20">
                     <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Ресторан
                     </h2>
@@ -305,7 +305,7 @@ export const Main = () => {
               </SwiperSlide>
               <SwiperSlide>
                 <div id="six" className="slide-content small-font">
-                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:bottom-4 sm:left-3 xs:bottom-2 xs:left-1 xs:p-1">
+                  <div className="absolute left-4 bottom-10 right-6 border-l-[3px] border-solid border-white p-4 bg-black/20 sm:left-3 xs:left-1 xs:p-1">
                     <h2 className="text-white text-[50px] main-font font-[600] tracking-wider sm:text-[40px] xs:text-[23px] ">
                       Паркинг
                     </h2>
