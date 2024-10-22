@@ -14,7 +14,9 @@ export const Advantage = () => {
         <div className="w-full flex gap-8 px-8 sm:px-3 sm:gap-4 sm:flex-col">
           <div className="w-full flex flex-col justify-center items-center sm:items-start">
             <div className="flex flex-col justify-center items-center sm:items-start gap-1 sm:gap-2 sm:w-full">
-              <p className="text-3xl text-white sm:text-2xl font-[600] main-font">Генеральный план </p>
+              <p className="text-3xl text-white sm:text-2xl font-[600] main-font">
+                Генеральный план{" "}
+              </p>
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
             <p className="text-white mt-8 sm:mt-4 max-w-[70%] text-center sm:text-start small-font xs:text-sm">
@@ -23,16 +25,18 @@ export const Advantage = () => {
             </p>
           </div>
           <div className="w-full h-full">
-            <img src={Plan} className="w-full h-auto" />
+            <img src={Plan} className="w-full h-auto rounded-3xl" />
           </div>
         </div>
         <div className="w-full flex gap-8 sm:px-3 sm:gap-4 px-8 items-center mt-8 sm:flex-col-reverse">
           <div className="w-full h-full">
-            <img src={Access} className="w-full h-auto" />
+            <img src={Access} className="w-full h-auto rounded-3xl" />
           </div>
           <div className="w-full flex flex-col justify-center items-center sm:items-start gap-4 sm:gap-1">
             <div className="flex flex-col justify-center items-center xs:items-start gap-1 sm:w-full">
-              <p className="text-3xl text-white sm:text-center sm:text-2xl font-[600] main-font">В шаговой доступности:</p>
+              <p className="text-3xl text-white sm:text-center sm:text-2xl font-[600] main-font">
+                В шаговой доступности:
+              </p>
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
             <div className="flex flex-col gap-1">
@@ -95,7 +99,9 @@ export const Advantage = () => {
         <div className="w-full flex gap-8 sm:gap-4 sm:px-3 px-8 items-start mt-8 sm:mt-4 sm:flex-col">
           <div className="w-full flex flex-col justify-center items-center sm:items-start">
             <div className="flex flex-col justify-center items-center gap-1 sm:w-full sm:items-start">
-              <p className="text-3xl text-white sm:text-2xl font-[600] main-font">Офисы под ключ</p>
+              <p className="text-3xl text-white sm:text-2xl font-[600] main-font">
+                Офисы под ключ
+              </p>
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
             <p className="text-white mt-12 sm:mt-4 xs:mt-2 sm:text-start max-w-[70%] text-center small-font font-[300] xs:text-sm">
@@ -112,16 +118,18 @@ export const Advantage = () => {
             </p>
           </div>
           <div className="w-full h-full">
-            <img src={Ofices} className="w-full max-h-[500px] object-cover" />
+            <img src={Ofices} className="w-full max-h-[500px] object-cover rounded-3xl" />
           </div>
         </div>
         <div className="w-full flex gap-8 px-8 sm:px-3 sm:gap-4 items-start mt-8 sm:mt-4 sm:flex-col-reverse sm:items-start">
           <div className="w-full h-full">
-            <img src={Permission} className="w-full h-auto object-cover" />
+            <img src={Permission} className="w-full h-auto object-cover rounded-3xl" />
           </div>
           <div className="w-full flex flex-col justify-center items-center sm:items-start">
             <div className="flex flex-col justify-center items-center gap-1 sm:w-full sm:items-start">
-              <p className="text-3xl text-white sm:text-2xl font-[600] main-font">Доступ 24/7</p>
+              <p className="text-3xl text-white sm:text-2xl font-[600] main-font">
+                Доступ 24/7
+              </p>
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
             <p className="text-white mt-12 max-w-[70%] sm:max-w-full text-center sm:text-start sm:mt-4 small-font font-[300] xs:text-sm">
@@ -134,16 +142,18 @@ export const Advantage = () => {
         <div className="w-full flex gap-8 sm:gap-4 sm:px-3 px-8 items-start mt-8 pb-8 sm:mt-4 sm:flex-col">
           <div className="w-full flex flex-col justify-center items-center sm:w-full sm:items-start">
             <div className="flex flex-col justify-center items-center gap-1 sm:items-start sm:w-full">
-              <p className="text-3xl text-white sm:text-2xl font-[600] main-font">Безопасность</p>
+              <p className="text-3xl text-white sm:text-2xl font-[600] main-font">
+                Безопасность
+              </p>
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
             <p className="text-white mt-12 max-w-[70%] sm:max-w-full text-center sm:text-start sm:mt-4 small-font font-[300] xs:text-sm">
-              Видеонаблюдение по всему БЦ Охрана 24/7 Ресепшен-зона Чипированные
-              карты Пожарная безопасность Эвакуационные выходы
+              Видеонаблюдение по всему Бизнес центру, охрана 24/7 ресепшен-зона,
+              чипированные карты, пожарная безопасность, эвакуационные выходы
             </p>
           </div>
           <div className="w-full h-full">
-            <img src={Safety} className="w-full max-h-[500px] object-cover" />
+            <img src={Safety} className="w-full max-h-[500px] object-cover rounded-3xl" />
           </div>
         </div>
         <div className="px-24 pb-10 lg:px-14 sm:px-4 xs:px-2">

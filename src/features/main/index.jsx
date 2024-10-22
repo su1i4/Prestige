@@ -218,11 +218,9 @@ export const Main = () => {
                     Ресторан на 13 этаже
                   </div>
                 </div>
-                <img
-                  src={Smamage}
-                  alt="Prestige Tower здание в"
-                  style={{ marginBottom: "40px" }}
-                />
+                <div className="rounded-[30px] overflow-hidden">
+                  <img src={Smamage} alt="Prestige Tower здание в" />
+                </div>
               </div>
             </div>
           </div>

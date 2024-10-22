@@ -157,7 +157,7 @@ export const Rent = () => {
           <div className="w-full flex justify-end">
             <button
               onClick={() => scrollToSection("footer")}
-              className="text-xl lg:text-lg sm:text-sm sm:px-3 xs:py-[6px] text-white bg-[#848484] rounded-[15px] px-4 py-2 xs:mt-2"
+              className="text-xl lg:text-lg sm:text-sm sm:px-3 xs:py-[6px] text-white bg-[#848484] rounded-[15px] px-4 py-2 xs:mt-2 small-font"
             >
               Контакты
             </button>
