@@ -51,6 +51,33 @@ const Popover = ({ children, position }) => (
   </div>
 );
 
+const contentVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeInOut", staggerChildren: 0.3 },
+  },
+};
+
+const textVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeInOut" },
+  },
+};
+
+const buttonVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeInOut", delay: 0.5 },
+  },
+};
+
 export const Rent = () => {
   const { activeSection, scrollToSection } = useScrollToSection();
   const navigate = useNavigate();
@@ -110,7 +137,7 @@ export const Rent = () => {
 
       setTimeout(() => {
         setIsPopoverFrozen(false);
-        setFirstClick(false); 
+        setFirstClick(false);
       }, 4000);
     } else {
       navigate(`/rent/floors/${floors[index].floor}`);
@@ -132,37 +159,51 @@ export const Rent = () => {
   return (
     <>
       <div className="w-full h-[100vh] lg:h-[80vh] sm:h-[60vh] xs:h-[45vh] relative">
-        <div />
-
         <motion.img
           key={currentImageIndex}
           src={images[currentImageIndex]}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.1 }}
+          initial={{ opacity: 0.8, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0.8, scale: 1.1 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="w-full h-full object-cover absolute inset-0 z-0"
           alt="background image"
         />
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 z-10" />
 
-        <div className="absolute bottom-10 right-8 sm:bottom-6 sm:left-4 sm:right-4 xs:bottom-1 xs:left-1 xs:right-1 left-8 border-l-[3px] border-white border-solid pl-8 p-4 sm:p-2 xs:p-1 bg-black/30 z-20">
-          <p className="text-[60px] lg:text-[45px] sm:text-[30px] xs:text-[27px] text-white main-font font-[600] tracking-widest xs:tracking-normal">
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={contentVariants}
+          className="absolute bottom-10 right-8 sm:bottom-6 sm:left-4 sm:right-4 xs:bottom-0 xs:left-0 xs:right-0 left-8 border-l-[3px] border-white border-solid pl-8 p-4 sm:p-2 xs:p-1 bg-black/30 z-20"
+        >
+          <motion.p
+            variants={textVariants}
+            className="text-[60px] lg:text-[45px] sm:text-[30px] xs:text-[27px] text-white main-font font-[600] tracking-widest xs:tracking-normal"
+          >
             Аренда и продажа офисов
-          </p>
-          <p className="text-2xl text-white lg:text-lg sm:text-sm xs:text-[14px] small-font font-light">
+          </motion.p>
+
+          <motion.p
+            variants={textVariants}
+            className="text-2xl text-white lg:text-lg sm:text-sm xs:text-[14px] small-font font-light"
+          >
             Современный бизнес центр для вашего комфорта
-          </p>
-          <div className="w-full flex justify-end">
+          </motion.p>
+
+          <motion.div
+            variants={buttonVariants}
+            className="w-full flex justify-end"
+          >
             <button
               onClick={() => scrollToSection("footer")}
               className="text-xl lg:text-lg sm:text-sm sm:px-3 xs:py-[6px] text-white bg-[#848484] rounded-[15px] px-4 py-2 xs:mt-2 small-font"
             >
               Контакты
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       <Container ref={containerRef}>

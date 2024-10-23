@@ -160,7 +160,7 @@ export const Main = () => {
         <div className="w-full z-[9999] absolute">
           <div className="nutral">
             <div className="info-wrap">
-              <h1 className="main-font font-[600]">Prestige tower</h1>
+              <h1 className="main-font font-[600]">PRESTIGE TOWER</h1>
               <p className="small-font max-w-[70%] sm:max-w-full xs:text-sm">
                 Это современный бизнес-центр класса «А», спроектированный по
                 новейшим технологиям мирового стандарта{" "}
@@ -221,7 +221,7 @@ export const Main = () => {
                 <img
                   src={Smamage}
                   alt="Prestige Tower здание в"
-                  className="kuku"
+                  className="max-h-[500px] xs:max-h-[210px] kuku w-full"
                 />
               </div>
             </div>

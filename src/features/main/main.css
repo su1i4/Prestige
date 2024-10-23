@@ -23,7 +23,7 @@
     linear-gradient(to right, transparent, black 10%),  /* Лево */
     linear-gradient(to left, transparent, black 10%);   /* Право */
   mask-composite: intersect;
-  -webkit-mask-composite: intersect; /* Для WebKit браузеров */
+  -webkit-mask-composite: intersect; 
 }
 
 .info-wrap {
@@ -32,7 +32,7 @@
 }
 
 .info-wrap > h1 {
-  font-size: 150px;
+  font-size: 140px;
   color: white;
   /* line-height: 10px; */
 }
@@ -85,7 +85,7 @@ button:hover {
 
 .inner {
   padding: 20px;
-  width: 92%;
+  width: 93%;
   background-color: #151515;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px; 
@@ -120,6 +120,7 @@ button:hover {
   font-size: 20px;
   font-weight: 200;
   font-family: "Geologica", sans-serif;
+  width: 50%;
 }
 
 .wrapp {
