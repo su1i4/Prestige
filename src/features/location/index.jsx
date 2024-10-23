@@ -20,8 +20,8 @@ export const Advantage = () => {
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
             <p className="text-white mt-8 sm:mt-4 max-w-[70%] text-center sm:text-start small-font xs:text-sm">
-              Бизнес-центр “Prestige-tower” расположен в самой топовой локации
-              города бишкек{" "}
+              Бизнес-центр “PRESTIGE TOWER” расположен в самой топовой локации
+              города Бишкек{" "}
             </p>
           </div>
           <div className="w-full h-full">
@@ -109,8 +109,7 @@ export const Advantage = () => {
               ремонтом, а также, обеспечить высокое качество выполненных работ.
             </p>
             <p className="text-white mt-12 sm:mt-4 xs:mt-2 sm:text-start max-w-[70%] text-center small-font font-[300] xs:text-sm">
-              Откройте двери в ваше новое рабочее пространство! Офисы “Prestige
-              Tower” - это не просто место для работы, а уютные уголки для
+              Откройте двери в ваше новое рабочее пространство! Офисы “PRESTIGE TOWER” - это не просто место для работы, а уютные уголки для
               вдохновения.
             </p>
             <p className="text-white mt-12 sm:mt-4 xs:mt-2 sm:text-start max-w-[70%] text-center small-font font-[300] xs:text-sm">
@@ -133,7 +132,7 @@ export const Advantage = () => {
               <div className="w-[70%] sm:w-full h-[2px] bg-white rounded" />
             </div>
             <p className="text-white mt-12 max-w-[70%] sm:max-w-full text-center sm:text-start sm:mt-4 small-font font-[300] xs:text-sm">
-              Круглосуточный доступ в бизнес-центр «Prestige Tower» - может
+              Круглосуточный доступ в бизнес-центр «PRESTIGE TOWER» - может
               способствовать росту вашего бизнеса, поскольку он позволяет вам
               быть контактным и доступным для клиентов в любое время.
             </p>

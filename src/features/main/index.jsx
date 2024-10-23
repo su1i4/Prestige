@@ -155,7 +155,7 @@ export const Main = () => {
   return (
     <>
       <div class="background-section">
-        <img src={Imagik} className="w-full absolute" />
+        <img src={Imagik} className="w-full absolute min-h-[200vh]" />
         <div className="absolute top-0 left-0 right-0 h-[400vh] bg-black/80"></div>
         <div className="w-full z-[9999] absolute">
           <div className="nutral">
@@ -218,9 +218,11 @@ export const Main = () => {
                     Ресторан на 13 этаже
                   </div>
                 </div>
-                <div className="rounded-[30px] overflow-hidden">
-                  <img src={Smamage} alt="Prestige Tower здание в" />
-                </div>
+                <img
+                  src={Smamage}
+                  alt="Prestige Tower здание в"
+                  className="kuku"
+                />
               </div>
             </div>
           </div>
@@ -255,7 +257,7 @@ export const Main = () => {
                       Офисы под ключ
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      Офис под ключ позволяет сократить время и услилия
+                      Офис под ключ позволяет сократить время и усилия
                       связанные с ремонтом, а также, обеспечить высокое качество
                       выполненных работ.
                     </p>
@@ -270,7 +272,7 @@ export const Main = () => {
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
                       Идеальное место для проведения вашего делового мероприятия
-                      - зал конференций в БЦ “Prestige Tower”
+                      - зал конференций в БЦ “PRESTIGE TOWER”
                     </p>
                   </div>
                 </div>
@@ -282,8 +284,8 @@ export const Main = () => {
                       Намазкана
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      Для вашего удобства, на -1 этаже Бизнес-центра “prestige
-                      tower” будет расположена мужская и женская Намазкана
+                      Для вашего удобства, на -1 этаже Бизнес-центра “PRESTIGE
+                      TOWER” будет расположена мужская и женская Намазкана
                     </p>
                   </div>
                 </div>
@@ -295,7 +297,7 @@ export const Main = () => {
                       Ресторан
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      В Бизнес-центра “prestige tower” на 13 этаже будет
+                      В Бизнес-центра “PRESTIGE TOWER” на 13 этаже будет
                       расположен ресторан высокой кухни в современном стиле{" "}
                     </p>
                   </div>
@@ -350,7 +352,7 @@ export const Main = () => {
                 </div>
                 <div className="flex justify-end sm:justify-start">
                   <p className="text-lg text-start sm:text-start text-white font-[300] mt-8 sm:mt-4 w-[70%] sm:w-full sm:leading-normal sm:text-md xs:text-sm leading-10 tracking-wider small-font">
-                    Мы сделали акцент на современности и минимализм, чтобы
+                    Мы сделали акцент на современности и минимализме, чтобы
                     создать комфортную атмосферу в бурлящей деловой жизни{" "}
                   </p>
                 </div>
@@ -425,8 +427,8 @@ export const Main = () => {
               Местоположение{" "}
             </p>
             <p className="text-xl lg:text-lg sm:text-md xs:text-xs">
-              Бизнес-центр “Prestige-tower” расположен в самой топовой локации
-              города бишкек{" "}
+              Бизнес-центр “PRESTIGE TOWER” расположен в самой топовой локации
+              города Бишкек{" "}
             </p>
           </div>
           <div className="bg-black h-[70vh] overflow-hidden">
