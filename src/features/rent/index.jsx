@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { floors } from "../../lib/data";
-import Hard from "../../shared/images/selling/hard.png";
+import Hard from "../../shared/images/selling/hard.png"
 import { useNavigate } from "react-router-dom";
 import { Consultation } from "../../shared/components/consultation";
 import { Footer } from "../../shared/components/footer";
@@ -10,9 +10,10 @@ import useWindowWidth from "../../shared/utils";
 import Spring from "../../shared/images/spring (1).jpg";
 import Autumn from "../../shared/images/autumn (1).jpg";
 import Winter from "../../shared/images/winter (1).jpg";
+import Summer from '../../shared/images/12.jpg'
 import { motion } from "framer-motion";
 
-const images = [Autumn, Spring, Winter];
+const images = [Autumn, Spring, Winter, Summer];
 
 const Container = ({ children }) => (
   <div className="relative inline-block w-full">{children}</div>
@@ -158,13 +159,13 @@ export const Rent = () => {
 
   return (
     <>
-      <div className="w-full h-[100vh] lg:h-[80vh] sm:h-[60vh] xs:h-[45vh] relative">
+      <div className="w-full h-[100vh] lg:h-[80vh] sm:h-[60vh] xs:h-[45vh] relative overflow-hidden">
         <motion.img
           key={currentImageIndex}
           src={images[currentImageIndex]}
-          initial={{ opacity: 0.8, scale: 1.1 }}
+          initial={{ opacity: 1, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0.8, scale: 1.1 }}
+          exit={{ opacity: 1, scale: 1.05 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="w-full h-full object-cover absolute inset-0 z-0"
           alt="background image"
