@@ -175,7 +175,7 @@ export const Main = () => {
             <div className="inner">
               <h2 className="main-font xs:py-2">Об объекте</h2>
               <div className="list xs:mt-2">
-                <div className="icons small-font">
+                <div className="icons small-font w-[55%] xs:w-full">
                   <div className="wrapp">
                     <File />
                     Красная книга
@@ -297,7 +297,7 @@ export const Main = () => {
                       Ресторан
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      В Бизнес-центра “PRESTIGE TOWER” на 13 этаже будет
+                      В Бизнес-центре “PRESTIGE TOWER” на 13 этаже будет
                       расположен ресторан высокой кухни в современном стиле{" "}
                     </p>
                   </div>

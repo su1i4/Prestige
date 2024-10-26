@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { floors } from "../../lib/data";
-import Hard from "../../shared/images/selling/hard.png"
+import { floors } from "../../lib/copy";
+import Hard from "../../shared/images/selling/Монтажная область 1 (2).png"
 import { useNavigate } from "react-router-dom";
 import { Consultation } from "../../shared/components/consultation";
 import { Footer } from "../../shared/components/footer";
@@ -20,7 +20,7 @@ const Container = ({ children }) => (
 );
 
 const Image = ({ src, alt }) => (
-  <img src={src} alt={alt} className="block w-full" />
+  <img src={src} alt={alt} className="block w-full h-[130vh]" />
 );
 
 const HighlightArea = ({ children }) => (
@@ -36,7 +36,7 @@ const HighlightPath = ({ d, isActive, onMouseEnter, onClick }) => (
   <path
     d={d}
     className={`${
-      isActive ? "fill-[#2756FC66]" : "fill-transparent"
+      isActive ? "fill-black/50" : "fill-black/50"
     } cursor-pointer pointer-events-auto hover:fill-[#2756FC66]`}
     onMouseEnter={onMouseEnter}
     onClick={onClick}
@@ -227,7 +227,7 @@ export const Rent = () => {
             </React.Fragment>
           ))}
         </HighlightArea>
-        {activeFloorIndex !== null && (
+        {/* {activeFloorIndex !== null && (
           <Popover position={popoverPosition}>
             <div className="w-[270px] sm:w-[200px] flex flex-col justify-center items-center gap-4 sm:gap-2">
               <div className="w-full flex flex-col justify-center items-center">
@@ -250,7 +250,7 @@ export const Rent = () => {
               </button>
             </div>
           </Popover>
-        )}
+        )} */}
       </Container>
       <div className="w-full py-20 px-10 sm:py-4 sm:px-4 xs:py-2 xs:px-2 bg-black">
         <Consultation />
