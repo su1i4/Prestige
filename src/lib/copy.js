@@ -84,57 +84,57 @@ export const floors = [
     count: 4,
     image: Floor11,
   },
-//   {
-//     rigth: { path: "M 444 231 L 444.5 198 L 154 323 L 154 349 Z" },
-//     left: { path: "M 620 302 L 620 274 L 444.5 198 L 444 231 Z" },
-//     label: "Horosho",
-//     floor: 11,
-//     floorsImages: [
-//       {
-//         path: "M0 0H287V32.7144H201L199 499H0V325.5H42V186.5H0V0Z",
-//         x: 13,
-//         y: 110,
-//         width: 287,
-//         height: 499,
-//         scale: "0.73",
-//       },
-//       {
-//         path: "M0 0H328V256H0V0Z",
-//         x: 163,
-//         y: 290,
-//         width: 328,
-//         height: 256,
-//         scale: "0.73",
-//       },
-//       {
-//         path: "M0 0H320V94.5H324V278H228.5V257H0V0Z",
-//         x: 407,
-//         y: 287,
-//         width: 324,
-//         height: 278,
-//         scale: "0.73",
-//       },
-//       {
-//         path: "M0 0H202V196.5H209V318.5H202V502.5L200 509L197 515L189 519H181H0V0Z",
-//         x: 647,
-//         y: 110,
-//         width: 209,
-//         height: 519,
-//         scale: "0.73",
-//       },
-//     ],
-//     squints: {
-//       1: { square: 165.2, name: "Офис №1", lock: true },
-//       2: { square: 140.53, name: "Офис №2", lock: true },
-//       3: { square: 143.73, name: "Офис №3", lock: true },
-//       4: { square: 175.81, name: "Офис №4", lock: true },
-//     },
-//     count: 4,
-//     image: Floor11,
-//   },
   {
-    rigth: { path: "M 444 265 L 444.5 230.5 L 154 348 L 154 368 Z" },
-    left: { path: "M 620 325 L 620 297 L 444.5 231 L 444 265 Z" },
+    rigth: { path: "M 431 231 L 431 198 L 196 325 L 196 346 Z" },
+    left: { path: "M 573 298 L 573 272 L 431 198 L 431 231 Z" },
+    label: "Horosho",
+    floor: 11,
+    floorsImages: [
+      {
+        path: "M0 0H287V32.7144H201L199 499H0V325.5H42V186.5H0V0Z",
+        x: 13,
+        y: 110,
+        width: 287,
+        height: 499,
+        scale: "0.73",
+      },
+      {
+        path: "M0 0H328V256H0V0Z",
+        x: 163,
+        y: 290,
+        width: 328,
+        height: 256,
+        scale: "0.73",
+      },
+      {
+        path: "M0 0H320V94.5H324V278H228.5V257H0V0Z",
+        x: 407,
+        y: 287,
+        width: 324,
+        height: 278,
+        scale: "0.73",
+      },
+      {
+        path: "M0 0H202V196.5H209V318.5H202V502.5L200 509L197 515L189 519H181H0V0Z",
+        x: 647,
+        y: 110,
+        width: 209,
+        height: 519,
+        scale: "0.73",
+      },
+    ],
+    squints: {
+      1: { square: 165.2, name: "Офис №1", lock: true },
+      2: { square: 140.53, name: "Офис №2", lock: true },
+      3: { square: 143.73, name: "Офис №3", lock: true },
+      4: { square: 175.81, name: "Офис №4", lock: true },
+    },
+    count: 4,
+    image: Floor11,
+  },
+  {
+    rigth: { path: "M 431 263 L 431 230.5 L 196 346 L 196 367 Z" },
+    left: { path: "M 573 323 L 573 298 L 431 231 L 431 263 Z" },
     label: "Horosho",
     floor: 10,
     floorsImages: [
@@ -217,8 +217,8 @@ export const floors = [
     image: Floor8,
   },
   {
-    rigth: { path: "M 444 298 L 444.5 265 L 154 368 L 154 390 Z" },
-    left: { path: "M 620 350 L 620 326 L 444.5 265 L 444 298 Z" },
+    rigth: { path: "M 431 295 L 431 263 L 196 367 L 196 387 Z" },
+    left: { path: "M 573 349 L 573 323 L 431 263 L 431 295 Z" },
     label: "Horosho",
     floor: 9,
     floorsImages: [
@@ -301,8 +301,8 @@ export const floors = [
     image: Floor8,
   },
   {
-    rigth: { path: "M 444 328 L 444.5 298 L 154 390 L 154 410 Z" },
-    left: { path: "M 620 377 L 620 350 L 444.5 298 L 444 328 Z" },
+    rigth: { path: "M 431 327 L 431 295 L 196 387 L 196 408 Z" },
+    left: { path: "M 573 375 L 573 349 L 431 295 L 431 327 Z" },
     label: "Horosho",
     floor: 8,
     floorsImages: [
@@ -385,8 +385,8 @@ export const floors = [
     image: Floor8,
   },
   {
-    rigth: { path: "M 444 360 L 444.5 328 L 154 410 L 154 430 Z" },
-    left: { path: "M 620 402 L 620 377 L 444.5 328 L 444 360 Z" },
+    rigth: { path: "M 431 360 L 431 327 L 196 408 L 196 430 Z" },
+    left: { path: "M 573 400 L 573 375 L 431 327 L 431 360 Z" },
     label: "Horosho",
     floor: 7,
     floorsImages: [
@@ -514,8 +514,8 @@ export const floors = [
     image: Floor4,
   },
   {
-    rigth: { path: "M 444 393 L 444.5 360 L 154 430 L 154 450 Z" },
-    left: { path: "M 620 427 L 620 402 L 444.5 360 L 444 393 Z" },
+    rigth: { path: "M 431 393 L 431 360 L 196 430 L 196 450 Z" },
+    left: { path: "M 573 426 L 573 400 L 431 360 L 431 393 Z" },
     label: "Horosho",
     floor: 6,
     floorsImages: [
@@ -643,8 +643,8 @@ export const floors = [
     image: Floor4,
   },
   {
-    rigth: { path: "M 444 426 L 444.5 393 L 154 450 L 154 472 Z" },
-    left: { path: "M 620 454 L 620 427 L 444.5 393 L 444 426 Z" },
+    rigth: { path: "M 431 426 L 431 393 L 196 450 L 196 472 Z" },
+    left: { path: "M 573 453 L 573 426 L 431 393 L 431 426 Z" },
     label: "Horosho",
     floor: 5,
     floorsImages: [
@@ -772,8 +772,8 @@ export const floors = [
     image: Floor4,
   },
   {
-    rigth: { path: "M 444 458 L 444.5 426 L 154 472 L 154 494 Z" },
-    left: { path: "M 620 480 L 620 454 L 444.5 426 L 444 458 Z" },
+    rigth: { path: "M 431 458 L 431 426 L 196 472 L 196 494 Z" },
+    left: { path: "M 573 480 L 573 454 L 431 426 L 431 458 Z" },
     label: "Horosho",
     floor: 4,
     floorsImages: [
@@ -901,8 +901,8 @@ export const floors = [
     image: Floor4,
   },
   {
-    rigth: { path: "M 444 488 L 444.5 458 L 154 494 L 154 514 Z" },
-    left: { path: "M 620 503 L 620 480 L 444.5 458 L 444 488 Z" },
+    rigth: { path: "M 431 488 L 431 458 L 196 494 L 196 514 Z" },
+    left: { path: "M 573 503 L 573 480 L 431 458 L 431 488 Z" },
     label: "Horosho",
     floor: 3,
     floorsImages: [
@@ -985,8 +985,8 @@ export const floors = [
     image: Floor2,
   },
   {
-    rigth: { path: "M 444 513 L 444.5 488 L 154 514 L 154 530 Z" },
-    left: { path: "M 620 521 L 620 503 L 444.5 488 L 444 513 Z" },
+    rigth: { path: "M 431 513 L 431 488 L 196 514 L 196 530 Z" },
+    left: { path: "M 573 521 L 573 503 L 431 488 L 431 513 Z" },
     label: "Horosho",
     floor: 2,
     floorsImages: [
@@ -1069,8 +1069,8 @@ export const floors = [
     image: Floor2,
   },
   {
-    rigth: { path: "M 484 583 L 484.5 513 L 96 534 L 96 575 Z" },
-    left: { path: "M 687 581 L 687 527 L 484.5 514.5 L 484 583 Z" },
+    rigth: { path: "M 474 583 L 474 513 L 150 534 L 150 575 Z" },
+    left: { path: "M 626 581 L 626 527 L 474 514.5 L 474 583 Z" },
     label: "Horosho",
     floor: 1,
     floorsImages: [
