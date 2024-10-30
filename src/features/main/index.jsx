@@ -39,7 +39,7 @@ const Container = ({ children }) => (
 );
 
 const Image = ({ src, alt }) => (
-  <img src={src} alt={alt} className="block w-full h-[130vh] sm:h-auto" />
+  <img src={src} alt={alt} className="block w-full h-[130vh] sm:h-full" />
 );
 
 const HighlightArea = ({ children }) => (
@@ -109,15 +109,14 @@ export const Main = () => {
 
   const handlePopoverClick = (index) => {
     if (!firstClick) {
-      setFirstClick(true);
-      setIsPopoverFrozen(true); // Заморозка поповера
+      setFirstClick(true)
+      setIsPopoverFrozen(true)
 
       setTimeout(() => {
-        setIsPopoverFrozen(false); // Размораживание поповера через 4 секунды
-        setFirstClick(false); // Сброс первого клика
+        setIsPopoverFrozen(false)
+        setFirstClick(false); 
       }, 2500);
     } else {
-      // Второе нажатие — переход на страницу
       navigate(`/rent/floors/${floors[index].floor}`);
     }
   };
@@ -422,7 +421,7 @@ export const Main = () => {
               </Popover>
             )}
           </Container>
-          <div className="text-white pl-10 lg:pl-7 sm:pl-4 xs:pl-2 flex flex-col gap-4 xs:gap-2 py-2 bg-black">
+          <div className="text-white pl-10 lg:pl-7 sm:pl-4 xs:pl-2 flex flex-col gap-4 xs:gap-2 py-2 bg-black sm:mt-[-10px]">
             <p className="text-[50px] sm:text-[40px] xs:text-[23px] font-[600] main-font text">
               Местоположение{" "}
             </p>

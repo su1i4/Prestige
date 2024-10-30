@@ -20,7 +20,7 @@ const Container = ({ children }) => (
 );
 
 const Image = ({ src, alt }) => (
-  <img src={src} alt={alt} className="block w-full h-[130vh] sm:h-auto" />
+  <img src={src} alt={alt} className="block w-full h-[130vh] sm:h-full xs" />
 );
 
 const HighlightArea = ({ children }) => (
@@ -252,7 +252,7 @@ export const Rent = () => {
           </Popover>
         )}
       </Container>
-      <div className="w-full py-20 px-10 sm:py-4 sm:px-4 xs:py-2 xs:px-2 bg-black">
+      <div className="w-full py-20 px-10 sm:py-4 sm:px-4 xs:py-2 xs:px-2 bg-black sm:mt-[-10px]">
         <Consultation />
       </div>
       <Footer />
