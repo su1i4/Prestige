@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { floors } from "../../lib/data";
-import Hard from "../../shared/images/selling/hard.png";
+import { floors } from "../../lib/copy";
+import Hard from "../../shared/images/selling/Монтажная область 1 (2).png";
 import "./main.css";
 import { Geo } from "../../shared/icons/geo";
 import { Arrow } from "../../shared/icons/Arrow";
@@ -39,7 +39,7 @@ const Container = ({ children }) => (
 );
 
 const Image = ({ src, alt }) => (
-  <img src={src} alt={alt} className="block w-full" />
+  <img src={src} alt={alt} className="block w-full h-[130vh] sm:h-auto" />
 );
 
 const HighlightArea = ({ children }) => (

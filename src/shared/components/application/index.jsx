@@ -2,15 +2,21 @@ import { useState } from "react";
 
 export const Application = ({ square, lock, name }) => {
   const [form, setForm] = useState({ name: "", phone: "" });
-  const lockText = lock ? 'Доступно': 'Недоступно для аренды'
+  const lockText = lock ? 'Доступно' : 'Недоступно для аренды';
+
+  const handleWhatsAppClick = () => {
+    const phone = "996995090090";
+    const message = `Здравствуйте, меня зовут ${form.name}. Я хотел бы получить консультацию по поводу аренды помещения площадью ${square} м2.`;
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="bg-[#DADADA] rounded-[20px] p-10 sm:p-4 xs:p-2">
       <p className="text-[30px] text-center font-[600] sm:text-[25px] xs:text-[20px]">{name}</p>
       <p className="text-lg mt-3 text-center sm:text-sm small-font">
         Площадь: {square} м2
-      </p>
-      <p className="text-2xl mt-3 text-center font-[500] sm:text-lg small-font">
-        {lockText}
       </p>
       <div className="flex sm:flex-col justify-between gap-10 my-10 sm:my-4">
         <div className="w-full">
@@ -33,13 +39,17 @@ export const Application = ({ square, lock, name }) => {
         </div>
       </div>
       <div className="mt-4 flex sm:flex-col items-center sm:items-start gap-8">
-        <button className="rounded-[15px] text-white bg-[#494949] px-4 py-2 small-font">
+        <button
+          className="rounded-[15px] text-white bg-[#494949] px-4 py-2 small-font"
+          onClick={handleWhatsAppClick}
+        >
           Оставить заявку
         </button>
         <p className="text-[15px] small-font">
-          Нажимая на кнопку, вы принимаете условия политики конфеденциальности
+          Нажимая на кнопку, вы принимаете условия политики конфиденциальности
         </p>
       </div>
     </div>
   );
 };
+
