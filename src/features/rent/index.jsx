@@ -203,7 +203,7 @@ export const Rent = () => {
             <img
               src={image}
               className="keen-slider__slide w-full h-full object-cover absolute inset-0 z-0"
-              alt={`Slide ${index + 1}`}
+              alt={`Slide ${index + 1} Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений`}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20 z-10" />
           </>
@@ -242,7 +242,7 @@ export const Rent = () => {
       </div>
 
       <Container ref={containerRef}>
-        <Image src={Hard} alt="Building" />
+        <Image src={Hard} alt="Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений" />
         <HighlightArea>
           {floors.map((floor, index) => (
             <React.Fragment key={index}>

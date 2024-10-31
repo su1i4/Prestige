@@ -25,12 +25,12 @@ export const Advantage = () => {
             </p>
           </div>
           <div className="w-full h-full">
-            <img src={Plan} className="w-full h-auto rounded-3xl" />
+            <img src={Plan} alt="Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений" className="w-full h-auto rounded-3xl" />
           </div>
         </div>
         <div className="w-full flex gap-8 sm:px-3 sm:gap-4 px-8 items-center mt-8 sm:flex-col-reverse">
           <div className="w-full h-full">
-            <img src={Access} className="w-full h-auto rounded-3xl" />
+            <img src={Access} alt="Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений" className="w-full h-auto rounded-3xl" />
           </div>
           <div className="w-full flex flex-col justify-center items-center sm:items-start gap-4 sm:gap-1">
             <div className="flex flex-col justify-center items-center xs:items-start gap-1 sm:w-full">
@@ -117,12 +117,12 @@ export const Advantage = () => {
             </p>
           </div>
           <div className="w-full h-full">
-            <img src={Ofices} className="w-full max-h-[500px] object-cover rounded-3xl" />
+            <img src={Ofices} alt="Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений" className="w-full max-h-[500px] object-cover rounded-3xl" />
           </div>
         </div>
         <div className="w-full flex gap-8 px-8 sm:px-3 sm:gap-4 items-start mt-8 sm:mt-4 sm:flex-col-reverse sm:items-start">
           <div className="w-full h-full">
-            <img src={Permission} className="w-full h-auto object-cover rounded-3xl" />
+            <img src={Permission} alt="Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений" className="w-full h-auto object-cover rounded-3xl" />
           </div>
           <div className="w-full flex flex-col justify-center items-center sm:items-start">
             <div className="flex flex-col justify-center items-center gap-1 sm:w-full sm:items-start">
@@ -152,7 +152,7 @@ export const Advantage = () => {
             </p>
           </div>
           <div className="w-full h-full">
-            <img src={Safety} className="w-full max-h-[500px] object-cover rounded-3xl" />
+            <img src={Safety} alt="Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений" className="w-full max-h-[500px] object-cover rounded-3xl" />
           </div>
         </div>
         <div className="px-24 pb-10 lg:px-14 sm:px-4 xs:px-2">
