@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { floors } from "../../lib/copy";
-import Hard from "../../shared/images/selling/Монтажная область 1 (2).png"
+import Hard from "../../shared/images/selling/Монтажная область 1 (2).png";
 import { useNavigate } from "react-router-dom";
 import { Consultation } from "../../shared/components/consultation";
 import { Footer } from "../../shared/components/footer";
@@ -10,17 +10,23 @@ import useWindowWidth from "../../shared/utils";
 import Spring from "../../shared/images/spring (1).jpg";
 import Autumn from "../../shared/images/autumn (1).jpg";
 import Winter from "../../shared/images/winter (1).jpg";
-import Summer from '../../shared/images/12.jpg'
+import Summer from "../../shared/images/seasons/Sprin2.jpg";
 import { motion } from "framer-motion";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
 
 const images = [Autumn, Spring, Winter, Summer];
 
 const Container = ({ children }) => (
-  <div className="relative inline-block w-full">{children}</div>
+  <div className="relative inline-block w-full bg-black">{children}</div>
 );
 
 const Image = ({ src, alt }) => (
-  <img src={src} alt={alt} className="block w-full h-[130vh] sm:h-full xs" />
+  <img
+    src={src}
+    alt={alt}
+    className="block w-full h-[130vh] sm:h-full ml-[-1px] mr-[-1px]"
+  />
 );
 
 const HighlightArea = ({ children }) => (
@@ -80,6 +86,35 @@ const buttonVariants = {
 };
 
 export const Rent = () => {
+  const slideDuration = 1000;
+  const pauseDuration = 2000;
+
+  const [sliderRef, instanceRef] = useKeenSlider({
+    loop: true,
+    renderMode: "performance",
+    drag: false,
+    slides: {
+      perView: 1,
+    },
+    initial: 0,
+    created(slider) {
+      setTimeout(() => {
+        slider.moveToIdx(1, true, {
+          duration: slideDuration,
+          easing: (t) => t,
+        });
+      }, pauseDuration);
+    },
+    animationEnded(slider) {
+      setTimeout(() => {
+        slider.moveToIdx((slider.track.details.abs + 1) % images.length, true, {
+          duration: slideDuration,
+          easing: (t) => t,
+        });
+      }, pauseDuration);
+    },
+  });
+
   const { activeSection, scrollToSection } = useScrollToSection();
   const navigate = useNavigate();
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
@@ -159,44 +194,43 @@ export const Rent = () => {
 
   return (
     <>
-      <div className="w-full h-[100vh] lg:h-[80vh] sm:h-[60vh] xs:h-[45vh] relative overflow-hidden">
-        <motion.img
-          key={currentImageIndex}
-          src={images[currentImageIndex]}
-          initial={{ opacity: 1, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 1, scale: 1.05 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="w-full h-full object-cover absolute inset-0 z-0"
-          alt="background image"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 z-10" />
+      <div
+        ref={sliderRef}
+        className="keen-slider w-full h-[100vh] lg:h-[80vh] sm:h-[60vh] xs:h-[45vh] relative overflow-hidden"
+      >
+        {images.map((image, index) => (
+          <>
+            <img
+              src={image}
+              className="keen-slider__slide w-full h-full object-cover absolute inset-0 z-0"
+              alt={`Slide ${index + 1}`}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20 z-10" />
+          </>
+        ))}
 
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={contentVariants}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { delay: 0.3, duration: 0.5 },
+            },
+          }}
           className="absolute bottom-10 right-8 sm:bottom-6 sm:left-4 sm:right-4 xs:bottom-0 xs:left-0 xs:right-0 left-8 border-l-[3px] border-white border-solid pl-8 p-4 sm:p-2 xs:p-1 bg-black/30 z-20"
         >
-          <motion.p
-            variants={textVariants}
-            className="text-[60px] lg:text-[45px] sm:text-[30px] xs:text-[27px] text-white main-font font-[600] tracking-widest xs:tracking-normal"
-          >
+          <motion.p className="text-[60px] lg:text-[45px] sm:text-[30px] xs:text-[27px] text-white main-font font-[600] tracking-widest xs:tracking-normal">
             Аренда и продажа офисов
           </motion.p>
 
-          <motion.p
-            variants={textVariants}
-            className="text-2xl text-white lg:text-lg sm:text-sm xs:text-[14px] small-font font-light"
-          >
+          <motion.p className="text-2xl text-white lg:text-lg sm:text-sm xs:text-[14px] small-font font-light">
             Современный бизнес центр для вашего комфорта
           </motion.p>
 
-          <motion.div
-            variants={buttonVariants}
-            className="w-full flex justify-end"
-          >
+          <motion.div className="w-full flex justify-end">
             <button
               onClick={() => scrollToSection("footer")}
               className="text-xl lg:text-lg sm:text-sm sm:px-3 xs:py-[6px] text-white bg-[#848484] rounded-[15px] px-4 py-2 xs:mt-2 small-font"
@@ -252,7 +286,7 @@ export const Rent = () => {
           </Popover>
         )}
       </Container>
-      <div className="w-full py-20 px-10 sm:py-4 sm:px-4 xs:py-2 xs:px-2 bg-black sm:mt-[-10px]">
+      <div className="w-full py-20 px-10 sm:py-4 sm:px-4 xs:py-2 xs:px-2 bg-black mt-[-10px]">
         <Consultation />
       </div>
       <Footer />
