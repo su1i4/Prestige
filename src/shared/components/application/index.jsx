@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { submitRequest } from "../../utils";
 
-export const Application = ({ square, lock, name }) => {
+export const Application = ({ square, lock, name, obj, office }) => {
   const [form, setForm] = useState({ name: "", phone: "" });
   const lockText = lock ? 'Доступно' : 'Недоступно для аренды';
 
@@ -11,6 +12,12 @@ export const Application = ({ square, lock, name }) => {
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
+
+  const handleSend = async () => {
+    await submitRequest(obj.floor, office + 1, form.name, form.phone)
+  }
+
+  console.log(obj, 'this is console.log')
 
   return (
     <div className="bg-[#DADADA] rounded-[20px] p-10 sm:p-4 xs:p-2">
@@ -41,7 +48,7 @@ export const Application = ({ square, lock, name }) => {
       <div className="mt-4 flex sm:flex-col items-center sm:items-start gap-8">
         <button
           className="rounded-[15px] text-white bg-[#494949] px-4 py-2 small-font"
-          onClick={handleWhatsAppClick}
+          onClick={handleSend}
         >
           Оставить заявку
         </button>

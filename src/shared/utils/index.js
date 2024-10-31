@@ -1,4 +1,37 @@
 import { useState, useEffect } from "react";
+import toast from "react-hot-toast";
+
+export const submitRequest = async (floor = 0, office = 0, user, phone) => {
+  const submissionData = {
+    floorNumber: String(floor),
+    officeNumber: String(office),
+    userName: user,
+    phoneNumber: phone
+  };
+
+  try {
+    const response = await fetch('http://34.234.97.168:8080/submissions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(submissionData)
+    });
+
+    if (!response.ok) {
+      throw new Error("Ошибка при отправке запроса");
+    }
+
+    const data = await response.json();
+    toast.success(data.message);
+    console.log('Заявка успешно отправлена:', data);
+
+  } catch (error) {
+    toast.error("Ошибка сервер");
+    console.error('Ошибка:', error);
+  }
+};
+
 
 export const useScrollToSection = () => {
   const [activeSection, setActiveSection] = useState(null);

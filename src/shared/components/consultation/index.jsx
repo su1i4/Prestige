@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { submitRequest } from "../../utils";
 
 export const Consultation = () => {
   const [form, setForm] = useState({ name: "", phone: "" });
@@ -10,6 +11,10 @@ export const Consultation = () => {
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
+
+  const handleSend = async () => {
+    await submitRequest(0, 0, form.name, form.phone)
+  }
 
   return (
     <div className="bg-[#151515] rounded-[20px] p-10 sm:p-6 xs:p-2">
@@ -39,7 +44,7 @@ export const Consultation = () => {
       </div>
       <button
         className="bg-[#848484] rounded-[15px] text-white px-4 py-2 sm:w-full small-font"
-        onClick={handleWhatsAppClick}
+        onClick={handleSend}
       >
         Оставить заявку
       </button>

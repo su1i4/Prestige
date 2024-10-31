@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { DarkLogo } from "../../shared/icons/darklogo";
 import useWindowWidth from "../../shared/utils";
 import { Compass } from "../../shared/icons/compass";
+import { submitRequest } from "../../shared/utils";
 
 const HighlightArea = ({ children }) => (
   <div className="relative w-full h-auto aspect-[4/3]">
@@ -58,17 +59,22 @@ export const Floors = () => {
   const windowWidth = useWindowWidth();
 
   const [suka, setSuka] = useState({ width: "107", height: "43" });
+  const [abu, setAbu] = useState({})
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
   const [updatedFloorsImages, setUpdatedFloorsImages] = useState(
     thisFloor.floorsImages
   );
 
-  const handleFloorActivate = (e, index) => {
+  console.log(abu, 'this is activeFloor')
+
+  const handleFloorActivate = (e, index, floor) => {
     setActiveFloorIndex(index);
+    setAbu(floor)
     const updatedImages = updatedFloorsImages.map((img, idx) =>
       idx === index ? { ...img, x: img.x + 10, y: img.y + 10 } : img
     );
     setUpdatedFloorsImages(updatedImages);
+    console.log(floor, 'this is fuck')
   };
 
   useEffect(() => {
@@ -115,7 +121,7 @@ export const Floors = () => {
                 <HighlightPath
                   d={floor.path}
                   isActive={activeFloorIndex === index}
-                  onMouseEnter={(e) => handleFloorActivate(e, index)}
+                  onMouseEnter={(e) => handleFloorActivate(e, index, floor)}
                   onClick={(e) => handleFloorActivate(e, index)}
                   width={floor.width}
                   height={floor.height}
@@ -136,6 +142,8 @@ export const Floors = () => {
           square={thisFloor.squints[String(activeFloorIndex + 1)].square}
           lock={thisFloor.squints[String(activeFloorIndex + 1)].lock}
           name={thisFloor.squints[String(activeFloorIndex + 1)].name}
+          obj={thisFloor}
+          office={activeFloorIndex}
         />
       </div>
     </div>
