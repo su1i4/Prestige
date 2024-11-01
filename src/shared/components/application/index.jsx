@@ -1,20 +1,15 @@
 import { useState } from "react";
 import { submitRequest } from "../../utils";
+import { LuLoader2 } from "react-icons/lu";
 
 export const Application = ({ square, lock, name, obj, office }) => {
   const [form, setForm] = useState({ name: "", phone: "" });
-  const lockText = lock ? 'Доступно' : 'Недоступно для аренды';
-
-  const handleWhatsAppClick = () => {
-    const phone = "996995090090";
-    const message = `Здравствуйте, меня зовут ${form.name}. Я хотел бы получить консультацию по поводу аренды помещения площадью ${square} м2.`;
-
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  };
+  const [loading, setLoading] = useState(false)
 
   const handleSend = async () => {
+    setLoading(true)
     await submitRequest(obj.floor, office + 1, form.name, form.phone)
+    setLoading(false)
   }
 
   console.log(obj, 'this is console.log')
@@ -47,10 +42,10 @@ export const Application = ({ square, lock, name, obj, office }) => {
       </div>
       <div className="mt-4 flex sm:flex-col items-center sm:items-start gap-8">
         <button
-          className="rounded-[15px] text-white bg-[#494949] px-4 py-2 small-font"
+          className="rounded-[15px] text-white bg-[#494949] h-[40px] min-w-[200px] transition-all duration-700 active:scale-95 flex justify-center items-center small-font"
           onClick={handleSend}
         >
-          Оставить заявку
+         {loading ? <LuLoader2 size={27} className="text-white animate-spin" />  : 'Оставить заявку'}
         </button>
         <p className="text-[15px] small-font">
           Нажимая на кнопку, вы принимаете условия политики конфиденциальности

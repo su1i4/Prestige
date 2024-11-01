@@ -421,7 +421,7 @@ export const Main = () => {
               </Popover>
             )}
           </Container>
-          <div className="text-white pl-10 lg:pl-7 sm:pl-4 xs:pl-2 flex flex-col gap-4 xs:gap-2 py-2 bg-black sm:mt-[-10px]">
+          <div className="text-white pl-10 lg:pl-7 sm:pl-4 xs:pl-2 flex flex-col gap-4 xs:gap-2 py-2 bg-black mt-[-10px]">
             <p className="text-[50px] sm:text-[40px] xs:text-[23px] font-[600] main-font text">
               Местоположение{" "}
             </p>

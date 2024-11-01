@@ -27,7 +27,7 @@ export const submitRequest = async (floor = 0, office = 0, user, phone) => {
     console.log('Заявка успешно отправлена:', data);
 
   } catch (error) {
-    toast.error("Ошибка сервер");
+    toast.error("Ошибка сервера");
     console.error('Ошибка:', error);
   }
 };

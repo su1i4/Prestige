@@ -1,24 +1,21 @@
 import { useState } from "react";
 import { submitRequest } from "../../utils";
+import { LuLoader2 } from "react-icons/lu";
 
 export const Consultation = () => {
   const [form, setForm] = useState({ name: "", phone: "" });
-
-  const handleWhatsAppClick = () => {
-    const phone = "996995090090"; // WhatsApp number in international format
-    const message = `Здравствуйте, меня зовут ${form.name}. Я хотел бы получить консультацию о бизнес-центре и подборе офиса.`;
-
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  };
-
+  const [loading, setLoading] = useState(false);
   const handleSend = async () => {
-    await submitRequest(0, 0, form.name, form.phone)
-  }
+    setLoading(true);
+    await submitRequest(0, 0, form.name, form.phone);
+    setLoading(false);
+  };
 
   return (
     <div className="bg-[#151515] rounded-[20px] p-10 sm:p-6 xs:p-2">
-      <p className="text-[55px] text-white sm:text-2xl main-font">Получить консультацию</p>
+      <p className="text-[55px] text-white sm:text-2xl main-font">
+        Получить консультацию
+      </p>
       <p className="text-[25px] text-white font-light sm:text-[17px] tracking-wider mt-6 sm:text-md sm:mt-4 small-font">
         Расскажем о бизнес-центре и поможем выбрать офис
       </p>
@@ -43,10 +40,10 @@ export const Consultation = () => {
         </div>
       </div>
       <button
-        className="bg-[#848484] rounded-[15px] text-white px-4 py-2 sm:w-full small-font"
+        className="bg-[#848484] rounded-[15px] text-white h-[40px] sm:w-full small-font active:scale-95 min-w-[200px] flex justify-center items-center transition-all duration-700"
         onClick={handleSend}
       >
-        Оставить заявку
+        {loading ? <LuLoader2 size={27} className="text-white animate-spin" /> : "Оставить заявку"}
       </button>
       <div className="mt-4 flex items-center gap-8 sm:flex-col sm:items-start sm:gap-4">
         <button
