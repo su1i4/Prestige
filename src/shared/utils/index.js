@@ -10,7 +10,7 @@ export const submitRequest = async (floor = 0, office = 0, user, phone) => {
   };
 
   try {
-    const response = await fetch('http://34.234.97.168:8080/submissions', {
+    const response = await fetch('https://backend.prestigetower.kg/submissions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
