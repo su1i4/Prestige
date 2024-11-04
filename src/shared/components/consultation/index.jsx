@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { submitRequest } from "../../utils";
 import { LuLoader2 } from "react-icons/lu";
+import toast from "react-hot-toast";
 
 export const Consultation = () => {
   const [form, setForm] = useState({ name: "", phone: "" });
@@ -9,6 +10,7 @@ export const Consultation = () => {
     setLoading(true);
     await submitRequest(0, 0, form.name, form.phone);
     setLoading(false);
+    setForm({ name: "", phone: "" })
   };
 
   return (

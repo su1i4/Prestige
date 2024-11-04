@@ -10,6 +10,7 @@ export const Application = ({ square, lock, name, obj, office }) => {
     setLoading(true)
     await submitRequest(obj.floor, office + 1, form.name, form.phone)
     setLoading(false)
+    setForm({ name: "", phone: "" })
   }
 
   console.log(obj, 'this is console.log')

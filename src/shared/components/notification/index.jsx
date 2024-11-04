@@ -1,4 +1,3 @@
-import { FC, ReactNode } from 'react'
 import { Toaster } from 'react-hot-toast'
 
 const Natification = ({ children }) => {
