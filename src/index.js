@@ -7,9 +7,9 @@ import Natification from "./shared/components/notification";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <Natification>
+  <Natification>
+    <BrowserRouter>
       <App />
-    </Natification>
-  </BrowserRouter>
+    </BrowserRouter>
+  </Natification>
 );

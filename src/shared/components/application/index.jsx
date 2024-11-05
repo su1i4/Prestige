@@ -3,21 +3,68 @@ import { submitRequest } from "../../utils";
 import { LuLoader2 } from "react-icons/lu";
 
 export const Application = ({ square, lock, name, obj, office }) => {
-  const [form, setForm] = useState({ name: "", phone: "" });
-  const [loading, setLoading] = useState(false)
+  const [form, setForm] = useState({ name: "", phone: "+996" });
+  const [errors, setErrors] = useState({ name: "", phone: "" });
+  const [loading, setLoading] = useState(false);
 
-  const handleSend = async () => {
-    setLoading(true)
-    await submitRequest(obj.floor, office + 1, form.name, form.phone)
-    setLoading(false)
-    setForm({ name: "", phone: "" })
-  }
+  const validateName = (name) => {
+    if (!name) {
+      return "Name is required";
+    } else if (name.length < 3) {
+      return "Name must be at least 3 characters";
+    }
+    return "";
+  };
 
-  console.log(obj, 'this is console.log')
+  const validatePhone = (phone) => {
+    if (!phone) {
+      return "Phone number is required";
+    } else if (!phone.startsWith("+996")) {
+      return "Phone number must start with +996";
+    } else if (phone.length !== 12) {
+      return "Phone number must be 12 characters including +996";
+    }
+    return "";
+  };
+
+  const handlePhoneChange = (e) => {
+    let input = e.target.value;
+
+    if (!input.startsWith("+996")) {
+      input = "+996";
+    }
+    const formattedInput = input.replace(/[^+\d]/g, "");
+
+    setForm({ ...form, phone: formattedInput });
+    setErrors({ ...errors, phone: validatePhone(formattedInput) });
+  };
+
+  const handleNameChange = (e) => {
+    const name = e.target.value;
+    setForm({ ...form, name });
+    setErrors({ ...errors, name: validateName(name) });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const nameError = validateName(form.name);
+    const phoneError = validatePhone(form.phone);
+
+    setErrors({ name: nameError, phone: phoneError });
+
+    if (!nameError && !phoneError) {
+      await submitRequest(0, 0, form.name, form.phone);
+    }
+    setForm({ name: "", phone: "+996" });
+    setLoading(false);
+  };
 
   return (
     <div className="bg-[#DADADA] rounded-[20px] p-10 sm:p-4 xs:p-2">
-      <p className="text-[30px] text-center font-[600] sm:text-[25px] xs:text-[20px]">{name}</p>
+      <p className="text-[30px] text-center font-[600] sm:text-[25px] xs:text-[20px]">
+        {name}
+      </p>
       <p className="text-lg mt-3 text-center sm:text-sm small-font">
         Площадь: {square} м2
       </p>
@@ -28,7 +75,7 @@ export const Application = ({ square, lock, name, obj, office }) => {
             placeholder="Введите ваше имя"
             className="w-full bg-transparent small-font border-b-[1px] border-gray-700 border-solid focus:outline-none focus:border-transparent text-[#555555]"
             value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
+            onChange={handleNameChange}
           />
         </div>
         <div className="w-full">
@@ -37,16 +84,20 @@ export const Application = ({ square, lock, name, obj, office }) => {
             placeholder="+996"
             className="w-full bg-transparent small-font border-b-[1px] border-gray-700 border-solid focus:outline-none focus:border-transparent text-[#555555]"
             value={form.phone}
-            onChange={(e) => setForm({ ...form, phone: e.target.value })}
+            onChange={handlePhoneChange}
           />
         </div>
       </div>
       <div className="mt-4 flex sm:flex-col items-center sm:items-start gap-8">
         <button
           className="rounded-[15px] text-white bg-[#494949] h-[40px] min-w-[200px] transition-all duration-700 active:scale-95 flex justify-center items-center small-font"
-          onClick={handleSend}
+          onClick={handleSubmit}
         >
-         {loading ? <LuLoader2 size={27} className="text-white animate-spin" />  : 'Оставить заявку'}
+          {loading ? (
+            <LuLoader2 size={27} className="text-white animate-spin" />
+          ) : (
+            "Оставить заявку"
+          )}
         </button>
         <p className="text-[15px] small-font">
           Нажимая на кнопку, вы принимаете условия политики конфиденциальности
@@ -55,4 +106,3 @@ export const Application = ({ square, lock, name, obj, office }) => {
     </div>
   );
 };
-

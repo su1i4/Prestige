@@ -1,16 +1,63 @@
 import { useState } from "react";
-import { submitRequest } from "../../utils";
 import { LuLoader2 } from "react-icons/lu";
-import toast from "react-hot-toast";
+import { submitRequest } from "../../utils";
 
 export const Consultation = () => {
-  const [form, setForm] = useState({ name: "", phone: "" });
-  const [loading, setLoading] = useState(false);
-  const handleSend = async () => {
+  const [form, setForm] = useState({ name: "", phone: "+996" });
+  const [errors, setErrors] = useState({ name: "", phone: "" });
+  const [loading, setLoading] = useState(false)
+
+  const validateName = (name) => {
+    if (!name) {
+      return "Name is required";
+    } else if (name.length < 3) {
+      return "Name must be at least 3 characters";
+    }
+    return "";
+  };
+
+  const validatePhone = (phone) => {
+    if (!phone) {
+      return "Phone number is required";
+    } else if (!phone.startsWith("+996")) {
+      return "Phone number must start with +996";
+    } else if (phone.length !== 12) {
+      return "Phone number must be 12 characters including +996";
+    }
+    return "";
+  };
+
+  const handlePhoneChange = (e) => {
+    let input = e.target.value;
+
+    if (!input.startsWith("+996")) {
+      input = "+996";
+    }
+    const formattedInput = input.replace(/[^+\d]/g, "");
+
+    setForm({ ...form, phone: formattedInput });
+    setErrors({ ...errors, phone: validatePhone(formattedInput) });
+  };
+
+  const handleNameChange = (e) => {
+    const name = e.target.value;
+    setForm({ ...form, name });
+    setErrors({ ...errors, name: validateName(name) });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
-    await submitRequest(0, 0, form.name, form.phone);
+    const nameError = validateName(form.name);
+    const phoneError = validatePhone(form.phone);
+
+    setErrors({ name: nameError, phone: phoneError });
+
+    if (!nameError && !phoneError) {
+      await submitRequest(0, 0, form.name, form.phone);
+    }
+    setForm({ name: "", phone: "+996" })
     setLoading(false);
-    setForm({ name: "", phone: "" })
   };
 
   return (
@@ -28,7 +75,7 @@ export const Consultation = () => {
             placeholder="Введите ваше имя"
             className="w-full bg-transparent border-b-[1px] border-gray-700 border-solid focus:outline-none focus:border-transparent text-white small-font"
             value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
+            onChange={handleNameChange}
           />
         </div>
         <div className="w-full">
@@ -37,15 +84,19 @@ export const Consultation = () => {
             placeholder="+996"
             className="w-full bg-transparent border-b-[1px] border-gray-700 border-solid focus:outline-none focus:border-transparent text-white small-font"
             value={form.phone}
-            onChange={(e) => setForm({ ...form, phone: e.target.value })}
+            onChange={handlePhoneChange}
           />
         </div>
       </div>
       <button
         className="bg-[#848484] rounded-[15px] text-white h-[40px] sm:w-full small-font active:scale-95 min-w-[200px] flex justify-center items-center transition-all duration-700"
-        onClick={handleSend}
+        onClick={handleSubmit}
       >
-        {loading ? <LuLoader2 size={27} className="text-white animate-spin" /> : "Оставить заявку"}
+        {loading ? (
+          <LuLoader2 size={27} className="text-white animate-spin" />
+        ) : (
+          "Оставить заявку"
+        )}
       </button>
       <div className="mt-4 flex items-center gap-8 sm:flex-col sm:items-start sm:gap-4">
         <button

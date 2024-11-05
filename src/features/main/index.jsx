@@ -156,7 +156,7 @@ export const Main = () => {
       <div class="background-section">
         <img src={Imagik} className="w-full absolute min-h-[200vh]" />
         <div className="absolute top-0 left-0 right-0 h-[400vh] bg-black/80"></div>
-        <div className="w-full z-[9999] absolute">
+        <div className="w-full z-[999] absolute">
           <div className="nutral">
             <div className="info-wrap">
               <h1 className="main-font font-[600]">PRESTIGE TOWER</h1>

@@ -1,12 +1,22 @@
-import { Toaster } from 'react-hot-toast'
+import { Toaster } from "react-hot-toast";
 
 const Natification = ({ children }) => {
-	return (
-		<>
-			<Toaster position='top-center' reverseOrder={false} />
-			{children}
-		</>
-	)
-}
+  return (
+    <>
+      <Toaster
+        position="top-right" // Set position to top-right
+        reverseOrder={false}
+        toastOptions={{
+          style: {
+            zIndex: 9999999,
+            marginTop: '150px', // Add top margin for 150px offset
+          },
+        }}
+      />
+      {children}
+    </>
+  );
+};
 
-export default Natification
+export default Natification;
+
