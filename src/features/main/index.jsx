@@ -109,12 +109,12 @@ export const Main = () => {
 
   const handlePopoverClick = (index) => {
     if (!firstClick) {
-      setFirstClick(true)
-      setIsPopoverFrozen(true)
+      setFirstClick(true);
+      setIsPopoverFrozen(true);
 
       setTimeout(() => {
-        setIsPopoverFrozen(false)
-        setFirstClick(false); 
+        setIsPopoverFrozen(false);
+        setFirstClick(false);
       }, 2500);
     } else {
       navigate(`/rent/floors/${floors[index].floor}`);
@@ -256,8 +256,8 @@ export const Main = () => {
                       Офисы под ключ
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      Офис под ключ позволяет сократить время и усилия
-                      связанные с ремонтом, а также, обеспечить высокое качество
+                      Офис под ключ позволяет сократить время и усилия связанные
+                      с ремонтом, а также, обеспечить высокое качество
                       выполненных работ.
                     </p>
                   </div>
@@ -337,7 +337,7 @@ export const Main = () => {
               Видеообзор
             </p>
             <iframe
-              src="https://www.youtube.com/embed/atjyAEKoeQI"
+              src="https://www.youtube.com/embed/SDFiXqwhyTk"
               className="w-full h-[600px] lg:h-[500px] sm:h-[400px] xs:h-[350px]"
             ></iframe>
           </div>
