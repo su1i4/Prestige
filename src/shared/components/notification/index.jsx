@@ -9,7 +9,7 @@ const Natification = ({ children }) => {
         toastOptions={{
           style: {
             zIndex: 9999999,
-            marginTop: '150px', // Add top margin for 150px offset
+            marginTop: '110px', // Add top margin for 150px offset
           },
         }}
       />

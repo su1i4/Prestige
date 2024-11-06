@@ -47,17 +47,17 @@ export const Consultation = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     const nameError = validateName(form.name);
     const phoneError = validatePhone(form.phone);
-
+    
     setErrors({ name: nameError, phone: phoneError });
-
+    
     if (!nameError && !phoneError) {
+      setLoading(true);
       await submitRequest(0, 0, form.name, form.phone);
+      setLoading(false);
+      setForm({ name: "", phone: "+996" })
     }
-    setForm({ name: "", phone: "+996" })
-    setLoading(false);
   };
 
   return (
