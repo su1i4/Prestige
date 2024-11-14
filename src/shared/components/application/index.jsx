@@ -49,15 +49,15 @@ export const Application = ({ square, lock, name, obj, office }) => {
     e.preventDefault();
     const nameError = validateName(form.name);
     const phoneError = validatePhone(form.phone);
-    
+
     setErrors({ name: nameError, phone: phoneError });
-    
-    if (!nameError && !phoneError) {
-      setLoading(true);
-      await submitRequest(0, 0, form.name, form.phone);
-      setForm({ name: "", phone: "+996" });
-      setLoading(false);
-    }
+
+    // if (!nameError && !phoneError) {
+    setLoading(true);
+    await submitRequest(0, 0, form.name, form.phone);
+    setForm({ name: "", phone: "+996" });
+    setLoading(false);
+    // }
   };
 
   return (

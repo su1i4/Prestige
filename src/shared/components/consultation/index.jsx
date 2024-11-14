@@ -5,7 +5,7 @@ import { submitRequest } from "../../utils";
 export const Consultation = () => {
   const [form, setForm] = useState({ name: "", phone: "+996" });
   const [errors, setErrors] = useState({ name: "", phone: "" });
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const validateName = (name) => {
     if (!name) {
@@ -49,15 +49,16 @@ export const Consultation = () => {
     e.preventDefault();
     const nameError = validateName(form.name);
     const phoneError = validatePhone(form.phone);
-    
+
     setErrors({ name: nameError, phone: phoneError });
-    
-    if (!nameError && !phoneError) {
-      setLoading(true);
-      await submitRequest(0, 0, form.name, form.phone);
-      setLoading(false);
-      setForm({ name: "", phone: "+996" })
-    }
+
+    // if (!nameError && !phoneError) {
+    console.log("sulaiman");
+    setLoading(true);
+    await submitRequest(0, 0, form.name, form.phone);
+    setLoading(false);
+    setForm({ name: "", phone: "+996" });
+    // }
   };
 
   return (
