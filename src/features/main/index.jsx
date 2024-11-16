@@ -243,7 +243,7 @@ export const Main = () => {
                       Холл
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      Репутация и значимость любого Бизнес-Центра начинается со
+                      Репутация и значимость любого бизнес-Центра начинается со
                       входа, ведь именно он создает первое впечатление
                     </p>
                   </div>
@@ -283,7 +283,7 @@ export const Main = () => {
                       Намазкана
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      Для вашего удобства, на -1 этаже Бизнес-центра “PRESTIGE
+                      Для вашего удобства, на -1 этаже бизнес-центра “PRESTIGE
                       TOWER” будет расположена мужская и женская Намазкана
                     </p>
                   </div>
@@ -296,7 +296,7 @@ export const Main = () => {
                       Ресторан
                     </h2>
                     <p className="text-white text-xl small-font sm:text-lg xs:text-xs ">
-                      В Бизнес-центре “PRESTIGE TOWER” на 13 этаже будет
+                      В бизнес-центре “PRESTIGE TOWER” на 13 этаже будет
                       расположен ресторан высокой кухни в современном стиле{" "}
                     </p>
                   </div>

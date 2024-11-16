@@ -72,7 +72,7 @@ export const Footer = () => {
           <Geo />
           <div className="text-white">
             <p className="text-md border-b-[1px] border-white border-solid main-font font-[500]">
-              Адрес Бизнес центра
+              Адрес бизнес центра
             </p>
             <p className="text-xs small-font">ул. Чуй 127/1</p>
           </div>

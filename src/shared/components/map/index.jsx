@@ -25,7 +25,7 @@ const YandexMap = () => {
         [42.875652, 74.622943],
         {
           hintContent: "Prestige Tower",
-          balloonContent: "Бизнес-центр Prestige Tower",
+          balloonContent: "бизнес-центр Prestige Tower",
         },
         {
           iconLayout: "default#image",
