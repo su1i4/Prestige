@@ -25,7 +25,7 @@ const Image = ({ src, alt }) => (
   <img
     src={src}
     alt={alt}
-    className="block w-full h-[130vh] sm:h-full ml-[-1px] mr-[-1px]"
+    className="block w-full ml-[-1px] mr-[-1px]"
   />
 );
 
@@ -263,7 +263,7 @@ export const Rent = () => {
         </HighlightArea>
         {activeFloorIndex !== null && (
           <Popover position={popoverPosition}>
-            <div className="w-[270px] sm:w-[200px] flex flex-col justify-center items-center gap-4 sm:gap-2">
+            <div className="w-[270px] sm:w-[170px] flex flex-col justify-center items-center gap-4 sm:gap-1">
               <div className="w-full flex flex-col justify-center items-center">
                 <p className="text-black text-[23px] sm:text-sm font-semibold small-font">
                   {floors[activeFloorIndex].floor} этаж
@@ -278,7 +278,7 @@ export const Rent = () => {
               </p>
               <button
                 onClick={() => handlePopoverClick(activeFloorIndex)}
-                className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 sm:px-3 sm:py-1 text-white small-font sm:text-xs"
+                className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 sm:px-2 sm:py-1 text-white small-font sm:text-xs"
               >
                 Перейти
               </button>

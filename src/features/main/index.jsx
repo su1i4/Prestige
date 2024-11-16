@@ -39,7 +39,7 @@ const Container = ({ children }) => (
 );
 
 const Image = ({ src, alt }) => (
-  <img src={src} alt={alt} className="block w-full h-[130vh] sm:h-full" />
+  <img src={src} alt={alt} className="block w-full sm:h-full" />
 );
 
 const HighlightArea = ({ children }) => (
@@ -398,22 +398,22 @@ export const Main = () => {
             </HighlightArea>
             {activeFloorIndex !== null && (
               <Popover position={popoverPosition}>
-                <div className="w-[270px] sm:w-[200px] flex flex-col justify-center items-center gap-4">
+                <div className="w-[270px] sm:w-[170px] flex flex-col justify-center items-center gap-4 sm:gap-1">
                   <div className="w-full flex flex-col justify-center items-center">
-                    <p className="text-black text-[23px] font-semibold small-font">
+                    <p className="text-black text-[23px] sm:text-sm font-semibold small-font">
                       {floors[activeFloorIndex].floor} этаж
                     </p>
                     <div className="w-[50px] h-[3px] bg-black" />
                   </div>
-                  <p className="text-[#000000B2] text-sm font-medium small-font">
-                    {floors[activeFloorIndex].count} свободных помещений на
-                    аренду
+                  <p className="text-[#000000B2] text-sm font-medium small-font sm:text-xs sm:text-center">
+                    {floors[activeFloorIndex].count} свободных помещений{" "}
+                    {floors[activeFloorIndex]?.floor < 4
+                      ? "в аренду"
+                      : "на продажу"}
                   </p>
                   <button
-                    onClick={() =>
-                      navigate(`/rent/floors/${floors[activeFloorIndex].floor}`)
-                    }
-                    className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 text-white small-font"
+                    onClick={() => handlePopoverClick(activeFloorIndex)}
+                    className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 sm:px-2 sm:py-1 text-white small-font sm:text-xs"
                   >
                     Перейти
                   </button>
