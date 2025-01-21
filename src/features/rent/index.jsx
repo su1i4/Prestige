@@ -22,11 +22,7 @@ const Container = ({ children }) => (
 );
 
 const Image = ({ src, alt }) => (
-  <img
-    src={src}
-    alt={alt}
-    className="block w-full ml-[-1px] mr-[-1px]"
-  />
+  <img src={src} alt={alt} className="block w-full ml-[-1px] mr-[-1px]" />
 );
 
 const HighlightArea = ({ children }) => (
@@ -49,41 +45,29 @@ const HighlightPath = ({ d, isActive, onMouseEnter, onClick }) => (
   />
 );
 
-const Popover = ({ children, position }) => (
+const PopoverLeft = ({ children, position }) => (
   <div
-    className="absolute bg-white rounded-md border border-gray-300 p-2.5 shadow-lg transform -translate-x-1/2 -translate-y-full z-[999]"
-    style={{ top: `${position.y + 300}px`, left: `${position.x}px` }}
+    className="fixed bg-white rounded-md border border-gray-300 p-2.5 xs:p-1 shadow-lg transform -translate-y-full z-[999]"
+    style={{
+      top: `${position.y}px`,
+      left: `${position.x}px`,
+    }}
   >
     {children}
   </div>
 );
 
-const contentVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeInOut", staggerChildren: 0.3 },
-  },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeInOut" },
-  },
-};
-
-const buttonVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeInOut", delay: 0.5 },
-  },
-};
+const PopoverRight = ({ children, position }) => (
+  <div
+    className="fixed bg-white rounded-md border border-gray-300 p-2.5 xs:p-1 shadow-lg transform -translate-y-full z-[999]"
+    style={{
+      top: `${position.y}px`,
+      right: `${position.x}px`,
+    }}
+  >
+    {children}
+  </div>
+);
 
 export const Rent = () => {
   const slideDuration = 1000;
@@ -123,15 +107,26 @@ export const Rent = () => {
   const [isPopoverFrozen, setIsPopoverFrozen] = useState(false);
   const containerRef = useRef(null);
   const [offset, setOffset] = useState();
+  const [side, setSide] = useState("");
 
   const windowWidth = useWindowWidth();
 
-  const handleFloorActivate = (event, index) => {
+  const handleFloorActivate = (event, index, direction) => {
+    setSide(direction);
+    const rect = event.target.getBoundingClientRect();
+    
     if (!firstClick) {
       setActiveFloorIndex(index);
-      setPopoverPosition({ x: event.clientX, y: event.clientY - offset });
+      
+      setPopoverPosition({
+        x: direction === "right" 
+          ? window.innerWidth - rect.right - 100 
+          : rect.left - 100, 
+        y: rect.top < 230 ? 230 : rect.top,
+      });
     }
   };
+  
 
   const handleClickOutside = (event) => {
     if (
@@ -174,7 +169,7 @@ export const Rent = () => {
       setTimeout(() => {
         setIsPopoverFrozen(false);
         setFirstClick(false);
-      }, 4000);
+      }, 500);
     } else {
       navigate(`/rent/floors/${floors[index].floor}`);
     }
@@ -192,6 +187,29 @@ export const Rent = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const render = () => {
+    return (
+      <div className="w-[270px] sm:w-[170px] xs:w-[150px] flex flex-col justify-center items-center gap-4 sm:gap-1">
+        <div className="w-full flex flex-col justify-center items-center">
+          <p className="text-black text-[23px] sm:text-sm font-semibold small-font">
+            {floors[activeFloorIndex].floor} этаж
+          </p>
+          <div className="w-[50px] h-[3px] bg-black xs:h-[1px]" />
+        </div>
+        <p className="text-[#000000B2] text-sm font-medium small-font sm:text-xs xs:text-[11px] sm:text-center">
+          {floors[activeFloorIndex].count} свободных помещений{" "}
+          {floors[activeFloorIndex]?.floor < 4 ? "в аренду" : "на продажу"}
+        </p>
+        <button
+          onClick={() => navigate(`/rent/floors/${floors[activeFloorIndex].floor}`)}
+          className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 sm:px-2 xs:px-0 xs:py-0 xs:bg-white sm:py-1 xs:text-[#848484] text-white small-font sm:text-xs"
+        >
+          Перейти
+        </button>
+      </div>
+    );
+  };
+
   return (
     <>
       <div
@@ -203,7 +221,9 @@ export const Rent = () => {
             <img
               src={image}
               className="keen-slider__slide w-full h-full object-cover absolute inset-0 z-0"
-              alt={`Slide ${index + 1} Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений`}
+              alt={`Slide ${
+                index + 1
+              } Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений`}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20 z-10" />
           </>
@@ -242,49 +262,34 @@ export const Rent = () => {
       </div>
 
       <Container ref={containerRef}>
-        <Image src={Hard} alt="Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений" />
+        <Image
+          src={Hard}
+          alt="Prestige Tower Bishkek, бизнес-центр в Бишкеке, аренда офисов Prestige Tower, офисы класса А Бишкек, коммерческая недвижимость Бишкек, современный бизнес-центр Бишкек, офисы в центре города Бишкек, аренда офисов в Бишкеке, офисные помещения Prestige Tower, бизнес-центр с парковкой Бишкек, аренда офиса рядом с Technodom Бишкек, офисы рядом с Дордой Плаза Бишкек, бизнес-центр с новейшими технологиями, офисы в современном здании Бишкек, Prestige Tower аренда помещений"
+        />
         <HighlightArea>
           {floors.map((floor, index) => (
             <React.Fragment key={index}>
               <HighlightPath
                 d={floor.rigth.path}
                 isActive={activeFloorIndex === index}
-                onMouseEnter={(e) => handleFloorActivate(e, index)}
+                onMouseEnter={(e) => handleFloorActivate(e, index, "left")}
                 onClick={(e) => handlePopoverClick(index)}
               />
               <HighlightPath
                 d={floor.left.path}
                 isActive={activeFloorIndex === index}
-                onMouseEnter={(e) => handleFloorActivate(e, index)}
+                onMouseEnter={(e) => handleFloorActivate(e, index, "right")}
                 onClick={(e) => handlePopoverClick(index)}
               />
             </React.Fragment>
           ))}
         </HighlightArea>
-        {activeFloorIndex !== null && (
-          <Popover position={popoverPosition}>
-            <div className="w-[270px] sm:w-[170px] flex flex-col justify-center items-center gap-4 sm:gap-1">
-              <div className="w-full flex flex-col justify-center items-center">
-                <p className="text-black text-[23px] sm:text-sm font-semibold small-font">
-                  {floors[activeFloorIndex].floor} этаж
-                </p>
-                <div className="w-[50px] h-[3px] bg-black" />
-              </div>
-              <p className="text-[#000000B2] text-sm font-medium small-font sm:text-xs sm:text-center">
-                {floors[activeFloorIndex].count} свободных помещений{" "}
-                {floors[activeFloorIndex]?.floor < 4
-                  ? "в аренду"
-                  : "на продажу"}
-              </p>
-              <button
-                onClick={() => handlePopoverClick(activeFloorIndex)}
-                className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 sm:px-2 sm:py-1 text-white small-font sm:text-xs"
-              >
-                Перейти
-              </button>
-            </div>
-          </Popover>
-        )}
+        {activeFloorIndex !== null &&
+          (side === "left" ? (
+            <PopoverLeft position={popoverPosition}>{render()}</PopoverLeft>
+          ) : (
+            <PopoverRight position={popoverPosition}>{render()}</PopoverRight>
+          ))}
       </Container>
       <div className="w-full py-20 px-10 sm:py-4 sm:px-4 xs:py-2 xs:px-2 bg-black mt-[-10px]">
         <Consultation />

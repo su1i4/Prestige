@@ -62,10 +62,25 @@ const HighlightPath = ({ d, isActive, onMouseEnter, onClick }) => (
   />
 );
 
-const Popover = ({ children, position }) => (
+const PopoverLeft = ({ children, position }) => (
   <div
-    className="absolute bg-white rounded-md border border-gray-300 p-2.5 shadow-lg z-10 transform -translate-x-1/2 -translate-y-full"
-    style={{ top: `${position.y}px`, left: `${position.x}px` }}
+    className="fixed bg-white rounded-md border border-gray-300 p-2.5 xs:p-1 shadow-lg transform -translate-y-full z-[999]"
+    style={{
+      top: `${position.y}px`,
+      left: `${position.x}px`,
+    }}
+  >
+    {children}
+  </div>
+);
+
+const PopoverRight = ({ children, position }) => (
+  <div
+    className="fixed bg-white rounded-md border border-gray-300 p-2.5 xs:p-1 shadow-lg transform -translate-y-full z-[999]"
+    style={{
+      top: `${position.y}px`,
+      right: `${position.x}px`,
+    }}
   >
     {children}
   </div>
@@ -80,13 +95,24 @@ export const Main = () => {
   const containerRef = useRef(null);
   const [offset, setOffset] = useState();
   const [suka, setSuka] = useState(150);
+  const [side, setSide] = useState("");
 
   const windowWidth = useWindowWidth();
 
-  const handleFloorActivate = (event, index) => {
+  const handleFloorActivate = (event, index, direction) => {
+    setSide(direction);
+    const rect = event.target.getBoundingClientRect();
+
     if (!firstClick) {
       setActiveFloorIndex(index);
-      setPopoverPosition({ x: event.clientX, y: event.clientY - suka });
+
+      setPopoverPosition({
+        x:
+          direction === "right"
+            ? window.innerWidth - rect.right - 100
+            : rect.left - 100,
+        y: windowWidth > 460 ? rect.top < 230 ? 230 : rect.top :rect.top < 170 ? 170 : rect.top
+      });
     }
   };
 
@@ -115,7 +141,7 @@ export const Main = () => {
       setTimeout(() => {
         setIsPopoverFrozen(false);
         setFirstClick(false);
-      }, 2500);
+      }, 500);
     } else {
       navigate(`/rent/floors/${floors[index].floor}`);
     }
@@ -150,6 +176,31 @@ export const Main = () => {
       setSuka(-250);
     }
   }, [windowWidth]);
+
+  const render = () => {
+    return (
+      <div className="w-[270px] sm:w-[170px] xs:w-[150px] flex flex-col justify-center items-center gap-4 sm:gap-1">
+        <div className="w-full flex flex-col justify-center items-center">
+          <p className="text-black text-[23px] sm:text-sm font-semibold small-font">
+            {floors[activeFloorIndex].floor} этаж
+          </p>
+          <div className="w-[50px] h-[3px] bg-black xs:h-[1px]" />
+        </div>
+        <p className="text-[#000000B2] text-sm font-medium small-font sm:text-xs xs:text-[11px] sm:text-center">
+          {floors[activeFloorIndex].count} свободных помещений{" "}
+          {floors[activeFloorIndex]?.floor < 4 ? "в аренду" : "на продажу"}
+        </p>
+        <button
+          onClick={() =>
+            navigate(`/rent/floors/${floors[activeFloorIndex].floor}`)
+          }
+          className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 sm:px-2 xs:px-0 xs:py-0 xs:bg-white sm:py-1 xs:text-[#848484] text-white small-font sm:text-xs"
+        >
+          Перейти
+        </button>
+      </div>
+    );
+  };
 
   return (
     <>
@@ -384,42 +435,26 @@ export const Main = () => {
                   <HighlightPath
                     d={floor.rigth.path}
                     isActive={activeFloorIndex === index}
-                    onMouseEnter={(e) => handleFloorActivate(e, index)}
+                    onMouseEnter={(e) => handleFloorActivate(e, index, "left")}
                     onClick={(e) => handlePopoverClick(index)}
                   />
                   <HighlightPath
                     d={floor.left.path}
                     isActive={activeFloorIndex === index}
-                    onMouseEnter={(e) => handleFloorActivate(e, index)}
+                    onMouseEnter={(e) => handleFloorActivate(e, index, "right")}
                     onClick={(e) => handlePopoverClick(index)}
                   />
                 </React.Fragment>
               ))}
             </HighlightArea>
-            {activeFloorIndex !== null && (
-              <Popover position={popoverPosition}>
-                <div className="w-[270px] sm:w-[170px] flex flex-col justify-center items-center gap-4 sm:gap-1">
-                  <div className="w-full flex flex-col justify-center items-center">
-                    <p className="text-black text-[23px] sm:text-sm font-semibold small-font">
-                      {floors[activeFloorIndex].floor} этаж
-                    </p>
-                    <div className="w-[50px] h-[3px] bg-black" />
-                  </div>
-                  <p className="text-[#000000B2] text-sm font-medium small-font sm:text-xs sm:text-center">
-                    {floors[activeFloorIndex].count} свободных помещений{" "}
-                    {floors[activeFloorIndex]?.floor < 4
-                      ? "в аренду"
-                      : "на продажу"}
-                  </p>
-                  <button
-                    onClick={() => handlePopoverClick(activeFloorIndex)}
-                    className="bg-[#848484] rounded-[15px] font-medium text-sm px-4 py-2 sm:px-2 sm:py-1 text-white small-font sm:text-xs"
-                  >
-                    Перейти
-                  </button>
-                </div>
-              </Popover>
-            )}
+            {activeFloorIndex !== null &&
+              (side === "left" ? (
+                <PopoverLeft position={popoverPosition}>{render()}</PopoverLeft>
+              ) : (
+                <PopoverRight position={popoverPosition}>
+                  {render()}
+                </PopoverRight>
+              ))}
           </Container>
           <div className="text-white pl-10 lg:pl-7 sm:pl-4 xs:pl-2 flex flex-col gap-4 xs:gap-2 py-2 bg-black mt-[-10px]">
             <p className="text-[50px] sm:text-[40px] xs:text-[23px] font-[600] main-font text">
