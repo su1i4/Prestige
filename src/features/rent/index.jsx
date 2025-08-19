@@ -188,6 +188,8 @@ export const Rent = () => {
   }, []);
 
   const render = () => {
+    const activeFloors = Object.values(floors[activeFloorIndex].squints).filter(floor => floor.lock === true);
+    console.log(activeFloors, floors[activeFloorIndex].squints, Object.values(floors[activeFloorIndex].squints));
     return (
       <div className="w-[270px] sm:w-[170px] xs:w-[150px] flex flex-col justify-center items-center gap-4 sm:gap-1">
         <div className="w-full flex flex-col justify-center items-center">
@@ -197,7 +199,7 @@ export const Rent = () => {
           <div className="w-[50px] h-[3px] bg-black xs:h-[1px]" />
         </div>
         <p className="text-[#000000B2] text-sm font-medium small-font sm:text-xs xs:text-[11px] sm:text-center">
-          {floors[activeFloorIndex].count} свободных помещений{" "}
+          {activeFloors.length} свободных помещений{" "}
           {floors[activeFloorIndex]?.floor < 4 ? "в аренду" : "на продажу"}
         </p>
         <button

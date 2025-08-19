@@ -68,6 +68,16 @@ export const Application = ({ square, lock, name, obj, office }) => {
       <p className="text-lg mt-3 text-center sm:text-sm small-font">
         Площадь: {square} м2
       </p>
+      {!lock && (
+        <p className="text-lg mt-3 text-center sm:text-sm small-font">
+          Продано
+        </p>
+      )}
+      {lock && (
+        <p className="text-lg mt-3 text-center sm:text-sm small-font">
+          В продаже
+        </p>
+      )}
       <div className="flex sm:flex-col justify-between gap-10 my-10 sm:my-4">
         <div className="w-full">
           <p className="text-[#555555] small-font">Ваше имя</p>

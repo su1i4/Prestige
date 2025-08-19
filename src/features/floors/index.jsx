@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { DarkLogo } from "../../shared/icons/darklogo";
 import useWindowWidth from "../../shared/utils";
 import { Compass } from "../../shared/icons/compass";
-import { submitRequest } from "../../shared/utils";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 const HighlightArea = ({ children }) => (
   <div className="relative w-full h-auto aspect-[4/3]">
@@ -31,6 +32,7 @@ const HighlightPath = ({
   onMouseEnter,
   onClick,
   scale,
+  lock,
 }) => (
   <svg
     x={x}
@@ -47,6 +49,8 @@ const HighlightPath = ({
       style={{ transform: `scale(${scale})` }}
       onMouseEnter={onMouseEnter}
       onClick={onClick}
+      data-tooltip-id="sold-tooltip"
+      data-tooltip-content={lock === false ? "Продано" : "В продаже"}
     />
   </svg>
 );
@@ -59,22 +63,12 @@ export const Floors = () => {
   const windowWidth = useWindowWidth();
 
   const [suka, setSuka] = useState({ width: "107", height: "43" });
-  const [abu, setAbu] = useState({})
+  const [abu, setAbu] = useState({});
   const [activeFloorIndex, setActiveFloorIndex] = useState(null);
-  const [updatedFloorsImages, setUpdatedFloorsImages] = useState(
-    thisFloor.floorsImages
-  );
-
-  console.log(abu, 'this is activeFloor')
 
   const handleFloorActivate = (e, index, floor) => {
     setActiveFloorIndex(index);
-    setAbu(floor)
-    const updatedImages = updatedFloorsImages.map((img, idx) =>
-      idx === index ? { ...img, x: img.x + 10, y: img.y + 10 } : img
-    );
-    setUpdatedFloorsImages(updatedImages);
-    console.log(floor, 'this is fuck')
+    setAbu(floor);
   };
 
   useEffect(() => {
@@ -102,10 +96,12 @@ export const Floors = () => {
           <DarkLogo width={suka.width} height={suka.height} />
         </div>
       </div>
+
       <p className="text-[50px] text-center main-font lg:text-[40px] sm:text-[30px] xs:text-[20px] font-[500] noselect hidden xs:block">
         Типовой план {id} этажа
       </p>
-      <div className="">
+
+      <div>
         <HighlightArea>
           <image
             xlinkHref={thisFloor.image}
@@ -116,36 +112,40 @@ export const Floors = () => {
             preserveAspectRatio="xMidYMid meet"
           />
           {thisFloor.floorsImages.map((floor, index) => (
-            <>
-              <React.Fragment key={index}>
-                <HighlightPath
-                  d={floor.path}
-                  isActive={activeFloorIndex === index}
-                  onMouseEnter={(e) => handleFloorActivate(e, index, floor)}
-                  onClick={(e) => handleFloorActivate(e, index)}
-                  width={floor.width}
-                  height={floor.height}
-                  y={floor.y}
-                  x={floor.x}
-                  scale={floor.scale}
-                />
-              </React.Fragment>
-            </>
+            <React.Fragment key={index}>
+              <HighlightPath
+                d={floor.path}
+                isActive={activeFloorIndex === index}
+                onMouseEnter={(e) => handleFloorActivate(e, index, floor)}
+                onClick={(e) => handleFloorActivate(e, index)}
+                width={floor.width}
+                height={floor.height}
+                y={floor.y}
+                x={floor.x}
+                scale={floor.scale}
+                lock={thisFloor.squints[String(index + 1)].lock}
+              />
+            </React.Fragment>
           ))}
         </HighlightArea>
       </div>
+
       <div className="mt-[-220px] lg:mt-[-70px] w-full flex justify-end mb-4 xs:scale-90">
         <Compass />
       </div>
-      <div className="">
+
+      <div>
         <Application
-          square={thisFloor.squints[String(activeFloorIndex + 1)].square}
-          lock={thisFloor.squints[String(activeFloorIndex + 1)].lock}
-          name={thisFloor.squints[String(activeFloorIndex + 1)].name}
+          square={thisFloor.squints[String(activeFloorIndex + 1)]?.square}
+          lock={thisFloor.squints[String(activeFloorIndex + 1)]?.lock}
+          name={thisFloor.squints[String(activeFloorIndex + 1)]?.name}
           obj={thisFloor}
           office={activeFloorIndex}
         />
       </div>
+
+      {/* Tooltip */}
+      <Tooltip id="sold-tooltip" place="top" />
     </div>
   );
 };
